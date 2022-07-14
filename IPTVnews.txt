@@ -1,0 +1,16 @@
+CCTV-1 综合 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225674/index.m3u8?servicetype=1&IASHttpSessionId=OTT
+CCTV-4 中文国际 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225753/index.m3u8?servicetype=1&IASHttpSessionId=OTT
+CCTV-13 新闻 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225787/index.m3u8?servicetype=1&IASHttpSessionId=OTT
+港台電視31,https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8
+港台電視32,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8
+無綫新聞台,http://cms750.synology.me:8001/bysid/83
+無綫新聞台1,http://ye23.win/iptv/tvb.php?id=1
+無綫新聞台2,http://ye23.win/iptv/tvb.php?id=5
+無綫新聞台3,http://ye23.win/iptv/tvb.php?id=4
+無綫新聞 NEVT1,http://ye23.win/iptv/tvb.php?id=3
+無綫新聞 NEVT2,http://ye23.win/iptv/tvb.php?id=6
+有線新聞台,http://livetv.dnsfor.me/channel.5.m3u8
+有線直播新聞台,http://livetv.dnsfor.me/channel.7.m3u8
+鳳凰衛視資訊台,http://zterr.hvs.fj.chinamobile.com:6060/PLTV/88888888/224/3221227226/index.m3u8?servicetype=1
+now直播台,http://livetv.dnsfor.me:80/channel.3.m3u8
+now新聞台,http://livetv.dnsfor.me:80/channel.4.m3u8
