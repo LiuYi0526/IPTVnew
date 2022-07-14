@@ -1,3 +1,4 @@
+新聞,#genre#
 CCTV-1 综合 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225674/index.m3u8?servicetype=1&IASHttpSessionId=OTT
 CCTV-4 中文国际 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225753/index.m3u8?servicetype=1&IASHttpSessionId=OTT
 CCTV-13 新闻 高清,http://39.135.32.236:6610/PLTV/77777777/224/3221225787/index.m3u8?servicetype=1&IASHttpSessionId=OTT
