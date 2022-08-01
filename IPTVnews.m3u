@@ -1,0 +1,108 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="新聞", CCTV-1 综合 高清
+http://39.134.115.163:8080/TVOD/88888910/224/3221225642/index.m3u8
+
+#EXTINF:-1 tvg-id="4" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png" group-title="新聞", CCTV-4 中文国际 高清
+http://ott.mobaibox.com/PLTV/3/224/3221227549/index.m3u8
+
+#EXTINF:-1 tvg-id="14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="新聞", CCTV-13 新闻 高清
+http://111.20.33.93/TVOD/88888893/224/3221226233/index.m3u8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.tvyan.com/uploads/dianshi/rhk31.jpg" group-title="新聞", 港台電視31
+https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.tvyan.com/uploads/dianshi/rhk32.jpg" group-title="新聞", 港台電視32
+https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8
+
+#EXTINF:-1 tvg-id="130" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="新聞", 無綫新聞台
+http://cms750.synology.me:8001/bysid/83
+
+#EXTINF:-1 tvg-id="109 新聞台 *" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/iCABLENewsChannelHD.png" group-title="新聞", 有線新聞台
+https://uc6.i-cable.com/live_freedirect/freehd209_h.live/chunklist_w2095687940.m3u8
+
+#EXTINF:-1 tvg-id="110 直播新聞台 *" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/iCABLELiveNewsChannel.png" group-title="新聞", 有線直播新聞台
+https://uc6.i-cable.com/live_freedirect/hd110_h.live/chunklist_w1636063330.m3u8
+
+#EXTINF:-1 tvg-id="FHJ.CN" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/fenghuangzixun.png" group-title="新聞", 鳳凰衛視資訊台
+http://zterr.hvs.fj.chinamobile.com:6060/PLTV/88888888/224/3221227226/index.m3u8?servicetype=1
+
+#EXTINF:-1 tvg-id="中國.-.Now直播台.hk" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/nowdirect.png" group-title="新聞", now直播台
+http://livetv.dnsfor.me:80/channel.3.m3u8
+
+#EXTINF:-1 tvg-id="中國.-.Now新聞台.hk" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/nownews.png" group-title="新聞", now新聞台
+http://livetv.dnsfor.me:80/channel.4.m3u8
+
+#EXTINF:-1 tvg-id="7176" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视新闻.png" group-title="台灣", 中視新聞 HD
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中視新聞.m3u8
+
+#EXTINF:-1 tvg-id="HSX.TW" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@master/TVlogos/CTSNews.png" group-title="台灣", 華視新聞資訊 HD
+http://seb.sason.top/sc/hsxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6143" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/台视新闻.png" group-title="台灣", 台視新聞 HD
+http://seb.sason.top/sc/tsxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6031" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/PublicTV.png" group-title="台灣", 公視 HD
+http://50.7.220.74:8278/ctv_taiwan/playlist.m3u8?tid=13765524&ct=17990&tsum=03eb77c1c186944b97737f14e95076c0
+
+#EXTINF:-1 tvg-id="6071" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/FTVNews.png" group-title="台灣", 民視新聞台 HD
+http://seb.sason.top/sc/msxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6171" tvg-logo="http://www.nettv.live/uploads/allimg/18/1-1PF21500270-L.jpg" group-title="台灣", 寰宇新聞台
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/寰宇新聞.m3u8
+
+#EXTINF:-1 tvg-id="7177" tvg-logo="http://www.nettv.live/uploads/20/1-200323215544608.jpg" group-title="台灣", ★寰宇新聞台灣台
+http://206.119.163.4/apitv/gttv.php?id=14172&cid=14332
+
+#EXTINF:-1 tvg-id="6171" tvg-logo="https://i.ytimg.com/vi/5n0y6b0Q25o/maxresdefault.jpg" group-title="台灣", 鏡新聞
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/鏡新聞.m3u8
+
+#EXTINF:-1 tvg-id="6070" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiNews.png" group-title="台灣", 中天新聞 HD
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中天新聞.m3u8
+
+#EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森新聞 HD
+http://59.125.101.187:8588/playlist.m3u8
+
+#EXTINF:-1 tvg-id="6075" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCFinancialNews.png" group-title="台灣", 東森財經新聞 HD
+http://seb.sason.top/sc/dscjxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森LIVE
+http://seb.sason.top/sc/dsxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6074" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS.png" group-title="台灣", TVBS HD
+http://50.7.218.42:8278/tvbs/playlist.m3u8?tid=m0f93590c7a75&ct=18335&tsum=d55d4e5f3a3d424454dbc8d70e3bb1b6
+
+#EXTINF:-1 tvg-id="6073" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS新闻.png" group-title="台灣", TVBS新聞台 HD
+http://seb.sason.top/sc/tvbsxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@master/TVlogos/setlivenews.png" group-title="台灣", 三立海外直播
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立海外直播.m3u8
+
+#EXTINF:-1 tvg-id="6108" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/SETInews.png" group-title="台灣", 三立iNews
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立iNEWS.m3u8
+
+#EXTINF:-1 tvg-id="6072" tvg-logo="http://www.tvyan.com/uploads/dianshi/setxinwen.jpg" group-title="台灣", 三立+
+https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立+.m3u8
+
+#EXTINF:-1 tvg-id="6067" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/NextTVNews.png" group-title="台灣", 壹新聞 HD
+http://stream.nexttv.com.tw/n001/hd/live.m3u8
+
+#EXTINF:-1 tvg-id="6076" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/UniqueNews.png" group-title="台灣", ★非凡新聞
+http://59.125.101.187:8591/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.ntdtv.com.tw/staticelement/img/aboutus/ntd_logo.png" group-title="海外", 新唐人大陸台
+http://cnhls.ntdtv.com/cn/live800/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.ntdtv.com.tw/staticelement/img/aboutus/ntd_logo.png" group-title="海外", 新唐人亞太台
+http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live050&nid=223
+
+#EXTINF:-1 tvg-id="Jaz.News" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/aljazeera.png" group-title="新聞", Al-Jazeera English
+https://live-hls-web-aje.getaj.net/AJE/01.m3u8
+
+#EXTINF:-1 tvg-id="Bbw.News" tvg-logo="http://static.epg.best/gb/BBCWorldNews.uk.png" group-title="新聞", BBC World News
+https://livecdn.fptplay.net/sdb/bbcnew_2000.stream/chunklist_b2500000.m3u8
+
+#EXTINF:-1 tvg-id="6139" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/channelnewsasia.png" group-title="新聞", Channel News Asia
+http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
+
+#EXTINF:-1 tvg-id="CNN.News" tvg-logo="http://static.epg.best/gb/CNN.uk.png" group-title="新聞", CNN
+https://cnn-cnninternational-1-de.samsung.wurl.com/manifest/playlist_1280x720_3000k.m3u8
