@@ -1,0 +1,604 @@
+name: Get YouTube Live m3u8
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Install youtube-dl
+      run: |
+        sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+        sudo chmod a+rx /usr/local/bin/youtube-dl
+    - name: Get aljazeera.m3u8
+      run: |
+        touch ./aljazeera.m3u8
+        sudo cat >./aljazeera.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=F-POY4Q0QSI)
+        EOL
+    - name: Get 國會頻道1.m3u8
+      run: |
+        touch ./國會頻道1.m3u8
+        sudo cat >./國會頻道1.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=4HysYHJ6GkY)
+        EOL
+    - name: Get 國會頻道2.m3u8
+      run: |
+        touch ./國會頻道2.m3u8
+        sudo cat >./國會頻道2.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=RAP4h3q6_Sg)
+        EOL
+    - name: Get 民視新聞.m3u8
+      run: |
+        touch ./民視新聞.m3u8
+        sudo cat >./民視新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=yguQ1SzPM5U)
+        EOL
+    - name: Get CNA.m3u8
+      run: |
+        touch ./CNA.m3u8
+        sudo cat >./CNA.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=XWq5kBlakcQ)
+        EOL
+    - name: Get NBC2.m3u8
+      run: |
+        touch ./NBC2.m3u8
+        sudo cat >./NBC2.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=TdQShwOfWSA)
+        EOL
+    - name: Get NASA.m3u8
+      run: |
+        touch ./NASA.m3u8
+        sudo cat >./NASA.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=21X5lGlDOfg)
+        EOL
+    - name: Get AlJazeeraArabic.m3u8
+      run: |
+        touch ./AlJazeeraArabic.m3u8
+        sudo cat >./AlJazeeraArabic.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=eJ6ZMd4sVrI)
+        EOL
+    - name: Get Телеканал.m3u8
+      run: |
+        touch ./Телеканал.m3u8
+        sudo cat >./Телеканал.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=lhs2JS_f9bI)
+        EOL
+    - name: Get 24канал.m3u8
+      run: |
+        touch ./24канал.m3u8
+        sudo cat >./24канал.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=Ze758jnFRbI)
+        EOL
+    - name: Get 中天新聞.m3u8
+      run: |
+        touch ./中天新聞.m3u8
+        sudo cat >./中天新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=_QbRXRnHMVY)
+        EOL
+    - name: Get CCTV中文国际.m3u8
+      run: |
+        touch ./CCTV中文国际.m3u8
+        sudo cat >./CCTV中文国际.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=Qg9U06O2R-s)
+        EOL
+    - name: Get FREEДОМ.m3u8
+      run: |
+        touch ./FREEДОМ.m3u8
+        sudo cat >./FREEДОМ.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=bd7pgOGD5Ds)
+        EOL
+    - name: Get 凤凰资讯.m3u8
+      run: |
+        touch ./凤凰资讯.m3u8
+        sudo cat >./凤凰资讯.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=vwWTPK2tiIo)
+        EOL
+    - name: Get 中視新聞.m3u8
+      run: |
+        touch ./中視新聞.m3u8
+        sudo cat >./中視新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=TCnaIE_SAtM)
+        EOL
+    - name: Get 台視新聞.m3u8
+      run: |
+        touch ./台視新聞.m3u8
+        sudo cat >./台視新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=xL0ch83RAK8)
+        EOL
+    - name: Get ABC.m3u8
+      run: |
+        touch ./ABC.m3u8
+        sudo cat >./ABC.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=w_Ma8oQLmSM)
+        EOL
+    - name: Get Bloomberg.m3u8
+      run: |
+        touch ./Bloomberg.m3u8
+        sudo cat >./Bloomberg.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=dp8PhLsUcFE)
+        EOL
+    - name: Get 東森新聞.m3u8
+      run: |
+        touch ./東森新聞.m3u8
+        sudo cat >./東森新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=R2iMq5LKXco)
+        EOL
+    - name: Get NTDAPTV.m3u8
+      run: |
+        touch ./NTDAPTV.m3u8
+        sudo cat >./NTDAPTV.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=wSKE3A40SIk)
+        EOL
+    - name: Get 東森財經新聞.m3u8
+      run: |
+        touch ./東森財經新聞.m3u8
+        sudo cat >./東森財經新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=ABn_ccXn_jc)
+        EOL
+    - name: Get YTN.m3u8
+      run: |
+        touch ./YTN.m3u8
+        sudo cat >./YTN.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=py_phbQxy5Y)
+        EOL
+    - name: Get earthTV.m3u8
+      run: |
+        touch ./earthTV.m3u8
+        sudo cat >./earthTV.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=3qdEMXmwTkQ)
+        EOL
+    - name: Get KBSKOREA.m3u8
+      run: |
+        touch ./KBSKOREA.m3u8
+        sudo cat >./KBSKOREA.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=HnfpTMtfFk8)
+        EOL
+    - name: Get ANN.m3u8
+      run: |
+        touch ./ANN.m3u8
+        sudo cat >./ANN.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=coYw-eVU0Ks)
+        EOL
+    - name: Get Yonhapnews.m3u8
+      run: |
+        touch ./Yonhapnews.m3u8
+        sudo cat >./Yonhapnews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=0GN8t2u3flc)
+        EOL
+    - name: Get africanews.m3u8
+      run: |
+        touch ./africanews.m3u8
+        sudo cat >./africanews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=NQjabLGdP5g)
+        EOL
+    - name: Get Arirang.m3u8
+      run: |
+        touch ./Arirang.m3u8
+        sudo cat >./Arirang.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=kTSbZym4uLw)
+        EOL
+    - name: Get 華視新聞.m3u8
+      run: |
+        touch ./華視新聞.m3u8
+        sudo cat >./華視新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=wM0g8EoUZ_E)
+        EOL
+    - name: Get News18India.m3u8
+      run: |
+        touch ./News18India.m3u8
+        sudo cat >./News18India.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=540000
+        $(youtube-dl -g https://www.youtube.com/watch?v=jTc5NN19qYs)
+        EOL
+    - name: Get euronews.m3u8
+      run: |
+        touch ./euronews.m3u8
+        sudo cat >./euronews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=sPgqEHsONK8)
+        EOL
+    - name: Get france24.m3u8
+      run: |
+        touch ./france24.m3u8
+        sudo cat >./france24.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=h3MuIUNCCzI)
+        EOL
+    - name: Get 寰宇新聞.m3u8
+      run: |
+        touch ./寰宇新聞.m3u8
+        sudo cat >./寰宇新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=B7Zp3d6xXWw)
+        EOL
+    - name: Get 三立海外直播.m3u8
+      run: |
+        touch ./三立海外直播.m3u8
+        sudo cat >./三立海外直播.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=FoBfXvlOR6I)
+        EOL
+    - name: Get 三立iNEWS.m3u8
+      run: |
+        touch ./三立iNEWS.m3u8
+        sudo cat >./三立iNEWS.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=CKjSm5ZeehE)
+        EOL
+    - name: Get 三立+.m3u8
+      run: |
+        touch ./三立+.m3u8
+        sudo cat >./三立+.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=EB4g7wecgTI)
+        EOL
+    - name: Get TRTWORLD.m3u8
+      run: |
+        touch ./TRTWORLD.m3u8
+        sudo cat >./TRTWORLD.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=CV5Fooi8YJA)
+        EOL
+    - name: Get TVBS新聞.m3u8
+      run: |
+        touch ./TVBS新聞.m3u8
+        sudo cat >./TVBS新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=2mCSYvcfhtc)
+        EOL
+    - name: Get Newsmax.m3u8
+      run: |
+        touch ./Newsmax.m3u8
+        sudo cat >./Newsmax.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=FErQVDzgBLo)
+        EOL
+    - name: Get HUMNEWS.m3u8
+      run: |
+        touch ./HUMNEWS.m3u8
+        sudo cat >./HUMNEWS.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=89HtqpTAtDY)
+        EOL
+    - name: Get RTVE.m3u8
+      run: |
+        touch ./RTVE.m3u8
+        sudo cat >./RTVE.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=xR-4NDFsYNk)
+        EOL
+    - name: Get 鏡新聞.m3u8
+      run: |
+        touch ./鏡新聞.m3u8
+        sudo cat >./鏡新聞.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=5n0y6b0Q25o)
+        EOL
+    - name: Get SunNews.m3u8
+      run: |
+        touch ./SunNews.m3u8
+        sudo cat >./SunNews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=kzwbYu1diCY)
+        EOL
+    - name: Get AlJazeeraArabic.m3u8
+      run: |
+        touch ./AlJazeeraArabic.m3u8
+        sudo cat >./AlJazeeraArabic.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=eJ6ZMd4sVrI)
+        EOL
+    - name: Get ABC7.m3u8
+      run: |
+        touch ./ABC7.m3u8
+        sudo cat >./ABC7.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=XObsOutMlh8)
+        EOL
+    - name: Get NewsmaxTV.m3u8
+      run: |
+        touch ./NewsmaxTV.m3u8
+        sudo cat >./NewsmaxTV.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=FErQVDzgBLo)
+        EOL
+    - name: Get ARYNEWS.m3u8
+      run: |
+        touch ./ARYNEWS.m3u8
+        sudo cat >./ARYNEWS.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=38IEolI8f-w)
+        EOL
+    - name: Get GBNews.m3u8
+      run: |
+        touch ./GBNews.m3u8
+        sudo cat >./GBNews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=7fIU2aMImMQ)
+        EOL
+    - name: Get NDTV.m3u8
+      run: |
+        touch ./NDTV.m3u8
+        sudo cat >./NDTV.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=WB-y7_ymPJ4)
+        EOL
+    - name: Get CGTN.m3u8
+      run: |
+        touch ./CGTN.m3u8
+        sudo cat >./CGTN.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=oWwQuAN-KZc)
+        EOL
+    - name: Get Milenio.m3u8
+      run: |
+        touch ./Milenio.m3u8
+        sudo cat >./Milenio.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=qxh5MZXxKb4)
+        EOL
+    - name: Get ABCNewsAustralia.m3u8
+      run: |
+        touch ./ABCNewsAustralia.m3u8
+        sudo cat >./ABCNewsAustralia.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=vOTiJkg1voo)
+        EOL
+    - name: Get UnitedNations.m3u8
+      run: |
+        touch ./UnitedNations.m3u8
+        sudo cat >./UnitedNations.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=9CdY7t5VKIY)
+        EOL
+    - name: Get SpaceAmbientMusic.m3u8
+      run: |
+        touch ./SpaceAmbientMusic.m3u8
+        sudo cat >./SpaceAmbientMusic.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=tNkZsRW7h2c)
+        EOL
+    - name: Get THEK-POP.m3u8
+      run: |
+        touch ./THEK-POP.m3u8
+        sudo cat >./THEK-POP.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=F4aby5WN1Rw)
+        EOL
+    - name: Get SOMOY-TV.m3u8
+      run: |
+        touch ./SOMOY-TV.m3u8
+        sudo cat >./SOMOY-TV.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=8xO7H8a4TXU)
+        EOL
+    - name: Get ABPNEWS.m3u8
+      run: |
+        touch ./ABPNEWS.m3u8
+        sudo cat >./ABPNEWS.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=nyd-xznCpJc)
+        EOL
+    - name: Get News18Urdu.m3u8
+      run: |
+        touch ./News18Urdu.m3u8
+        sudo cat >./News18Urdu.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=dRJU8Ur7-g8)
+        EOL
+    - name: Get OTVLive.m3u8
+      run: |
+        touch ./OTVLive.m3u8
+        sudo cat >./OTVLive.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=AtveZ8K0JT0)
+        EOL
+    - name: Get TV9KANNADANEWS.m3u8
+      run: |
+        touch ./TV9KANNADANEWS.m3u8
+        sudo cat >./TV9KANNADANEWS.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=jdJoOhqCipA)
+        EOL
+    - name: Get SuvarnaNews.m3u8
+      run: |
+        touch ./SuvarnaNews.m3u8
+        sudo cat >./SuvarnaNews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=GM91zl1Dn4o)
+        EOL
+    - name: Get AsianetNews.m3u8
+      run: |
+        touch ./AsianetNews.m3u8
+        sudo cat >./AsianetNews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=PNR06O9sSio)
+        EOL
+    - name: Get DDIndia.m3u8
+      run: |
+        touch ./DDIndia.m3u8
+        sudo cat >./DDIndia.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=zGpJ1NgRXoI)
+        EOL
+    - name: Get Україна24.m3u8
+      run: |
+        touch ./Україна24.m3u8
+        sudo cat >./Україна24.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=IgSn1Z2rq6E)
+        EOL
+    - name : Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: YTlive m3u8
+        path: .
+    - name: Git push assets to "YTlive" branch
+      run: |
+        git init
+        git config --local user.name "actions"
+        git config --local user.email "action@github.com"
+        git checkout -b YTlive
+        git add .
+        git commit -m "Update YTlive"
+        git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+        git push -f -u origin YTlive
