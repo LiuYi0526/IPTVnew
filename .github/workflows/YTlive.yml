@@ -1,11 +1,11 @@
 name: Get YouTube Live m3u8
 on:
-  schedule:
-    - cron: "0 */2 * * *"
+#  schedule:
+#    - cron: "0 */2 * * *"
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Install youtube-dl
       run: |
