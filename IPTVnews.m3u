@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="新聞", CCTV-1 综合 高清
-http://39.134.115.163:8080/TVOD/88888910/224/3221225642/index.m3u8
+https://cntv.sbs/tv?auth=230830&id=cctv1
 
 #EXTINF:-1 tvg-id="4" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png" group-title="新聞", CCTV-4 中文国际 高清
-http://ott.mobaibox.com/PLTV/3/224/3221227549/index.m3u8
+https://cntv.sbs/tv?auth=230830&id=cctv4
 
 #EXTINF:-1 tvg-id="14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="新聞", CCTV-13 新闻 高清
-http://111.20.33.93/TVOD/88888893/224/3221226233/index.m3u8
+https://cntv.sbs/tv?auth=230830&id=cctv13
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.tvyan.com/uploads/dianshi/rhk31.jpg" group-title="新聞", 港台電視31
 https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8
@@ -15,7 +15,7 @@ https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlay
 https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8
 
 #EXTINF:-1 tvg-id="130" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="新聞", 無綫新聞台
-http://cms750.synology.me:8001/bysid/83
+http://hkdtmb.com/dtmb/83/index.m3u8?token=EWrvhWfpuddTT8quLJmuYA&expires=1691529511
 
 #EXTINF:-1 tvg-id="109 新聞台 *" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/iCABLENewsChannelHD.png" group-title="新聞", 有線新聞台
 https://uc6.i-cable.com/live_freedirect/freehd209_h.live/chunklist_w2095687940.m3u8
