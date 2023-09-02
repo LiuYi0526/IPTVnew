@@ -27,7 +27,7 @@ https://uc6.i-cable.com/live_freedirect/hd110_h.live/chunklist_w1636063330.m3u8
 http://zterr.hvs.fj.chinamobile.com:6060/PLTV/88888888/224/3221227226/index.m3u8?servicetype=1
 
 #EXTINF:-1 tvg-id="中國.-.Now新聞台.hk" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/nownews.png" group-title="新聞", now新聞台
-https://sc2022.stream-link.org/tv2306.php?id=h08
+http://hkdtmb.com/dtmb/332/index.m3u8?
 
 #EXTINF:-1 tvg-id="7176" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视新闻.png" group-title="台灣", 中視新聞 HD
 https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中視新聞.m3u8
