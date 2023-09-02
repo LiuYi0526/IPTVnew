@@ -26,11 +26,8 @@ https://uc6.i-cable.com/live_freedirect/hd110_h.live/chunklist_w1636063330.m3u8
 #EXTINF:-1 tvg-id="FHJ.CN" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/fenghuangzixun.png" group-title="新聞", 鳳凰衛視資訊台
 http://zterr.hvs.fj.chinamobile.com:6060/PLTV/88888888/224/3221227226/index.m3u8?servicetype=1
 
-#EXTINF:-1 tvg-id="中國.-.Now直播台.hk" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/nowdirect.png" group-title="新聞", now直播台
-http://livetv.dnsfor.me:80/channel.3.m3u8
-
 #EXTINF:-1 tvg-id="中國.-.Now新聞台.hk" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/nownews.png" group-title="新聞", now新聞台
-http://livetv.dnsfor.me:80/channel.4.m3u8
+https://sc2022.stream-link.org/tv2306.php?id=h08
 
 #EXTINF:-1 tvg-id="7176" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视新闻.png" group-title="台灣", 中視新聞 HD
 https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中視新聞.m3u8
@@ -50,8 +47,8 @@ http://seb.sason.top/sc/msxw_fhd.m3u8
 #EXTINF:-1 tvg-id="6171" tvg-logo="http://www.nettv.live/uploads/allimg/18/1-1PF21500270-L.jpg" group-title="台灣", 寰宇新聞台
 https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/寰宇新聞.m3u8
 
-#EXTINF:-1 tvg-id="7177" tvg-logo="http://www.nettv.live/uploads/20/1-200323215544608.jpg" group-title="台灣", ★寰宇新聞台灣台
-http://206.119.163.4/apitv/gttv.php?id=14172&cid=14332
+#EXTINF:-1 tvg-id="7177" tvg-logo="http://www.nettv.live/uploads/20/1-200323215544608.jpg" group-title="台灣", 寰宇新聞台灣台
+https://sc2022.stream-link.org/tv2306.php?id=t09
 
 #EXTINF:-1 tvg-id="6171" tvg-logo="https://i.ytimg.com/vi/5n0y6b0Q25o/maxresdefault.jpg" group-title="台灣", 鏡新聞
 https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/鏡新聞.m3u8
@@ -93,7 +90,7 @@ http://59.125.101.187:8591/playlist.m3u8
 http://cnhls.ntdtv.com/cn/live800/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.ntdtv.com.tw/staticelement/img/aboutus/ntd_logo.png" group-title="海外", 新唐人亞太台
-http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live050&nid=223
+https://www.ntdtv.com.tw/mlt/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Jaz.News" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/aljazeera.png" group-title="新聞", Al-Jazeera English
 https://live-hls-web-aje.getaj.net/AJE/01.m3u8
@@ -105,4 +102,4 @@ https://livecdn.fptplay.net/sdb/bbcnew_2000.stream/chunklist_b2500000.m3u8
 http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
 
 #EXTINF:-1 tvg-id="CNN.News" tvg-logo="http://static.epg.best/gb/CNN.uk.png" group-title="新聞", CNN
-https://cnn-cnninternational-1-de.samsung.wurl.com/manifest/playlist_1280x720_3000k.m3u8
+https://sc2022.stream-link.org/tv2306.php?id=e11
