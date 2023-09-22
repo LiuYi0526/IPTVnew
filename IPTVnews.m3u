@@ -1,12 +1,12 @@
 #EXTM3U catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="新聞", CCTV-1 综合 高清
-https://cntv.sbs/tv?auth=2309081833&id=cctv1
+https://cntv.sbs/tv?auth=230918&id=cctv1
 
 #EXTINF:-1 tvg-id="4" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png" group-title="新聞", CCTV-4 中文国际 高清
-https://cntv.sbs/tv?auth=2309081833&id=cctv4
+https://cntv.sbs/tv?auth=230918&id=cctv4
 
 #EXTINF:-1 tvg-id="14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="新聞", CCTV-13 新闻 高清
-https://cntv.sbs/tv?auth=2309081833&id=cctv13
+https://cntv.sbs/tv?auth=230918&id=cctv13
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.tvyan.com/uploads/dianshi/rhk31.jpg" group-title="新聞", 港台電視31
 https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8
