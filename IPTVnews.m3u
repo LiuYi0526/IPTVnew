@@ -36,13 +36,14 @@ http://hkdtmb.com/dtmb/83/index.m3u8
 https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8
 
 #EXTINF:-1 tvg-id="78" tvg-name="香港開電視資訊台" tvg-logo="http://www.stream-link.org/tv_logo/hoy_info.png" group-title="新聞", HOY資訊台
-https://hoytv-live-stream.hoy.tv/ch78/index-fhd-1-v-fhd.m3u8
+https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://www.stream-link.org/tv_logo/hoy_info.png" group-title="新聞", 亞運直播1台
 https://d238cgug17vwpr.cloudfront.net/ch1/live.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://www.stream-link.org/tv_logo/hoy_info.png" group-title="新聞", 亞運直播2台
 https://d238cgug17vwpr.cloudfront.net/ch2/live.m3u8
+
 #EXTINF:-1 tvg-id="110 直播新聞台 *" tvg-logo="https://cdn.jsdelivr.net/gh/LiuYi0526/IPTV@master/TVlogos/iCABLELiveNewsChannel.png" group-title="新聞", 有線直播新聞台
 https://uc6.i-cable.com/live_freedirect/hd110_h.live/chunklist_w1636063330.m3u8
 
