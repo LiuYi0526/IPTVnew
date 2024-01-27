@@ -130,6 +130,33 @@ Reuters Now,https://reuters-reutersnow-1-nl.samsung.wurl.tv/c0c0829237382f291cc4
 RT News,https://rt-glb.rttv.com/dvr/rtnews/playlist_4500Kb.m3u8
 RT Documentary,https://rt-rtd.rttv.com/live/rtdoc/playlist_4500Kb.m3u8
 
+台灣,#genre#
+中視新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中視新聞.m3u8
+華視新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/華視新聞.m3u8
+台視新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/台視新聞.m3u8
+公視新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/公視新聞.m3u8
+TaiwanPlus,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/TaiwanPlus.m3u8
+民視新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/民視新聞.m3u8
+鏡新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/鏡新聞.m3u8
+三立海外直播,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立海外直播.m3u8
+三立iNEWS,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立iNEWS.m3u8
+三立+,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/三立+.m3u8
+東森新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/東森新聞.m3u8
+東森LIVE,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/東森LIVE.m3u8
+東森財經新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/東森財經新聞.m3u8
+東森財經股市,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/東森財經股市.m3u8
+寰宇新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/寰宇新聞.m3u8
+寰宇新聞台灣台,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/寰宇新聞台灣台.m3u8
+寰宇新聞財經台,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/寰宇新聞財經台.m3u8
+TVBS新聞台,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/TVBS新聞台.m3u8
+TVBS NEWS網路獨家新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/TVBSNEWS網路獨家新聞.m3u8
+TVBS,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/TVBS.m3u8
+中天新聞,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/中天新聞.m3u8
+國會頻道1,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/國會頻道1.m3u8
+國會頻道2,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/YTlive/國會頻道2.m3u8
+东森电影,https://ctrl.laotv.la/live/DongsenMovie/index.m3u8
+东森洋片,https://ctrl.laotv.la/live/DongsenForeignMovie/index.m3u8
+
 old,#genre#
 無綫新聞台,http://cms750.synology.me:8001/bysid/83
 有線新聞台,http://livetv.dnsfor.me/channel.5.m3u8
