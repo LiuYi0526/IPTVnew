@@ -1,15 +1,16 @@
 name: Get kctv_elufa m3u8
 on:
-  schedule:
+#  schedule:
 #    - cron: "0 */2 * * *"
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
-    - name: Install streamlink
+    - name: Install yt-dlp
       run: |
-        sudo apt install streamlink
+        sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+        sudo chmod a+rx /usr/local/bin/yt-dlp
     - name: Get kctv_elufa m3u8
       run: |
         touch ./kctv_elufa.m3u8
@@ -17,7 +18,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(streamlink --stream-url https://www.twitch.tv/kctv_elufa)
+        $(yt-dlp -g https://www.twitch.tv/kctv_elufa)
         EOL
     - name : Upload artifact
       uses: actions/upload-artifact@master
