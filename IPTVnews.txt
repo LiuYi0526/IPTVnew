@@ -1,4 +1,4 @@
-新聞,#genre#
+中国央视,#genre#
 CCTV-1 综合,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001331/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 CCTV-2 财经,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001332/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 CCTV-3 综艺,http://[2409:8087:2001:20:2800:0:df6e:eb22]/ott.mobaibox.com/PLTV/4/224/3221228392/index.m3u8
@@ -23,7 +23,7 @@ CCTV-8K 超高清,http://[2409:8087:2001:20:2800:0:df6e:eb03]/ott.mobaibox.com/P
 CGTN,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001024/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 CGTN Documentary,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002905/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 
-重温经典,http://cg12.hunancatv.cn:9090/live/CWJD.m3u8?t=Q3ZTI5YWVmMmUwM==&d=7e29aef2e03907f&pid=&cid=20&u=freeuser&l=001&sid=My5f5evM7A+JM7kBEt7zRg==&r=20240116195900&e=20240117195900&nc=5juVZbdBPOgB&a=7&v=2&hlsSessionID=7114844658832085543&srchost=172.16.22.158:8060&gid=1cTuE8i8Z%2F6MoBf3Sw1THw%3D%3D江西卫视[江西],http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888910/224/3221225492/index.m3u8?fmt=ts2hls
+重温经典,http://cg12.hunancatv.cn:9090/live/CWJD.m3u8?t=Q3ZTI5YWVmMmUwM==&d=7e29aef2e03907f&pid=&cid=20&u=freeuser&l=001&sid=My5f5evM7A+JM7kBEt7zRg==&r=20240116195900&e=20240117195900&nc=5juVZbdBPOgB&a=7&v=2&hlsSessionID=7114844658832085543&srchost=172.16.22.158:8060&gid=1cTuE8i8Z%2F6MoBf3Sw1THw%3D%3D
 
 兵器科技,http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8
 电视指南,http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8
@@ -105,8 +105,8 @@ CRI NEWS Plus AM1008,http://sk.cri.cn/am1008.m3u8
 凤凰中文,http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/3/224/3221228527/1.m3u8
 凤凰资讯,http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221228524/1.m3u8
 凤凰香港,http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/1/224/3221228530/1.m3u8
-香港國際財經台,https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8
 
+香港國際財經台,https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8
 HOYTV,https://hoytv-live-stream.hoy.tv/ch77/index-fhd.m3u8
 HOY資訊台,https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
 亞運直播1台,https://d238cgug17vwpr.cloudfront.net/ch1/live.m3u8
@@ -115,6 +115,7 @@ HOY資訊台,https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
 無綫新聞台,https://cdn.hkdtmb.com/hls/live/83.m3u8?token=415002797076182#http://live.cooltv.top/tv/tvb.php?id=1
 無綫新聞 NEVT1,http://live.cooltv.top/tv/tvb.php?id=4#http://live.cooltv.top/tv/tvb.php?id=5
 無綫新聞 NEVT2,http://live.cooltv.top/tv/tvb.php?id=6#http://live.cooltv.top/tv/tvb.php?id=7
+無綫財經 體育 資訊台,https://cdn.hkdtmb.com/hls/live/83.m3u8?token=415002797076182#http://live.cooltv.top/tv/tvb.php?id=2#http://live.cooltv.top/tv/tvb.php?id=3
 
 ViuTVsix,https://cdn.hkdtmb.com/hls/live/96.m3u8?token=415002797076182
 ViuTV,https://cdn.hkdtmb.com/hls/live/99.m3u8?token=415002797076182
