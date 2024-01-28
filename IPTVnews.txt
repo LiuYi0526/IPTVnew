@@ -124,11 +124,11 @@ CRI NEWS Plus AM846,http://sk.cri.cn/am846.m3u8
 CRI NEWS Plus AM1008,http://sk.cri.cn/am1008.m3u8
 
 香港,#genre#
-港台電視31,https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/31.m3u8?token=415002797076182
-港台電視32,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/32.m3u8?token=415002797076182
-港台電視33,https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/33.m3u8?token=415002797076182
-港台電視34,https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/34.m3u8?token=415002797076182
-港台電視35,https://rthktv35-live.akamaized.net/hls/live/2101643/RTHKTV35/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/35.m3u8?token=415002797076182
+港台電視31,https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/31.m3u8?token=415002797098260
+港台電視32,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/32.m3u8?token=415002797098260
+港台電視33,https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/33.m3u8?token=415002797098260
+港台電視34,https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/34.m3u8?token=415002797098260
+港台電視35,https://rthktv35-live.akamaized.net/hls/live/2101643/RTHKTV35/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/35.m3u8?token=415002797098260
 
 凤凰中文,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226248/1/index.m3u8?fmt=ts2hls
 凤凰资讯,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226274/1/index.m3u8?fmt=ts2hls
@@ -143,13 +143,13 @@ HOY 資訊台,https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
 HOY APP CH1,https://d238cgug17vwpr.cloudfront.net/ch1/live.m3u8
 HOY APP CH2,https://d238cgug17vwpr.cloudfront.net/ch2/live.m3u8
 
-無綫新聞台,https://cdn.hkdtmb.com/hls/live/83.m3u8?token=415002797076182#http://live.cooltv.top/tv/tvb.php?id=1&hq
+無綫新聞台,https://cdn.hkdtmb.com/hls/live/83.m3u8?token=415002797098260#http://live.cooltv.top/tv/tvb.php?id=1&hq
 無綫新聞 NEVT1,http://live.cooltv.top/tv/tvb.php?id=4&hq#http://live.cooltv.top/tv/tvb.php?id=5&hq
 無綫新聞 NEVT2,http://live.cooltv.top/tv/tvb.php?id=6&hq#http://live.cooltv.top/tv/tvb.php?id=7&hq
-無綫財經 體育 資訊台,https://cdn.hkdtmb.com/hls/live/85.m3u8?token=415002797076182#http://live.cooltv.top/tv/tvb.php?id=2&hq#http://live.cooltv.top/tv/tvb.php?id=3&hq
+無綫財經 體育 資訊台,https://cdn.hkdtmb.com/hls/live/85.m3u8?token=415002797098260#http://live.cooltv.top/tv/tvb.php?id=2&hq#http://live.cooltv.top/tv/tvb.php?id=3&hq
 
-ViuTVsix,https://cdn.hkdtmb.com/hls/live/96.m3u8?token=415002797076182
-ViuTV,https://cdn.hkdtmb.com/hls/live/99.m3u8?token=415002797076182
+ViuTVsix,https://cdn.hkdtmb.com/hls/live/96.m3u8?token=415002797098260
+ViuTV,https://cdn.hkdtmb.com/hls/live/99.m3u8?token=415002797098260
 
 myTV SUPER直播足球1台(900),https://prd-mytvs-hkjc-evt4-vcache.tvb.com/__cl/slocalo24/__c/ott_EVT1_h264/__op/default/__f/manifest.mpd
 myTV SUPER直播足球2台(901),https://prd-mytvs-hkjc-evt4-vcache.tvb.com/__cl/slocalo24/__c/ott_EVT2_h264/__op/default/__f/manifest.mpd
@@ -208,6 +208,10 @@ RT News,https://rt-glb.rttv.com/dvr/rtnews/playlist_4500Kb.m3u8
 RT Documentary,https://rt-rtd.rttv.com/live/rtdoc/playlist_4500Kb.m3u8
 
 198.16.100.90,#genre#
+ViuTVsix,http://198.16.100.90:8278/viusix_twn/playlist.m3u8?tid=MF0F4217630642176306&ct=19249&tsum=33becc0fe8466036420dbbb4727dc49e
+ViuTVsix,http://198.16.100.90:8278/viusix_twn/playlist.m3u8?tid=MC6C1412376614123766&ct=19225&tsum=f4273425d435057616c3380b9e2a0287
+ViuTVsix,http://50.7.238.114:8278/viusix_twn/playlist.m3u8?tid=MD7D9950629799506297&ct=19234&tsum=83ba3013be3e325b775bcd348b38eab1
+ViuTV,http://198.16.100.90:8278/viu1_twn/playlist.m3u8?tid=MF9F2344917423449174&ct=19254&tsum=3cb061ac749a32280d3b88c022a1403f
 公视,http://198.16.100.90:8278/ctv_taiwan/playlist.m3u8?tid=MDCD6096520560965205&ct=19249&tsum=64237c7ffa0c00b62657a938247bcab0
 TVBS,http://198.16.100.90:8278/tvbs/playlist.m3u8?tid=MDED5111960351119603&ct=19226&tsum=49931e2d3885c468d56ffae2c2db9e6e
 TVBS新闻台,http://198.16.100.90:8278/tvbs_n/playlist.m3u8?tid=MECE3233774032337740&ct=19225&tsum=47a22a993d8e9b29582dfde5631c78b0
