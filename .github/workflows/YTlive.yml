@@ -49,15 +49,15 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(yt-dlp -g https://www.youtube.com/watch?v=quwqlazU-c8)
         EOL
-    - name: Get TaiwanPlus.m3u8
-      run: |
-        touch ./TaiwanPlus.m3u8
-        sudo cat >./TaiwanPlus.m3u8 <<EOL
-        #EXTM3U
-        #EXT-X-VERSION:3
-        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=dZp87qnWelE)
-        EOL
+    # - name: Get TaiwanPlus.m3u8
+    #   run: |
+    #     touch ./TaiwanPlus.m3u8
+    #     sudo cat >./TaiwanPlus.m3u8 <<EOL
+    #     #EXTM3U
+    #     #EXT-X-VERSION:3
+    #     #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+    #     $(yt-dlp -g https://www.youtube.com/watch?v=dZp87qnWelE)
+    #     EOL
     - name: Get 民視新聞.m3u8
       run: |
         touch ./民視新聞.m3u8
@@ -157,10 +157,10 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(yt-dlp -g https://www.youtube.com/watch?v=w87VGpgd90U)
         EOL
-    - name: Get 寰宇新聞財經台.m3u8
+    - name: Get 寰宇財經台.m3u8
       run: |
-        touch ./寰宇新聞財經台.m3u8
-        sudo cat >./寰宇新聞財經台.m3u8 <<EOL
+        touch ./寰宇財經台.m3u8
+        sudo cat >./寰宇財經台.m3u8 <<EOL
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
@@ -227,7 +227,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=Qg9U06O2R-s)
+        $(yt-dlp -g https://www.youtube.com/watch?v=bEZYrBMYNNg)
         EOL
     - name: Get FREEДОМ.m3u8
       run: |
@@ -236,16 +236,16 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=bd7pgOGD5Ds)
+        $(yt-dlp -g https://www.youtube.com/watch?v=BOPR9CNP-Uk)
         EOL
-    - name: Get 凤凰资讯.m3u8
+    - name: Get 鳳凰衛視資訊台.m3u8
       run: |
-        touch ./凤凰资讯.m3u8
-        sudo cat >./凤凰资讯.m3u8 <<EOL
+        touch ./鳳凰衛視資訊台.m3u8
+        sudo cat >./鳳凰衛視資訊台.m3u8 <<EOL
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=vwWTPK2tiIo)
+        $(yt-dlp -g https://www.youtube.com/watch?v=0K6C6Rv4RR4)
         EOL
     - name: Get NTDAPTV.m3u8
       run: |
@@ -254,16 +254,25 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=wSKE3A40SIk)
+        $(yt-dlp -g https://www.youtube.com/watch?v=WIhgU_mc05A)
         EOL
-    - name: Get aljazeera.m3u8
+    - name: Get AlJazeeraArabic.m3u8
       run: |
-        touch ./aljazeera.m3u8
-        sudo cat >./aljazeera.m3u8 <<EOL
+        touch ./AlJazeeraArabic.m3u8
+        sudo cat >./AlJazeeraArabic.m3u8 <<EOL
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=F-POY4Q0QSI)
+        $(yt-dlp -g https://www.youtube.com/watch?v=bNyUyrR0PHo)
+        EOL
+    - name: Get aljazeeraenglish.m3u8
+      run: |
+        touch ./aljazeeraenglish.m3u8
+        sudo cat >./aljazeeraenglish.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(yt-dlp -g https://www.youtube.com/watch?v=gCNeDWCI0vo)
         EOL
     - name: Get CNA.m3u8
       run: |
@@ -291,15 +300,6 @@ jobs:
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(yt-dlp -g https://www.youtube.com/watch?v=21X5lGlDOfg)
-        EOL
-    - name: Get AlJazeeraArabic.m3u8
-      run: |
-        touch ./AlJazeeraArabic.m3u8
-        sudo cat >./AlJazeeraArabic.m3u8 <<EOL
-        #EXTM3U
-        #EXT-X-VERSION:3
-        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp -g https://www.youtube.com/watch?v=eJ6ZMd4sVrI)
         EOL
     - name: Get Телеканал.m3u8
       run: |
