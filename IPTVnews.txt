@@ -1,24 +1,25 @@
 中国央视,#genre#
-CCTV-1 综合,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001331/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
-CCTV-2 财经,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001332/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
-CCTV-3 综艺,http://[2409:8087:2001:20:2800:0:df6e:eb22]/ott.mobaibox.com/PLTV/4/224/3221228392/index.m3u8
-CCTV-4 中文国际,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001333/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
-CCTV-5 体育,http://[2409:8087:2001:20:2800:0:df6e:eb22]/ott.mobaibox.com/PLTV/4/224/3221228502/index.m3u8
-CCTV-5+ 体育赛事,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001334/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
-CCTV-6 电影,http://[2409:8087:2001:20:2800:0:df6e:eb14]:80/ott.mobaibox.com/PLTV/4/224/3221228123/index.m3u8
-CCTV-7 国防军事,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225671/index.m3u8
-CCTV-8 电视剧,http://[2409:8087:2001:20:2800:0:df6e:eb13]:80/ott.mobaibox.com/PLTV/4/224/3221227473/index.m3u8
-CCTV-9 纪录,http://[2409:8087:2001:20:2800:0:df6e:eb13]:80/ott.mobaibox.com/PLTV/4/224/3221227614/index.m3u8
-CCTV-10 科教,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225677/index.m3u8
-CCTV-11 戏曲,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225517/index.m3u8
-CCTV-12 社会与法,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225669/index.m3u8
-CCTV-13 新闻,http://[2409:8087:2001:20:2800:0:df6e:eb17]:80/ott.mobaibox.com/PLTV/4/224/3221227387/index.m3u8
-CCTV-14 少儿,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225674/index.m3u8
-CCTV-15 音乐,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225513/index.m3u8
-CCTV-16 奥林匹克,http://[2409:8087:2001:20:2800:0:df6e:eb17]:80/ott.mobaibox.com/PLTV/4/224/3221228112/index.m3u8
-CCTV-17 农业农村,http://[2409:8087:2001:20:2800:0:df6e:eb17]:80/ott.mobaibox.com/PLTV/4/224/3221227592/index.m3u8
+CCTV-1 综合,http://39.135.140.104:6610/PLTV/88888888/224/3221225642/2/index.m3u8?fmt=ts2hls
+CCTV-2 财经,http://39.135.140.104:6610/PLTV/88888888/224/3221225643/2/index.m3u8?fmt=ts2hls
+CCTV-3 综艺,http://39.135.140.104:6610/PLTV/88888888/224/3221225634/2/index.m3u8?fmt=ts2hls
+CCTV-4 中文国际,http://39.135.140.104:6610/PLTV/88888888/224/3221226277/1/index.m3u8?fmt=ts2hls
+CCTV-5 体育,http://39.135.140.104:6610/PLTV/88888888/224/3221225633/2/index.m3u8?fmt=ts2hls
+CCTV-5+ 体育赛事,http://39.135.140.104:6610/PLTV/88888888/224/3221225706/2/index.m3u8?fmt=ts2hls
+CCTV-6 电影,http://39.135.140.104:6610/PLTV/88888888/224/3221225632/2/index.m3u8?fmt=ts2hls
+CCTV-7 国防军事,http://39.135.140.104:6610/PLTV/88888888/224/3221225644/2/index.m3u8?fmt=ts2hls
+CCTV-8 电视剧,http://39.135.140.104:6610/PLTV/88888888/224/3221225631/2/index.m3u8?fmt=ts2hls
+CCTV-9 纪录,http://39.135.140.104:6610/PLTV/88888888/224/3221225646/2/index.m3u8?fmt=ts2hls
+CCTV-10 科教,http://39.135.140.104:6610/PLTV/88888888/224/3221225636/2/index.m3u8?fmt=ts2hls
+CCTV-11 戏曲,http://39.135.140.104:6610/PLTV/88888888/224/3221225628/2/index.m3u8?fmt=ts2hls
+CCTV-12 社会与法,http://39.135.140.104:6610/PLTV/88888888/224/3221225637/2/index.m3u8?fmt=ts2hls
+CCTV-13 新闻,http://39.135.140.104:6610/PLTV/88888888/224/3221225638/1/index.m3u8?fmt=ts2hls
+CCTV-14 少儿,http://39.135.140.104:6610/PLTV/88888888/224/3221225640/2/index.m3u8?fmt=ts2hls
+CCTV-15 音乐,http://39.135.140.104:6610/PLTV/88888888/224/3221225641/2/index.m3u8?fmt=ts2hls
+CCTV-16 奥林匹克,CCTV16,http://39.135.140.104:6610/PLTV/88888888/224/3221226232/1/index.m3u8?fmt=ts2hls#http://39.135.140.104:6610/PLTV/88888888/224/3221226233/1/index.m3u8?fmt=ts2hls
+CCTV-16 奥林匹克 4K,http://39.135.140.104:6610/PLTV/88888888/224/3221226236/1/index.m3u8?fmt=ts2hls
+CCTV-17 农业农村,http://39.135.140.104:6610/PLTV/88888888/224/3221225909/2/index.m3u8?fmt=ts2hls
 CCTV-4K 超高清,http://1.14.131.61:5678/gd4k.php#http://[2409:8087:2001:20:2800:0:df6e:eb13]/ott.mobaibox.com/PLTV/3/224/3221228228/index.m3u8
-CCTV-8K 超高清,http://[2409:8087:2001:20:2800:0:df6e:eb03]/ott.mobaibox.com/PLTV/4/224/3221228165/index.m3u8
+CCTV-8K 超高清,http://27.222.3.214/liveali-tp4k.cctv.cn/live/8K120M/playlist.m3u8#http://[2409:8087:2001:20:2800:0:df6e:eb03]/ott.mobaibox.com/PLTV/4/224/3221228165/index.m3u8
 
 CGTN,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001024/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 CGTN Documentary,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002905/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
@@ -57,9 +58,9 @@ CNC英文,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226298/index
 江西教育高清,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226197/1/index.m3u8?fmt=ts2hls
 陶瓷频道,http://39.135.140.104:6610/PLTV/88888888/224/3221226304/1/index.m3u8?fmt=ts2hls
 
-南昌-1 新闻综合,http://live.cooltv.top/tv/nctv.php?id=1
-南昌-2 文旅,http://live.cooltv.top/tv/nctv.php?id=2
-南昌-3 资讯,http://live.cooltv.top/tv/nctv.php?id=3
+南昌-1 新闻综合,http://116.162.6.191/live.nctv.net.cn/live/nctv1.m3u8
+南昌-2 文旅,http://116.162.6.191/live.nctv.net.cn/live/nctv2.m3u8
+南昌-3 资讯,http://116.162.6.191/live.nctv.net.cn/live/nctv3.m3u8
 
 赣州新闻综合,http://115.150.63.77:9902/tsfile/live/0001_50.m3u8
 赣州公共,http://115.150.63.77:9902/tsfile/live/0001_51.m3u8
@@ -124,18 +125,15 @@ CRI NEWS Plus AM846,http://sk.cri.cn/am846.m3u8
 CRI NEWS Plus AM1008,http://sk.cri.cn/am1008.m3u8
 
 香港,#genre#
-港台電視31,https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/31.m3u8?token=415002797089736
-港台電視32,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/32.m3u8?token=415002797089736
-港台電視33,https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/33.m3u8?token=415002797089736
-港台電視34,https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/34.m3u8?token=415002797089736
-港台電視35,https://rthktv35-live.akamaized.net/hls/live/2101643/RTHKTV35/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/35.m3u8?token=415002797089736
+港台電視31,http://bziyunshao.synology.me:8892/bysid/31#https://live.hkdvb.com/hls/live/31.m3u8?token=415002797090467
+港台電視32,http://bziyunshao.synology.me:8892/bysid/32#https://live.hkdvb.com/hls/live/32.m3u8?token=415002797090467
+港台電視33,https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/33.m3u8?token=415002797090467
+港台電視34,https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/34.m3u8?token=415002797090467
+港台電視35,https://rthktv35-live.akamaized.net/hls/live/2101643/RTHKTV35/stream05/streamPlaylist.m3u8#https://cdn.hkdtmb.com/hls/live/35.m3u8?token=415002797090467
 
-凤凰中文,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226248/1/index.m3u8?fmt=ts2hls
-凤凰资讯,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226274/1/index.m3u8?fmt=ts2hls
+凤凰中文,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226248/1/index.m3u8
+凤凰资讯,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226274/1/index.m3u8
 凤凰香港,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221226251/1/index.m3u8
-凤凰中文,http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/3/224/3221228527/1.m3u8
-凤凰资讯,http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221228524/1.m3u8
-凤凰香港,http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/1/224/3221228530/1.m3u8
 
 HOY 國際財經台,https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8
 HOY TV,https://hoytv-live-stream.hoy.tv/ch77/index-fhd.m3u8
@@ -143,13 +141,18 @@ HOY 資訊台,https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
 HOY APP CH1,https://d238cgug17vwpr.cloudfront.net/ch1/live.m3u8
 HOY APP CH2,https://d238cgug17vwpr.cloudfront.net/ch2/live.m3u8
 
-無綫新聞台,https://cdn.hkdtmb.com/hls/live/83.m3u8?token=415002797089736#http://live.cooltv.top/tv/tvb.php?id=1&hq
+無綫新聞台,https://live.hkdvb.com/hls/live/83.m3u8?token=415002797090467#http://live.cooltv.top/tv/tvb.php?id=1&hq
 無綫新聞 NEVT1,http://live.cooltv.top/tv/tvb.php?id=4&hq#http://live.cooltv.top/tv/tvb.php?id=5&hq
 無綫新聞 NEVT2,http://live.cooltv.top/tv/tvb.php?id=6&hq#http://live.cooltv.top/tv/tvb.php?id=7&hq
-無綫財經 體育 資訊台,https://cdn.hkdtmb.com/hls/live/85.m3u8?token=415002797089736#http://live.cooltv.top/tv/tvb.php?id=2&hq#http://live.cooltv.top/tv/tvb.php?id=3&hq
+無綫財經 體育 資訊台,https://live.hkdvb.com/hls/live/85.m3u8?token=415002797089736#http://live.cooltv.top/tv/tvb.php?id=2&hq#http://live.cooltv.top/tv/tvb.php?id=3&hq
 
-ViuTVsix,https://cdn.hkdtmb.com/hls/live/96.m3u8?token=415002797089736
-ViuTV,https://cdn.hkdtmb.com/hls/live/99.m3u8?token=415002797089736
+ViuTVsix,https://live.hkdvb.com/hls/live/96.m3u8?token=415002797090467
+ViuTV,https://live.hkdvb.com/hls/live/99.m3u8?token=415002797090467
+Now 新聞台,https://live.hkdvb.com/hls/live/332.m3u8?token=415002797090467
+Now Sports Prime,https://live.hkdvb.com/hls/live/630.m3u8?token=415002797090467
+Now Sports 618,https://live.hkdvb.com/hls/live/618.m3u8?token=415002797090467
+Now Sports 619,https://live.hkdvb.com/hls/live/619.m3u8?token=415002797090467
+Now Sports 688,https://live.hkdvb.com/hls/live/688.m3u8?token=415002797090467
 
 myTV SUPER直播足球1台(900),https://prd-mytvs-hkjc-evt4-vcache.tvb.com/__cl/slocalo24/__c/ott_EVT1_h264/__op/default/__f/manifest.mpd
 myTV SUPER直播足球2台(901),https://prd-mytvs-hkjc-evt4-vcache.tvb.com/__cl/slocalo24/__c/ott_EVT2_h264/__op/default/__f/manifest.mpd
