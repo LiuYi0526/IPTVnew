@@ -1,10 +1,10 @@
 name: Get YouTube Live m3u8
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 */2 * * *"
+  # push:
+  #   branches:
+  #     - main
+  # schedule:
+  #   - cron: "0 */2 * * *"
   workflow_dispatch:
 jobs:
   build:
