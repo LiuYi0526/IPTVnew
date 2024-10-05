@@ -1,0 +1,1610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tv>
+    <channel id="PhoenixMoviesChannel">
+        <display-name lang="zh">鳳凰衛視電影台</display-name>
+    </channel>
+    <programme start="20241201015000 +0800" stop="20241201033000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">盧納莎之舞</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201033000 +0800" stop="20241201052500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">大地的女兒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201052500 +0800" stop="20241201073000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨心所欲</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201073000 +0800" stop="20241201093500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火實錄</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201093500 +0800" stop="20241201111000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">倩女幽魂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201111000 +0800" stop="20241201124500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">情不自禁愛上你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201124500 +0800" stop="20241201144000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：冬天的訪客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201144000 +0800" stop="20241201162000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">阿郎的故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201162000 +0800" stop="20241201182000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">雪國機械師</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201182000 +0800" stop="20241201194000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">畢業證書</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201194000 +0800" stop="20241201211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">記憶傳授人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201211500 +0800" stop="20241201233500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">周日五星影院：王牌對王牌</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241201233500 +0800" stop="20241202010500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：非常時期</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202010500 +0800" stop="20241202030500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">荒蠻故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202030500 +0800" stop="20241202045500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">賽琳娜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202045500 +0800" stop="20241202063500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">女學生和亨利先生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202063500 +0800" stop="20241202082000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">清白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202082000 +0800" stop="20241202102500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">莫迪與畢加索</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202102500 +0800" stop="20241202122000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">笑傲江湖</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202122000 +0800" stop="20241202140500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：內神外鬼</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202140500 +0800" stop="20241202160000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冠軍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202160000 +0800" stop="20241202175500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">縱橫四海</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202175500 +0800" stop="20241202192500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在公交車站直到黎明</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202192500 +0800" stop="20241202211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">吉米的舞廳</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202211500 +0800" stop="20241202225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">動感天下：窗台上的男人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241202225500 +0800" stop="20241203004000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：看不見的客人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203004000 +0800" stop="20241203022000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神鬼獵人：在結冰的路上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203022000 +0800" stop="20241203040500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小好、小麻、佐和子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203040500 +0800" stop="20241203055000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">墨菲的戰爭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203055000 +0800" stop="20241203075000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">安娜，我的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203075000 +0800" stop="20241203094500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">喋血雙雄</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203094500 +0800" stop="20241203112000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">九三之夏</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203112000 +0800" stop="20241203130000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：長翅膀的猪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203130000 +0800" stop="20241203150000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火球星</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203150000 +0800" stop="20241203180500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">刺殺肯尼迪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203180500 +0800" stop="20241203194500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">窗台上的男人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203194500 +0800" stop="20241203211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">中間時代</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203211500 +0800" stop="20241203225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">亞洲本色：東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241203225500 +0800" stop="20241204005000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：羅姆男孩</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204005000 +0800" stop="20241204025000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 冬春篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204025000 +0800" stop="20241204043000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瞞天計畫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204043000 +0800" stop="20241204060500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">燈塔看守人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204060500 +0800" stop="20241204080000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">更好的世界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204080000 +0800" stop="20241204093500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我們來了</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204093500 +0800" stop="20241204112500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">不痛的死法</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204112500 +0800" stop="20241204131000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：滅罪拍檔</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204131000 +0800" stop="20241204150500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海沉屍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204150500 +0800" stop="20241204164500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">盧納莎之舞</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204164500 +0800" stop="20241204192500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">大象</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204192500 +0800" stop="20241204211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">索爾之子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204211500 +0800" stop="20241204232000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緣份的天空：王者之心</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241204232000 +0800" stop="20241205011000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：我是殺人犯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205011000 +0800" stop="20241205030000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 夏秋篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205030000 +0800" stop="20241205044500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">内神外鬼</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205044500 +0800" stop="20241205063500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">賽琳娜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205063500 +0800" stop="20241205083500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">荒蠻故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205083500 +0800" stop="20241205105000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我啊，走自己的路</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205105000 +0800" stop="20241205121500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在緣茵場上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205121500 +0800" stop="20241205135500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：法或精爸</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205135500 +0800" stop="20241205154000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">墨菲的戰爭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205154000 +0800" stop="20241205174500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨心所欲</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205174500 +0800" stop="20241205194500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">諑鵝</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205194500 +0800" stop="20241205211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">粉色月亮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205211500 +0800" stop="20241205225000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">奇幻世界：獨身向前</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241205225000 +0800" stop="20241206003500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：亡命大畫家</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206003500 +0800" stop="20241206023500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火球星</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206023500 +0800" stop="20241206041500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206041500 +0800" stop="20241206062000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">王者之心</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206062000 +0800" stop="20241206080000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神鬼獵人：在結冰的路上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206080000 +0800" stop="20241206093500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">滄海漁生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206093500 +0800" stop="20241206121000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神醫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206121000 +0800" stop="20241206134500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：兩天一夜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206134500 +0800" stop="20241206160000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">浩氣蓋山河</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206160000 +0800" stop="20241206175500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冬天的訪客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206175500 +0800" stop="20241206195500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神秘代碼</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206195500 +0800" stop="20241206211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">畢業證書</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206211500 +0800" stop="20241206225000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">好萊塢影院：燈塔看守人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241206225000 +0800" stop="20241207002500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：苦妓追憶錄</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207002500 +0800" stop="20241207022000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海沉屍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207022000 +0800" stop="20241207040500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">滅罪拍檔</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207040500 +0800" stop="20241207054500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">長翅膀的猪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207054500 +0800" stop="20241207074500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 冬春篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207074500 +0800" stop="20241207092000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">兩天一夜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207092000 +0800" stop="20241207111000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瑪麗蓮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207111000 +0800" stop="20241207125000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：瞞天計畫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207125000 +0800" stop="20241207143500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小好、小麻、佐和子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207143500 +0800" stop="20241207163000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">大地的女兒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207163000 +0800" stop="20241207191000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">巴霍巴利王：開端</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207191000 +0800" stop="20241207211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緘默的迷宫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207211500 +0800" stop="20241207230000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">經典影院：非洲女王號</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241207230000 +0800" stop="20241208004000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：貝蒂布事件簿</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208004000 +0800" stop="20241208025500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">金剛：傳奇重生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208025500 +0800" stop="20241208043000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">獨身向前</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208043000 +0800" stop="20241208061000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">法國精爸</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208061000 +0800" stop="20241208083500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">伊斯特慷</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208083500 +0800" stop="20241208102500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">接近無限的白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208102500 +0800" stop="20241208123000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">北齋</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208123000 +0800" stop="20241208141000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：女學生和亨利先生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208141000 +0800" stop="20241208161000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">黃金緣起時</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208161000 +0800" stop="20241208181500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火實録</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208181500 +0800" stop="20241208194000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">福岡</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208194000 +0800" stop="20241208211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">野馬</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208211500 +0800" stop="20241208231000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">周日五星影院：更好的世界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241208231000 +0800" stop="20241209013000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：黑暗瀰漫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209013000 +0800" stop="20241209032000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">孩童姿勢</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209032000 +0800" stop="20241209053000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">無名戰士</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209053000 +0800" stop="20241209072000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">金魚</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209072000 +0800" stop="20241209091500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海沉屍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209091500 +0800" stop="20241209105500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨愛沉淪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209105500 +0800" stop="20241209122500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小曼哈頓</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209122500 +0800" stop="20241209141000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：我們這種叛徒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209141000 +0800" stop="20241209160000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">草琴</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209160000 +0800" stop="20241209174000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">尋找聖地</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209174000 +0800" stop="20241209191500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">記憶傳授人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209191500 +0800" stop="20241209211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">諑鵝</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209211500 +0800" stop="20241209225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">動感天下：謀海危情</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241209225500 +0800" stop="20241210004500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：繼承人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210004500 +0800" stop="20241210023000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">美麗心境界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210023000 +0800" stop="20241210041000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210041000 +0800" stop="20241210060000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">熱情暑假</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210060000 +0800" stop="20241210074500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">清白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210074500 +0800" stop="20241210093500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">消防犬</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210093500 +0800" stop="20241210120000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒火救援</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210120000 +0800" stop="20241210135000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：與生命有約</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210135000 +0800" stop="20241210155000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">黃金緣起時</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210155000 +0800" stop="20241210174500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冬天的訪客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210174500 +0800" stop="20241210194000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">饑餓的心</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210194000 +0800" stop="20241210211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">九三之夏</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210211500 +0800" stop="20241210231500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">亞洲本色：寧靜咖啡館之歌</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241210231500 +0800" stop="20241211012000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：糜骨之壤</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211012000 +0800" stop="20241211032000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">安娜，我的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211032000 +0800" stop="20241211045500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">獨身向前</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211045500 +0800" stop="20241211063500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">多重譏諷</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211063500 +0800" stop="20241211083500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 冬春篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211083500 +0800" stop="20241211103500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">委訐人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211103500 +0800" stop="20241211124000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">失控陪富團</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211124000 +0800" stop="20241211142500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：火山</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211142500 +0800" stop="20241211162000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冠軍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211162000 +0800" stop="20241211182500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨心所欲</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211182500 +0800" stop="20241211194500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">畢業證書</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211194500 +0800" stop="20241211211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">中間時代</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211211500 +0800" stop="20241211232500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緣伤的天空：泡沫人生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241211232500 +0800" stop="20241212011000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：暗夜驚狂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212011000 +0800" stop="20241212025000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神鬼獵人：在結冰的路上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212025000 +0800" stop="20241212043000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瞞天計畫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212043000 +0800" stop="20241212061000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">諜海危情</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212061000 +0800" stop="20241212075000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">榮耀時刻</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212075000 +0800" stop="20241212094500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">男孩的生活</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212094500 +0800" stop="20241212113000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">超膽俠</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212113000 +0800" stop="20241212131500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：美麗心境界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212131500 +0800" stop="20241212151000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海沉屍</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212151000 +0800" stop="20241212170000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">草琴</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212170000 +0800" stop="20241212185000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">索爾之子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212185000 +0800" stop="20241212211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">慶州</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212211500 +0800" stop="20241212230500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">奇幻世界：深空失憶</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241212230500 +0800" stop="20241213011500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：被告</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213011500 +0800" stop="20241213025500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">必是天堂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213025500 +0800" stop="20241213043500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">女學生和亨利先生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213043500 +0800" stop="20241213061500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213061500 +0800" stop="20241213081500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寧靜咖啡館之歌</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213081500 +0800" stop="20241213103000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洛城機密</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213103000 +0800" stop="20241213121000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我與夢露的一周</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213121000 +0800" stop="20241213140000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：孩頃姿勢</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213140000 +0800" stop="20241213153500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">獨身向前</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213153500 +0800" stop="20241213172000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">幻影凶間</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213172000 +0800" stop="20241213191000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">深空失憶</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213191000 +0800" stop="20241213211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">琅璃城堡</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213211500 +0800" stop="20241213225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">好萊塢影院：多重譏諷</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241213225500 +0800" stop="20241214004000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：醜聞調查</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214004000 +0800" stop="20241214024000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 冬春篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214024000 +0800" stop="20241214042500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我們這種叛徒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214042500 +0800" stop="20241214062000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">吾乃母親</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214062000 +0800" stop="20241214080000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">托尼歐</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214080000 +0800" stop="20241214102000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">妙想天開</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214102000 +0800" stop="20241214121000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">喜劇之王</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214121000 +0800" stop="20241214142000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：無名戰士</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214142000 +0800" stop="20241214163500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">金剛：傳奇重生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214163500 +0800" stop="20241214181500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">盧納莎之舞</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214181500 +0800" stop="20241214194000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">福岡</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214194000 +0800" stop="20241214211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">盲點</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214211500 +0800" stop="20241214230500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">經典影院：熱情暑假</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241214230500 +0800" stop="20241215005500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：我是殺人犯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215005500 +0800" stop="20241215024500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小森林 夏秋篇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215024500 +0800" stop="20241215043000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">火山</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215043000 +0800" stop="20241215062000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">與生命有約</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215062000 +0800" stop="20241215080500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">非洲女王號</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215080500 +0800" stop="20241215094000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我們來了</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215094000 +0800" stop="20241215113000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">不痛的死法</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215113000 +0800" stop="20241215132000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：金魚</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215132000 +0800" stop="20241215152500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海驕陽</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215152500 +0800" stop="20241215171500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洪吉東</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215171500 +0800" stop="20241215193000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">恐襲波士頓</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215193000 +0800" stop="20241215211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">紙花</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215211500 +0800" stop="20241215225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">周日五星影院：聖人文森特</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241215225500 +0800" stop="20241216010000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：嗅覺神探</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216010000 +0800" stop="20241216025000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">氣息</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216025000 +0800" stop="20241216043500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冰媽媽</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216043500 +0800" stop="20241216063000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">沙拉克</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216063000 +0800" stop="20241216083500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火實録</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216083500 +0800" stop="20241216105000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我啊，走自己的路</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216105000 +0800" stop="20241216122500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">滄海漁生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216122500 +0800" stop="20241216142000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：我所有的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216142000 +0800" stop="20241216161500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">剛好遇見你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216161500 +0800" stop="20241216180500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瑪麗蓮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216180500 +0800" stop="20241216194500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">聖人文森特</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216194500 +0800" stop="20241216211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在公交車站直到黎明</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216211500 +0800" stop="20241216225000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">動感天下：攔截目擊者</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241216225000 +0800" stop="20241217003500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：非法制裁</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217003500 +0800" stop="20241217021500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">榮耀時刻</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217021500 +0800" stop="20241217035500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217035500 +0800" stop="20241217055500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">安娜，我的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217055500 +0800" stop="20241217082000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">影子部隊</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217082000 +0800" stop="20241217101000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">接近無限的白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217101000 +0800" stop="20241217121500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">北齋</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217121500 +0800" stop="20241217135500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：郵差的白夜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217135500 +0800" stop="20241217153500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">尋找聖地</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217153500 +0800" stop="20241217171000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">一個女學生的日記</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217171000 +0800" stop="20241217190500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">埃爾塞：將近改變世界的人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217190500 +0800" stop="20241217211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">無名戰士</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217211500 +0800" stop="20241217232000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">亞洲本色：意料之外的你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241217232000 +0800" stop="20241218005500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：絶命追兇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218005500 +0800" stop="20241218023500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">托尼歐</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218023500 +0800" stop="20241218042000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">美麗心境界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218042000 +0800" stop="20241218061500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">須彌山</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218061500 +0800" stop="20241218080500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">金魚</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218080500 +0800" stop="20241218111000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">刺殺肯尼迪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218111000 +0800" stop="20241218124000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">粉色月亮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218124000 +0800" stop="20241218142000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：必是天堂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218142000 +0800" stop="20241218161000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洪吉東</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218161000 +0800" stop="20241218175000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">阿郎的故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218175000 +0800" stop="20241218193000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨愛沉淪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218193000 +0800" stop="20241218211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">紙花</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218211500 +0800" stop="20241218225000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緣份的天空：一年之癢</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241218225000 +0800" stop="20241219003500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：亡命大畫家</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219003500 +0800" stop="20241219030000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">影子部隊</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219030000 +0800" stop="20241219065000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">與生命有約：北壁</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219065000 +0800" stop="20241219084500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我所有的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219084500 +0800" stop="20241219101500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小曼哈頓</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219101500 +0800" stop="20241219120500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">消防犬</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219120500 +0800" stop="20241219135500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：氣息</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219135500 +0800" stop="20241219155000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我很在乎</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219155000 +0800" stop="20241219172500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">海雲洞的兩個家庭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219172500 +0800" stop="20241219195000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒火救援</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219195000 +0800" stop="20241219211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在緑茵場上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219211500 +0800" stop="20241219231000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">奇幻世界：吾乃母親</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241219231000 +0800" stop="20241220005000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：貝蒂布事件簿</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220005000 +0800" stop="20241220023000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">郵差的白夜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220023000 +0800" stop="20241220043500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">意料之的你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220043500 +0800" stop="20241220061500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">東經北緯</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220061500 +0800" stop="20241220075000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">攔截目擊者</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220075000 +0800" stop="20241220095500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">失控陪審團</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220095500 +0800" stop="20241220115000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">男孩的生活</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220115000 +0800" stop="20241220133500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：清白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220133500 +0800" stop="20241220153000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">須彌山</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220153000 +0800" stop="20241220171500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">平壤納帕蘭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220171500 +0800" stop="20241220190000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">大眼睛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220190000 +0800" stop="20241220211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我啊，走自己的路</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220211500 +0800" stop="20241220225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">好萊塢影院：抗癌的我</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241220225500 +0800" stop="20241221011500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：黑暗瀰漫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221011500 +0800" stop="20241221033000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">浩氣蓋山河</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221033000 +0800" stop="20241221051000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神鬼獵人：在結冰的路上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221051000 +0800" stop="20241221064500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">一年之癢</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221064500 +0800" stop="20241221083000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">美麗心境界</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221083000 +0800" stop="20241221101500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">超膽俠</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221101500 +0800" stop="20241221123000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洛城機密</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221123000 +0800" stop="20241221141000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：榮耀時刻</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221141000 +0800" stop="20241221154000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">啊，青春！</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221154000 +0800" stop="20241221172500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小公女</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221172500 +0800" stop="20241221190500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">抗癌的我</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221190500 +0800" stop="20241221211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">被嫌棄的松子的一生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221211500 +0800" stop="20241221231000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">經典影院：沙拉克</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241221231000 +0800" stop="20241222005500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：看不見的客人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222005500 +0800" stop="20241222025500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">黃金緣起時</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222025500 +0800" stop="20241222050000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒海驕陽</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222050000 +0800" stop="20241222065500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冬天的訪客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222065500 +0800" stop="20241222090000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">隨心所欲</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222090000 +0800" stop="20241222112000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">妙想天開</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222112000 +0800" stop="20241222125500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">圖騰</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222125500 +0800" stop="20241222143500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：托尼歐</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222143500 +0800" stop="20241222161000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">倩女幽魂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222161000 +0800" stop="20241222180000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">喜劇之王</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222180000 +0800" stop="20241222193000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">愛的就是你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222193000 +0800" stop="20241222211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">這裎是亞美子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222211500 +0800" stop="20241222231500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">周日五星影院：北壁</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241222231500 +0800" stop="20241223012000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：糜骨之壤</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223012000 +0800" stop="20241223025000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">啊，青春！</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223025000 +0800" stop="20241223043000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">蛇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223043000 +0800" stop="20241223060500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">海雲洞的兩個家庭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223060500 +0800" stop="20241223082000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">人造怪物</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223082000 +0800" stop="20241223095500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">九三之夏</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223095500 +0800" stop="20241223113000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我們來了</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223113000 +0800" stop="20241223131500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：冰媽媽</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223131500 +0800" stop="20241223144500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">非常時期</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223144500 +0800" stop="20241223163500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">不痛的死法</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223163500 +0800" stop="20241223181000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">滄海漁生</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223181000 +0800" stop="20241223211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">刺殺肯尼迪，</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223211500 +0800" stop="20241223233000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">動感天下：海上函戰</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241223233000 +0800" stop="20241224012500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：末日危途</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224012500 +0800" stop="20241224032000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">縱横四海</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224032000 +0800" stop="20241224052500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">朋友</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224052500 +0800" stop="20241224070500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神鬼獵人，在結冰的路上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224070500 +0800" stop="20241224085000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">平壤納帕蘭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224085000 +0800" stop="20241224104000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瑪麗蓮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224104000 +0800" stop="20241224123000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">接近無限的白</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224123000 +0800" stop="20241224141000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：尋找聖地</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224141000 +0800" stop="20241224155500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我家的故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224155500 +0800" stop="20241224181500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">王牌對王牌</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224181500 +0800" stop="20241224194000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在緣茵場上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224194000 +0800" stop="20241224211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">圖騰</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224211500 +0800" stop="20241224230000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">亞洲本色：為你取名的朋一天</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241224230000 +0800" stop="20241225010500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：嗅覺神探</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225010500 +0800" stop="20241225024500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">蛇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225024500 +0800" stop="20241225044000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我很在乎</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225044000 +0800" stop="20241225063500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">夢想的課程</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225063500 +0800" stop="20241225084000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">心所欲</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225084000 +0800" stop="20241225104500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">北齋</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225104500 +0800" stop="20241225121500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">小曼哈頓</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225121500 +0800" stop="20241225140500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：洪吉東</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225140500 +0800" stop="20241225160500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">黃金緣起時</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225160500 +0800" stop="20241225174500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">愛沉淪</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225174500 +0800" stop="20241225193500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">偷天陷阱</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225193500 +0800" stop="20241225211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">温暖的屍體</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225211500 +0800" stop="20241225225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緣份的天空：妙筆生花</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241225225500 +0800" stop="20241226003000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：苦妓追憶録</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226003000 +0800" stop="20241226022500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">末日危途</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226022500 +0800" stop="20241226042500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">安娜，我的愛</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226042500 +0800" stop="20241226061500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">金魚</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226061500 +0800" stop="20241226075000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">一個女學生的日記</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226075000 +0800" stop="20241226094000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">消防犬</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226094000 +0800" stop="20241226120500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">怒火救援</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226120500 +0800" stop="20241226133500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：啊，青春！</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226133500 +0800" stop="20241226153000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">剛好遇見你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226153000 +0800" stop="20241226173000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">委託人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226173000 +0800" stop="20241226191000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">妙筆生花</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226191000 +0800" stop="20241226211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">緘默的迷宫</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226211500 +0800" stop="20241226231500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">奇幻世界：超驗駭客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241226231500 +0800" stop="20241227010000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：醜聞調查</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227010000 +0800" stop="20241227023500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">倩女幽魂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227023500 +0800" stop="20241227060000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">為你取名的那一天：郵差的白夜</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227060000 +0800" stop="20241227074500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">我家的故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227074500 +0800" stop="20241227095000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">失控陪審團</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227095000 +0800" stop="20241227114500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">男孩的生活</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227114500 +0800" stop="20241227132000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：海雲洞的兩個家庭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227132000 +0800" stop="20241227151000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">偷天陷阱</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227151000 +0800" stop="20241227165500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">超膽俠</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227165500 +0800" stop="20241227185500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">超驗駭客</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227185500 +0800" stop="20241227211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">妙想天開</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227211500 +0800" stop="20241227232000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">好萊塢影院：朋友</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241227232000 +0800" stop="20241228010500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：暗夜驚狂</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228010500 +0800" stop="20241228025500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洪吉東</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228025500 +0800" stop="20241228044000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">冰媽媽</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228044000 +0800" stop="20241228065500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">海上毒戰</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228065500 +0800" stop="20241228085000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">縱横四海</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228085000 +0800" stop="20241228110500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">洛城機密</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228110500 +0800" stop="20241228123000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">福岡</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228123000 +0800" stop="20241228141500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：平壤納帕蘭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228141500 +0800" stop="20241228163500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">埃舍爾街的紅色郵筒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228163500 +0800" stop="20241228182000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">紙花</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228182000 +0800" stop="20241228195500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">記憶傳授人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228195500 +0800" stop="20241228211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">里業證書</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228211500 +0800" stop="20241228225500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">經典影院：蛇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241228225500 +0800" stop="20241229004500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">宇際影院：繼承人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229004500 +0800" stop="20241229030000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">人造怪物</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229030000 +0800" stop="20241229050500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">嗅覺神探</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229050500 +0800" stop="20241229071000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">戰火實鋒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229071000 +0800" stop="20241229090500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">末日危途</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229090500 +0800" stop="20241229111000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">迷霧</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229111000 +0800" stop="20241229124500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">圖騰</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229124500 +0800" stop="20241229142000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：一個女學生的日記</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229142000 +0800" stop="20241229160500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">逭裎是亞美子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229160500 +0800" stop="20241229173500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">非常時期</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229173500 +0800" stop="20241229193000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">百萬富翁的初戀</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229193000 +0800" stop="20241229211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">鮑爾的抗爭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229211500 +0800" stop="20241229231000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">周日五星影院：夢想的課程</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241229231000 +0800" stop="20241230005500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：非法制裁</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230005500 +0800" stop="20241230032000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">慶州</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230032000 +0800" stop="20241230045000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">愛的就是你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230045000 +0800" stop="20241230063000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">温暖的屍體</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230063000 +0800" stop="20241230080500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">盲點</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230080500 +0800" stop="20241230101000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">决戰猶馬鎮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230101000 +0800" stop="20241230120000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">瑪麗蓮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230120000 +0800" stop="20241230134500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：我家的故事</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230134500 +0800" stop="20241230151500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在公交車站直到黎明</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230151500 +0800" stop="20241230171500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">詠鵝</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230171500 +0800" stop="20241230191500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">神秘代碼</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230191500 +0800" stop="20241230211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">雪國機械師</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230211500 +0800" stop="20241230230500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">動感天下：備天陷阱</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241230230500 +0800" stop="20241231004000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：絕命追兇</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231004000 +0800" stop="20241231022500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">鮑爾的抗爭</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231022500 +0800" stop="20241231042000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">剛好遛見你</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231042000 +0800" stop="20241231064000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">王牌對王牌</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231064000 +0800" stop="20241231083500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">饑餓的心</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231083500 +0800" stop="20241231102500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">索爾之子</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231102500 +0800" stop="20241231122000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">埃爾塞：將近改變世界的人</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231122000 +0800" stop="20241231144000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">環球電影大觀：埃舍爾街的紅色郵筒</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231144000 +0800" stop="20241231165500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">人造怪物</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231165500 +0800" stop="20241231182000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">福岡</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231182000 +0800" stop="20241231195000 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">粉色月亮</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231195000 +0800" stop="20241231211500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">在緑茵場上</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231211500 +0800" stop="20241231230500 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">亞洲本色：開心家族</title>
+        <desc lang="zh"></desc>
+    </programme>
+    <programme start="20241231230500 +0800" stop="20241231235900 +0800" channel="PhoenixMoviesChannel">
+        <title lang="zh">寰宇國際影院：暗夜驚狂</title>
+        <desc lang="zh"></desc>
+    </programme>
+</tv>
