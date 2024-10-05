@@ -1,0 +1,53 @@
+name: Make IPTV EPG 
+on:
+  # push:
+  #   branches:
+  #     - main
+  schedule:
+    - cron: "50 6 * * *"
+    - cron: "30 16 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install xmltv
+      run: |
+        cp /usr/share/zoneinfo/Asia/Taipei  /etc/localtime
+        sudo apt -y install xmltv
+        cd ./EPG
+        pip3 install -r requirements.txt
+    - name: Make EPG
+      run: |
+        cd ./EPG
+        python3 ./gen_xml.py
+        mkdir xml
+        mv epg0.xml xml
+        mv README.md xml
+        mv PhoenixMoviesChannel.xml xml
+        cd xml
+        wget https://e.erw.cc/all.xml
+        wget https://raw.githubusercontent.com/taksssss/tv/refs/heads/main/epg/livednow.xml
+    - name: Merge EPG
+      run: |
+        cd ./EPG/xml
+        tv_cat all.xml livednow.xml epg0.xml PhoenixMoviesChannel.xml > EPG.xml
+        gzip -kf EPG.xml
+    # - name : Upload artifact
+    #   uses: actions/upload-artifact@master
+    #   with:
+    #     name: allcc.xml
+    #     path: allcc.xml
+    - name: Git push assets to "EPG" branch
+      run: |
+        cd ./EPG/xml
+        git init
+        git config --local user.name "actions"
+        git config --local user.email "action@github.com"
+        git checkout -b EPG
+        git add .
+        git commit -m "Update EPG"
+        git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+        git push -f -u origin EPG
