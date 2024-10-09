@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V3.2.2.8 -- Jan van Straaten" site="sattvguide.com.au">
+  <channels>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVNSW" xmltv_id="ABC TV HD New South Wales">ABC TV HD New South Wales</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCPKSE" xmltv_id="ABC Kids/TV Plus South-East">ABC Kids/TV Plus South-East</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCMESE" xmltv_id="ABC ME South-East">ABC ME South-East</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCNEWS" xmltv_id="ABC NEWS">ABC NEWS</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSHDVNSW" xmltv_id="SBS HD South-East">SBS HD South-East</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSVICESDSE" xmltv_id="SBS Viceland HD South-East">SBS Viceland HD South-East</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSWMSE" xmltv_id="SBS World Movies HD">SBS World Movies HD</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSFOODSE" xmltv_id="SBS Food">SBS Food</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="NITVSE" xmltv_id="NITV">NITV</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ICTV" xmltv_id="ICTV">ICTV</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="3ABNI" xmltv_id="3ABN International">3ABN International</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7CSE" xmltv_id="Seven  Central South">Seven  Central South</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7MATECSE" xmltv_id="7mateHD Central">7mateHD Central</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7TWOCSE" xmltv_id="7TWO  Central South">7TWO  Central South</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="IMPSE" xmltv_id="Imparja South">Imparja South</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="9GEMSE" xmltv_id="9GemHD">9GemHD</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="9GOSE" xmltv_id="10 Central South">10 Central South</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="10CSE" xmltv_id="10 BOLD HD Central">10 BOLD HD Central</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="BOLDCSE" xmltv_id="10 Peach Central South">10 Peach Central South</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="PEACHCSE" xmltv_id="Racing.com">Racing.com</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="RACPRI" xmltv_id="TVSN">TVSN</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WTVSN" xmltv_id="WIN News Cairns Townsville">WIN News Cairns Townsville</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN401" xmltv_id="WIN News SunshineCst Toowoomba">WIN News SunshineCst Toowoomba</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN402" xmltv_id="WIN News Canberra Rockhampton">WIN News Canberra Rockhampton</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN403" xmltv_id="WIN News Orange Wollongong">WIN News Orange Wollongong</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN404" xmltv_id="WIN News Gippsland Ballarat">WIN News Gippsland Ballarat</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN405" xmltv_id="WIN News Bendigo Shepparton">WIN News Bendigo Shepparton</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN406" xmltv_id="Nine Darwin WIN Tas.">Nine Darwin WIN Tas.</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="WIN407" xmltv_id="SCA News Updates">SCA News Updates</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SCA408" xmltv_id="SCA Nightly News Tasmania SpencerGulf">SCA Nightly News Tasmania SpencerGulf</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SCA409" xmltv_id="Seven News Cairns Townsville">Seven News Cairns Townsville</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7LN410" xmltv_id="Seven News Mackay Rockhampton">Seven News Mackay Rockhampton</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7LN411" xmltv_id="Seven News Wide Bay SunshineCst">Seven News Wide Bay SunshineCst</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7LN412" xmltv_id="Seven News Toowoomba">Seven News Toowoomba</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="7LN413" xmltv_id="NBN News Gold Coast and Lismore, NSW">NBN News Gold Coast and Lismore, NSW</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="NBN414" xmltv_id="NBN News Coffs Harbour and Tamworth, NSW">NBN News Coffs Harbour and Tamworth, NSW</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="NBN415" xmltv_id="NBN News Newcastle and Central Coast, NSW">NBN News Newcastle and Central Coast, NSW</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="NBN416" xmltv_id="Prime7 News Updates">Prime7 News Updates</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="PRIME417" xmltv_id="Prime7 News Coffs Harbour and Tamworth, NSW">Prime7 News Coffs Harbour and Tamworth, NSW</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="PRIME418" xmltv_id="Prime7 News Orange and Wagga, NSW">Prime7 News Orange and Wagga, NSW</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="PRIME419" xmltv_id="Prime7 News Albury">Prime7 News Albury</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="PRIME420" xmltv_id="ABC TV HD Victoria">ABC TV HD Victoria</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVVIC" xmltv_id="ABC TV HD Queensland">ABC TV HD Queensland</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVQLD" xmltv_id="ABC TV HD South Australia">ABC TV HD South Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVSA" xmltv_id="ABC TV HD Western Australia">ABC TV HD Western Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVWA" xmltv_id="ABC TV HD Tasmania">ABC TV HD Tasmania</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVTAS" xmltv_id="ABC TV HD Northern Territory">ABC TV HD Northern Territory</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCHDVNT" xmltv_id="ABC Kids/TV Plus Queensland, NT and SA">ABC Kids/TV Plus Queensland, NT and SA</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCPKVQNS" xmltv_id="ABC Kids/TV Plus Western Australia">ABC Kids/TV Plus Western Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCPKWA" xmltv_id="ABC ME Queensland, NT and SA">ABC ME Queensland, NT and SA</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCMEVQNS" xmltv_id="ABC ME Western Australia">ABC ME Western Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="ABCMEWA" xmltv_id="SBS HD Queensland/NT">SBS HD Queensland/NT</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSHDVQLD" xmltv_id="SBS HD Western Australia">SBS HD Western Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSHDVWA" xmltv_id="SBS Viceland HD Queensland/NT">SBS Viceland HD Queensland/NT</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSVICESDQLD" xmltv_id="SBS Viceland HD Western Australia">SBS Viceland HD Western Australia</channel>
+    <channel update="i" site="sattvguide.com.au" site_id="SBSVICESDWA" xmltv_id="ABC 702 Sydney">ABC 702 Sydney</channel>
+  </channels>
+</site>
