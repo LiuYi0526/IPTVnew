@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V5.0.1.1 -- Jan van Straaten" site="hot.net.il_ru">
+  <channels>
+    <channel update="i" site="hot.net.il_ru" site_id="477" xmltv_id="HOT3">HOT3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="776" xmltv_id="HOT PLUS">HOT PLUS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="506" xmltv_id="Hot Zone">Hot Zone</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="682" xmltv_id="HOT Comedy Central">HOT Comedy Central</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="507" xmltv_id="HOT Развлекательный канал">HOT Развлекательный канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="430" xmltv_id="8-й канал">8-й канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="431" xmltv_id="Израиль+">Израиль+</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="947" xmltv_id="HOT Real">HOT Real</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="839" xmltv_id="Кан 11">Кан 11</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="861" xmltv_id="Кешет">Кешет</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="863" xmltv_id="Решет">Решет</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1032" xmltv_id="CHANNEL 14 HD">CHANNEL 14 HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="504" xmltv_id="HOT VOD Cinema">HOT VOD Cinema</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="496" xmltv_id="HOT cinema 1">HOT cinema 1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="486" xmltv_id="HOT cinema 2">HOT cinema 2</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="493" xmltv_id="HOT cinema 3">HOT cinema 3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="701" xmltv_id="*HOT DRAMA HD">*HOT DRAMA HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="574" xmltv_id="Канал покупок">Канал покупок</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="928" xmltv_id="Канал юмора">Канал юмора</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1008" xmltv_id="*тшех дщтщетерйн">*тшех дщтщетерйн</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="578" xmltv_id="Музыка 24">Музыка 24</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="833" xmltv_id="Средиземноморский канал">Средиземноморский канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="551" xmltv_id="The Big Brother LIVE">The Big Brother LIVE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="561" xmltv_id="Вива">Вива</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="834" xmltv_id="Вива плюс">Вива плюс</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1004" xmltv_id="Турецкие мелодрамы+ 2">Турецкие мелодрамы+ 2</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="728" xmltv_id="*дма ий.ей">*дма ий.ей</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="736" xmltv_id="*дма ий. ей - ощелфм">*дма ий. ей - ощелфм</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="456" xmltv_id="Е!">Е!</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="884" xmltv_id="Реалити">Реалити</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="841" xmltv_id="33-й канал">33-й канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="907" xmltv_id="i24 англ. яз.">i24 англ. яз.</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="896" xmltv_id="Израильский канал моды">Израильский канал моды</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="945" xmltv_id="Турецкие мелодрамы HD">Турецкие мелодрамы HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="585" xmltv_id="Стиль жизни">Стиль жизни</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="571" xmltv_id="Канал Кулинария">Канал Кулинария</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="570" xmltv_id="Канал здоровья">Канал здоровья</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="552" xmltv_id="Путешествия">Путешествия</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="836" xmltv_id="Греческая музыка">Греческая музыка</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="474" xmltv_id="История">История</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="745" xmltv_id="*TRACE">*TRACE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="530" xmltv_id="NAT GEO WILD">NAT GEO WILD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="531" xmltv_id="NATIONAL GEOGRAPHIC">NATIONAL GEOGRAPHIC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="746" xmltv_id="*FRANCE 24 ARAB">*FRANCE 24 ARAB</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="912" xmltv_id="ONE 2 HD">ONE 2 HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="685" xmltv_id="ONE SD">ONE SD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="580" xmltv_id="Спорт 1">Спорт 1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="581" xmltv_id="Спорт 2">Спорт 2</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="826" xmltv_id="*SPORT 3">*SPORT 3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="828" xmltv_id="*SPORT 4">*SPORT 4</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="582" xmltv_id="Спорт 5">Спорт 5</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="583" xmltv_id="Спорт 5+">Спорт 5+</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="428" xmltv_id="5+ Gold">5+ Gold</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="429" xmltv_id="5+ Live">5+ Live</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="461" xmltv_id="EUROSPORT">EUROSPORT</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="673" xmltv_id="EUROSPORT 2">EUROSPORT 2</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="594" xmltv_id="EGO">EGO</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="567" xmltv_id="Дом и семья">Дом и семья</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="993" xmltv_id="Канал турецких драм 3">Канал турецких драм 3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1045" xmltv_id="ZOOM TOON">ZOOM TOON</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="997" xmltv_id="*тшех длелбйн">*тшех длелбйн</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="404" xmltv_id="*тшех мщйоещ фрйой 7">*тшех мщйоещ фрйой 7</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="405" xmltv_id="*тшех мщйоещ фрйой 8">*тшех мщйоещ фрйой 8</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1060" xmltv_id="HOT BUZZ">HOT BUZZ</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="717" xmltv_id="ДжимДжэм">ДжимДжэм</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="395" xmltv_id="Baby TV">Baby TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="510" xmltv_id="HOT Лули">HOT Лули</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="591" xmltv_id="Хоп!">Хоп!</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="592" xmltv_id="Хоп! Наше детство">Хоп! Наше детство</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="755" xmltv_id="Disney Junior">Disney Junior</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="911" xmltv_id="Кан детский канал">Кан детский канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="566" xmltv_id="Дисней">Дисней</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="742" xmltv_id="*DISCOVERY SCIENCE">*DISCOVERY SCIENCE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="579" xmltv_id="Nickelodeon">Nickelodeon</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="710" xmltv_id="Nick Junior">Nick Junior</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="513" xmltv_id="Джуниор">Джуниор</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="956" xmltv_id="Фильмы для детей HD">Фильмы для детей HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="489" xmltv_id="HOT Bollywood">HOT Bollywood</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="490" xmltv_id="HOT Bombay">HOT Bombay</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="445" xmltv_id="BOLLYWOOD HD">BOLLYWOOD HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1018" xmltv_id="*ейед фшйойен">*ейед фшйойен</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="990" xmltv_id="VIVA VINTAGE">VIVA VINTAGE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="558" xmltv_id="ZONE REALITY">ZONE REALITY</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="569" xmltv_id="Каббала">Каббала</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="565" xmltv_id="Диалог">Диалог</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="427" xmltv_id="33-й канал">33-й канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="573" xmltv_id="Канал Кнессета">Канал Кнессета</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="930" xmltv_id="Первый канал">Первый канал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="536" xmltv_id="РТР-Планета">РТР-Планета</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="537" xmltv_id="RTVi">RTVi</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="949" xmltv_id="RTVI Архив">RTVI Архив</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="879" xmltv_id="РЕН ТВ">РЕН ТВ</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="475" xmltv_id="История (рус. яз.)">История (рус. яз.)</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="453" xmltv_id="Дом Кино">Дом Кино</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="877" xmltv_id="Дом Кино премиум">Дом Кино премиум</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="723" xmltv_id="Время">Время</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="923" xmltv_id="Altru">Altru</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1013" xmltv_id="ONE CLASSIC">ONE CLASSIC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="672" xmltv_id="CTC">CTC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="362" xmltv_id="TVCI">TVCI</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="875" xmltv_id="O">O</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="547" xmltv_id="Карусель">Карусель</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1048" xmltv_id="DUCKTV">DUCKTV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="721" xmltv_id="Телекафе">Телекафе</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="999" xmltv_id="Победа">Победа</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="472" xmltv_id="GTV">GTV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="756" xmltv_id="Big Brother">Big Brother</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="813" xmltv_id="Музыка Первого">Музыка Первого</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="512" xmltv_id="Интер+">Интер+</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="714" xmltv_id="1+1">1+1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="809" xmltv_id="Дождь">Дождь</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="532" xmltv_id="НТВ-Мир">НТВ-Мир</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="844" xmltv_id="НТВ Право">НТВ Право</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="845" xmltv_id="НТВ Сериал">НТВ Сериал</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="846" xmltv_id="НТВ Стиль">НТВ Стиль</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="874" xmltv_id="Dомашний">Dомашний</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1017" xmltv_id="*чщъ млбгй шаййд">*чщъ млбгй шаййд</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="511" xmltv_id="IETV">IETV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="805" xmltv_id="*BFM TV">*BFM TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="336" xmltv_id="*FRANCE 24 - FR">*FRANCE 24 - FR</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="909" xmltv_id="*I24 HD FRA">*I24 HD FRA</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="548" xmltv_id="TV-5">TV-5</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="438" xmltv_id="ARTE">ARTE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="467" xmltv_id="FRANCE 2">FRANCE 2</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="729" xmltv_id="*FRANCE 3">*FRANCE 3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="730" xmltv_id="*FRANCE 5">*FRANCE 5</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="516" xmltv_id="METV">METV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="539" xmltv_id="SAT1">SAT1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="540" xmltv_id="SAT3">SAT3</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="535" xmltv_id="RTL">RTL</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="545" xmltv_id="TELEFE">TELEFE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="350" xmltv_id="*RAI ITALIA">*RAI ITALIA</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="690" xmltv_id="*MEDIASET ITALIA">*MEDIASET ITALIA</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="549" xmltv_id="TVE">TVE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="773" xmltv_id="Канал 20">Канал 20</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="463" xmltv_id="EURO STAR">EURO STAR</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="557" xmltv_id="ZEE TV">ZEE TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="455" xmltv_id="DUNA TV">DUNA TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="534" xmltv_id="PRO TV">PRO TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="550" xmltv_id="TVRI">TVRI</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="754" xmltv_id="Хоп!">Хоп!</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="939" xmltv_id="RECORD TV HD">RECORD TV HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="521" xmltv_id="Марокко">Марокко</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="587" xmltv_id="Тунис">Тунис</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="459" xmltv_id="Египет">Египет</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="568" xmltv_id="Иордания 1">Иордания 1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="750" xmltv_id="*NHK WORLD">*NHK WORLD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="906" xmltv_id="*I24 ARABIC">*I24 ARABIC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1035" xmltv_id="DW Arabia">DW Arabia</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="541" xmltv_id="SAUDI">SAUDI</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="514" xmltv_id="LBC">LBC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="595" xmltv_id="Al Jazeera">Al Jazeera</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="766" xmltv_id="Moreshet CH 20">Moreshet CH 20</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="898" xmltv_id="Food Network SD">Food Network SD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="900" xmltv_id="Travel Channel SD">Travel Channel SD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="469" xmltv_id="FTV">FTV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="779" xmltv_id="OUTDOOR SD">OUTDOOR SD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="522" xmltv_id="MTV">MTV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="554" xmltv_id="VH-1">VH-1</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="553" xmltv_id="MTV 80s">MTV 80s</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="525" xmltv_id="MTV Hits">MTV Hits</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="523" xmltv_id="MTV 90s">MTV 90s</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="524" xmltv_id="MTV DANCE">MTV DANCE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="518" xmltv_id="MEZZO">MEZZO</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="698" xmltv_id="*MEZZO LIVE HD">*MEZZO LIVE HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="526" xmltv_id="MTV HD">MTV HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1001" xmltv_id="Music IL">Music IL</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="941" xmltv_id="PRIDE TV">PRIDE TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="468" xmltv_id="FRANCE 24">FRANCE 24</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="465" xmltv_id="FOX NEWS">FOX NEWS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="542" xmltv_id="SKY NEWS">SKY NEWS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1027" xmltv_id="Фокс Бизнес">Фокс Бизнес</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="443" xmltv_id="BLOOMBERG">BLOOMBERG</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="775" xmltv_id="MTV Series">MTV Series</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="804" xmltv_id="*DW GERMAN">*DW GERMAN</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="335" xmltv_id="*EURONEWS">*EURONEWS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="670" xmltv_id="Penthouse HD">Penthouse HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="761" xmltv_id="*MOTORS TV">*MOTORS TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="848" xmltv_id="NAUGHTY NIGHTS">NAUGHTY NIGHTS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="847" xmltv_id="AFTER MIDNIGHT">AFTER MIDNIGHT</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="444" xmltv_id="BLUE HUSTLER">BLUE HUSTLER</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="432" xmltv_id="BARELY LEGAL">BARELY LEGAL</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="1038" xmltv_id="PLAYBOY TV">PLAYBOY TV</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="345" xmltv_id="Спорт i5">Спорт i5</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="747" xmltv_id="*I24 ARABIC">*I24 ARABIC</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="684" xmltv_id="*сфеши HD ONE">*сфеши HD ONE</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="677" xmltv_id="Sport 1 HD">Sport 1 HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="544" xmltv_id="Sport 5 HD">Sport 5 HD</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="924" xmltv_id="5SPORT 4K">5SPORT 4K</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="749" xmltv_id="*I24 FRANCIS">*I24 FRANCIS</channel>
+    <channel update="i" site="hot.net.il_ru" site_id="464" xmltv_id="EXTREME SPORTS">EXTREME SPORTS</channel>
+  </channels>
+</site>

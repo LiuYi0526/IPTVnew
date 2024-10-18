@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V5.1.4.4 -- Jan van Straaten" site="a1.hr">
+  <channels>
+    <channel update="i" site="a1.hr" site_id="2##HRT1.png" xmltv_id="HTV1 HD">HTV1 HD</channel>
+    <channel update="i" site="a1.hr" site_id="3##HRT2.png" xmltv_id="HTV2 HD">HTV2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="4##rtl_200x100.png" xmltv_id="RTL HD">RTL HD</channel>
+    <channel update="i" site="a1.hr" site_id="5##Nova HD.png" xmltv_id="Nova TV HD">Nova TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="7##rtl_2_200x100.png" xmltv_id="RTL 2 HD">RTL 2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="8##DOMA HD.png" xmltv_id="Doma TV HD">Doma TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="9##HRT3.png" xmltv_id="HTV3 HD">HTV3 HD</channel>
+    <channel update="i" site="a1.hr" site_id="10##HRT4.png" xmltv_id="HTV4 HD">HTV4 HD</channel>
+    <channel update="i" site="a1.hr" site_id="11##kockica1.png" xmltv_id="RTL Kockica HD">RTL Kockica HD</channel>
+    <channel update="i" site="a1.hr" site_id="12##Mini TV.png" xmltv_id="MiniTV">MiniTV</channel>
+    <channel update="i" site="a1.hr" site_id="598##Woman.png" xmltv_id="Woman">Woman</channel>
+    <channel update="i" site="a1.hr" site_id="603##PickboxTV_LOGOTYPE_2020_720x264.png" xmltv_id="Pickbox TV">Pickbox TV</channel>
+    <channel update="i" site="a1.hr" site_id="152##CMC TV.png" xmltv_id="CMC">CMC</channel>
+    <channel update="i" site="a1.hr" site_id="86##sptv.png" xmltv_id="Sportska TV">Sportska TV</channel>
+    <channel update="i" site="a1.hr" site_id="657##bloomberg adria.png" xmltv_id="Bloomberg Adria">Bloomberg Adria</channel>
+    <channel update="i" site="a1.hr" site_id="42##Al Jazeera Balkans.png" xmltv_id="Al Jazeera Balkans HD">Al Jazeera Balkans HD</channel>
+    <channel update="i" site="a1.hr" site_id="678##Discovery black.png" xmltv_id="Discovery Channel">Discovery Channel</channel>
+    <channel update="i" site="a1.hr" site_id="632##bbc_earth.png" xmltv_id="BBC Earth">BBC Earth</channel>
+    <channel update="i" site="a1.hr" site_id="639##kitchen_tv.png" xmltv_id="Kitchen TV">Kitchen TV</channel>
+    <channel update="i" site="a1.hr" site_id="272,&quot;title&quot;:&quot;Kanal mjeseca&quot;,&quot;image&quot;:&quot;./images/dummy-slika.png" xmltv_id="Kanal mjeseca">Kanal mjeseca</channel>
+    <channel update="i" site="a1.hr" site_id="50##CineStar1.png" xmltv_id="CineStar TV 1">CineStar TV 1</channel>
+    <channel update="i" site="a1.hr" site_id="51##CineStar_Action.png" xmltv_id="CineStar TV Action and Thriller">CineStar TV Action and Thriller</channel>
+    <channel update="i" site="a1.hr" site_id="53##Fox HD.png" xmltv_id="STAR Channel">STAR Channel</channel>
+    <channel update="i" site="a1.hr" site_id="54##Foxlife HD.png" xmltv_id="STAR Life">STAR Life</channel>
+    <channel update="i" site="a1.hr" site_id="63##fox_crime.png" xmltv_id="STAR Crime">STAR Crime</channel>
+    <channel update="i" site="a1.hr" site_id="455##disney_fox_logo_140x67_20230915_movies_crno.png" xmltv_id="STAR Movies">STAR Movies</channel>
+    <channel update="i" site="a1.hr" site_id="52##DIVA.png" xmltv_id="DIVA">DIVA</channel>
+    <channel update="i" site="a1.hr" site_id="55##Viasat TV1000.png" xmltv_id="TV1000">TV1000</channel>
+    <channel update="i" site="a1.hr" site_id="79##BBC First.png" xmltv_id="BBC First">BBC First</channel>
+    <channel update="i" site="a1.hr" site_id="116##Epic Drama.png" xmltv_id="Epic Drama">Epic Drama</channel>
+    <channel update="i" site="a1.hr" site_id="19##amc HD.png" xmltv_id="AMC HD">AMC HD</channel>
+    <channel update="i" site="a1.hr" site_id="16##CineStar_Premiere1.png" xmltv_id="CineStar TV Premiere 1 HD">CineStar TV Premiere 1 HD</channel>
+    <channel update="i" site="a1.hr" site_id="17##CineStar_Premiere2.png" xmltv_id="CineStar TV Premiere 2 HD">CineStar TV Premiere 2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="667##CineStar2.png" xmltv_id="CineStar TV 2">CineStar TV 2</channel>
+    <channel update="i" site="a1.hr" site_id="669##CineStar_Fantasy.png" xmltv_id="CineStar TV Fantasy">CineStar TV Fantasy</channel>
+    <channel update="i" site="a1.hr" site_id="670##CineStar_Comedy.png" xmltv_id="CineStar TV Comedy and Family">CineStar TV Comedy and Family</channel>
+    <channel update="i" site="a1.hr" site_id="671##GoodTimes.png" xmltv_id="Good Times">Good Times</channel>
+    <channel update="i" site="a1.hr" site_id="672##filmbox_premium.jpg" xmltv_id="FilmBox Premium">FilmBox Premium</channel>
+    <channel update="i" site="a1.hr" site_id="622##rtl_adria.png" xmltv_id="RTL Adria">RTL Adria</channel>
+    <channel update="i" site="a1.hr" site_id="18##Kino TV.png" xmltv_id="Kino TV HD">Kino TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="67##klasik_tv.png" xmltv_id="Klasik TV">Klasik TV</channel>
+    <channel update="i" site="a1.hr" site_id="68##rtl_crime_720x264.png" xmltv_id="RTL Crime">RTL Crime</channel>
+    <channel update="i" site="a1.hr" site_id="69##rtl_passion_720x264.png" xmltv_id="RTL Passion">RTL Passion</channel>
+    <channel update="i" site="a1.hr" site_id="71##Nova Cinema.png" xmltv_id="Nova Cinema">Nova Cinema</channel>
+    <channel update="i" site="a1.hr" site_id="72##Nova Family.png" xmltv_id="Nova Family">Nova Family</channel>
+    <channel update="i" site="a1.hr" site_id="20##Eurochannel.png" xmltv_id="Eurochannel HD">Eurochannel HD</channel>
+    <channel update="i" site="a1.hr" site_id="70##Timeless Dizi Channel Logo.png" xmltv_id="Dizi">Dizi</channel>
+    <channel update="i" site="a1.hr" site_id="58##AXN.png" xmltv_id="AXN">AXN</channel>
+    <channel update="i" site="a1.hr" site_id="59##AXN Spin.png" xmltv_id="AXN Spin">AXN Spin</channel>
+    <channel update="i" site="a1.hr" site_id="21##Film Box Extra HD.png" xmltv_id="Filmbox Extra HD">Filmbox Extra HD</channel>
+    <channel update="i" site="a1.hr" site_id="61##Film Box Plus.png" xmltv_id="Film Box Stars">Film Box Stars</channel>
+    <channel update="i" site="a1.hr" site_id="73##SCIFI_Poland_Logo_HORIZONTAL_BW.png" xmltv_id="SciFi">SciFi</channel>
+    <channel update="i" site="a1.hr" site_id="22##HBO HD.png" xmltv_id="HBO HD">HBO HD</channel>
+    <channel update="i" site="a1.hr" site_id="23##HBO2 HD.png" xmltv_id="HBO 2 HD">HBO 2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="24##HBO3 HD.png" xmltv_id="HBO 3 HD">HBO 3 HD</channel>
+    <channel update="i" site="a1.hr" site_id="25##Cinemax_HD.png" xmltv_id="Cinemax HD">Cinemax HD</channel>
+    <channel update="i" site="a1.hr" site_id="26##Cinemax-2-HD.png" xmltv_id="Cinemax 2 HD">Cinemax 2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="630##arena_sport_m.png" xmltv_id="Arena Sport Mozaik">Arena Sport Mozaik</channel>
+    <channel update="i" site="a1.hr" site_id="614##arena_sport_1.png" xmltv_id="Arena Sport 1 HD">Arena Sport 1 HD</channel>
+    <channel update="i" site="a1.hr" site_id="615##arena_sport_2.png" xmltv_id="Arena Sport 2 HD">Arena Sport 2 HD</channel>
+    <channel update="i" site="a1.hr" site_id="616##arena_sport_3.png" xmltv_id="Arena Sport 3 HD">Arena Sport 3 HD</channel>
+    <channel update="i" site="a1.hr" site_id="617##arena_sport_4.png" xmltv_id="Arena Sport 4 HD">Arena Sport 4 HD</channel>
+    <channel update="i" site="a1.hr" site_id="618##arena_sport_5.png" xmltv_id="Arena Sport 5 HD">Arena Sport 5 HD</channel>
+    <channel update="i" site="a1.hr" site_id="619##arena_sport_6.png" xmltv_id="Arena Sport 6 HD">Arena Sport 6 HD</channel>
+    <channel update="i" site="a1.hr" site_id="626##arena_sport_7.png" xmltv_id="Arena Sport 7 HD">Arena Sport 7 HD</channel>
+    <channel update="i" site="a1.hr" site_id="627##arena_sport_8.png" xmltv_id="Arena Sport 8 HD">Arena Sport 8 HD</channel>
+    <channel update="i" site="a1.hr" site_id="628##arena_sport_9.png" xmltv_id="Arena Sport 9 HD">Arena Sport 9 HD</channel>
+    <channel update="i" site="a1.hr" site_id="629##arena_sport_10.png" xmltv_id="Arena Sport 10 HD">Arena Sport 10 HD</channel>
+    <channel update="i" site="a1.hr" site_id="679##Eurosport1.png" xmltv_id="Eurosport 1">Eurosport 1</channel>
+    <channel update="i" site="a1.hr" site_id="680##Eurosport2.png" xmltv_id="Eurosport 2">Eurosport 2</channel>
+    <channel update="i" site="a1.hr" site_id="95##arena_fight.png" xmltv_id="Arena Fight">Arena Fight</channel>
+    <channel update="i" site="a1.hr" site_id="32##GP1.png" xmltv_id="GP1 HD">GP1 HD</channel>
+    <channel update="i" site="a1.hr" site_id="100##Extreme Sports.png" xmltv_id="Extreme Sports">Extreme Sports</channel>
+    <channel update="i" site="a1.hr" site_id="101##Nautical.png" xmltv_id="Nautical Channel">Nautical Channel</channel>
+    <channel update="i" site="a1.hr" site_id="34##Game Toon.png" xmltv_id="Gametoon HD">Gametoon HD</channel>
+    <channel update="i" site="a1.hr" site_id="631##arena_esport.png" xmltv_id="Arena Esport">Arena Esport</channel>
+    <channel update="i" site="a1.hr" site_id="605##game_hub.jpg" xmltv_id="GameHub">GameHub</channel>
+    <channel update="i" site="a1.hr" site_id="112##National_Geographic.png" xmltv_id="National Geographic">National Geographic</channel>
+    <channel update="i" site="a1.hr" site_id="117##National_Geographic_Wild.png" xmltv_id="National Geographic Wild">National Geographic Wild</channel>
+    <channel update="i" site="a1.hr" site_id="38##Doku TV.png" xmltv_id="Doku TV HD">Doku TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="114##Viasat Explorer.png" xmltv_id="Viasat History">Viasat History</channel>
+    <channel update="i" site="a1.hr" site_id="115##viasat_explore.png" xmltv_id="Viasat Explore">Viasat Explore</channel>
+    <channel update="i" site="a1.hr" site_id="638##DOX TV 200x100.png" xmltv_id="DOX TV">DOX TV</channel>
+    <channel update="i" site="a1.hr" site_id="39##History HD.png" xmltv_id="History HD">History HD</channel>
+    <channel update="i" site="a1.hr" site_id="118##Docu Box.png" xmltv_id="DocuBox">DocuBox</channel>
+    <channel update="i" site="a1.hr" site_id="120##Viasat History.png" xmltv_id="Viasat Nature">Viasat Nature</channel>
+    <channel update="i" site="a1.hr" site_id="125##Laudato TV.png" xmltv_id="Laudato TV">Laudato TV</channel>
+    <channel update="i" site="a1.hr" site_id="682##hgtv.png" xmltv_id="HGTV">HGTV</channel>
+    <channel update="i" site="a1.hr" site_id="122##rtl_living_720x264.png" xmltv_id="RTL Living">RTL Living</channel>
+    <channel update="i" site="a1.hr" site_id="133##24Kitchen_logo_color.png" xmltv_id="24Kitchen">24Kitchen</channel>
+    <channel update="i" site="a1.hr" site_id="681##tlc.png" xmltv_id="TLC">TLC</channel>
+    <channel update="i" site="a1.hr" site_id="134##E!.png" xmltv_id="E!">E!</channel>
+    <channel update="i" site="a1.hr" site_id="40##My Zen Tv.png" xmltv_id="myZen.tv HD">myZen.tv HD</channel>
+    <channel update="i" site="a1.hr" site_id="131##wness TV.png" xmltv_id="WNESS TV">WNESS TV</channel>
+    <channel update="i" site="a1.hr" site_id="130##travelxp_hd.png" xmltv_id="Travel XP">Travel XP</channel>
+    <channel update="i" site="a1.hr" site_id="633##balkan_trip.png" xmltv_id="Balkan Trip">Balkan Trip</channel>
+    <channel update="i" site="a1.hr" site_id="41##Luxe TV HD.png" xmltv_id="Luxe.tv HD">Luxe.tv HD</channel>
+    <channel update="i" site="a1.hr" site_id="600##Dr Fit.png" xmltv_id="Dr Fit">Dr Fit</channel>
+    <channel update="i" site="a1.hr" site_id="136##Nickelodeon.png" xmltv_id="Nickelodeon">Nickelodeon</channel>
+    <channel update="i" site="a1.hr" site_id="137##nick_jr.png" xmltv_id="Nick Jr HR">Nick Jr HR</channel>
+    <channel update="i" site="a1.hr" site_id="147##Nick Jr.png" xmltv_id="Nick Jr">Nick Jr</channel>
+    <channel update="i" site="a1.hr" site_id="143##Baby TV.png" xmltv_id="Baby TV">Baby TV</channel>
+    <channel update="i" site="a1.hr" site_id="144##jim_jam.png" xmltv_id="Jim Jam">Jim Jam</channel>
+    <channel update="i" site="a1.hr" site_id="141##ric.png" xmltv_id="RiC">RiC</channel>
+    <channel update="i" site="a1.hr" site_id="148##Duck TV.png" xmltv_id="Duck TV">Duck TV</channel>
+    <channel update="i" site="a1.hr" site_id="145##TiJi.png" xmltv_id="TIJI">TIJI</channel>
+    <channel update="i" site="a1.hr" site_id="139##Da Vinci.png" xmltv_id="Da Vinci">Da Vinci</channel>
+    <channel update="i" site="a1.hr" site_id="602##nicktoons.png" xmltv_id="Nicktoons">Nicktoons</channel>
+    <channel update="i" site="a1.hr" site_id="142##Toon_kids.png" xmltv_id="Toon Kids">Toon Kids</channel>
+    <channel update="i" site="a1.hr" site_id="673##Disney_channel.png" xmltv_id="Disney Channel">Disney Channel</channel>
+    <channel update="i" site="a1.hr" site_id="674##Disney_Junior.png" xmltv_id="Disney Junior">Disney Junior</channel>
+    <channel update="i" site="a1.hr" site_id="140##Boomerang.png" xmltv_id="Cartoonito">Cartoonito</channel>
+    <channel update="i" site="a1.hr" site_id="138##Cartoon Network.png" xmltv_id="Cartoon Network">Cartoon Network</channel>
+    <channel update="i" site="a1.hr" site_id="150##MTV.png" xmltv_id="MTV">MTV</channel>
+    <channel update="i" site="a1.hr" site_id="151##mtv_00s.png" xmltv_id="MTV 00s">MTV 00s</channel>
+    <channel update="i" site="a1.hr" site_id="641##Muzzik.png" xmltv_id="Muzzik TV">Muzzik TV</channel>
+    <channel update="i" site="a1.hr" site_id="153##nonstop.png" xmltv_id="NONSTOP">NONSTOP</channel>
+    <channel update="i" site="a1.hr" site_id="155##Jugoton.png" xmltv_id="Jugoton">Jugoton</channel>
+    <channel update="i" site="a1.hr" site_id="159##DMC.png" xmltv_id="DMC">DMC</channel>
+    <channel update="i" site="a1.hr" site_id="160##rtv-banovina 2.png" xmltv_id="RTV Banovina">RTV Banovina</channel>
+    <channel update="i" site="a1.hr" site_id="161##klape_i_tambure_tv.png" xmltv_id="Klape i Tambure">Klape i Tambure</channel>
+    <channel update="i" site="a1.hr" site_id="169##Extra TV.png" xmltv_id="Extra TV">Extra TV</channel>
+    <channel update="i" site="a1.hr" site_id="170##toxic_folk.png" xmltv_id="Toxic Folk">Toxic Folk</channel>
+    <channel update="i" site="a1.hr" site_id="171##toxic_tv.png" xmltv_id="Toxic TV">Toxic TV</channel>
+    <channel update="i" site="a1.hr" site_id="634##toxic_tv_rap.png" xmltv_id="Toxic Rap">Toxic Rap</channel>
+    <channel update="i" site="a1.hr" site_id="177##DM Sat.png" xmltv_id="DM SAT">DM SAT</channel>
+    <channel update="i" site="a1.hr" site_id="46##Balkanika Music Television.png" xmltv_id="Balkanika TV HD">Balkanika TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="47##Narodni TV.png" xmltv_id="bravo! TV HD">bravo! TV HD</channel>
+    <channel update="i" site="a1.hr" site_id="166##VH1 Classic.png" xmltv_id="MTV 80s">MTV 80s</channel>
+    <channel update="i" site="a1.hr" site_id="162##MTV Hits.png" xmltv_id="MTV Hits International">MTV Hits International</channel>
+    <channel update="i" site="a1.hr" site_id="163##dorcel_tv.png" xmltv_id="Club MTV">Club MTV</channel>
+    <channel update="i" site="a1.hr" site_id="164##NickMusic-720x264px.png" xmltv_id="NickMusic">NickMusic</channel>
+    <channel update="i" site="a1.hr" site_id="165##MTV Rocks.png" xmltv_id="MTV 90s">MTV 90s</channel>
+    <channel update="i" site="a1.hr" site_id="167##Mezzo.png" xmltv_id="Mezzo">Mezzo</channel>
+    <channel update="i" site="a1.hr" site_id="168##trace_urban.png" xmltv_id="Trace Urban">Trace Urban</channel>
+    <channel update="i" site="a1.hr" site_id="643##Rock.png" xmltv_id="Rock and Roll">Rock and Roll</channel>
+    <channel update="i" site="a1.hr" site_id="642##Pop star.png" xmltv_id="Pop Star">Pop Star</channel>
+    <channel update="i" site="a1.hr" site_id="644##Jeka.png" xmltv_id="Jeka">Jeka</channel>
+    <channel update="i" site="a1.hr" site_id="645##ZZtv.png" xmltv_id="ZZ TV">ZZ TV</channel>
+    <channel update="i" site="a1.hr" site_id="646##Flashback.png" xmltv_id="Flashback">Flashback</channel>
+    <channel update="i" site="a1.hr" site_id="647##wwm.png" xmltv_id="World Wide Muzzik">World Wide Muzzik</channel>
+    <channel update="i" site="a1.hr" site_id="252##KCN Music 2.png" xmltv_id="KCN Music 2">KCN Music 2</channel>
+    <channel update="i" site="a1.hr" site_id="182##sky_news.png" xmltv_id="Sky News">Sky News</channel>
+    <channel update="i" site="a1.hr" site_id="180##CNN.png" xmltv_id="CNN">CNN</channel>
+    <channel update="i" site="a1.hr" site_id="181##Fox News.png" xmltv_id="FOX News">FOX News</channel>
+    <channel update="i" site="a1.hr" site_id="183##Al Jazeera.png" xmltv_id="Al Jazeera English">Al Jazeera English</channel>
+    <channel update="i" site="a1.hr" site_id="184##BBC World News.png" xmltv_id="BBC News">BBC News</channel>
+    <channel update="i" site="a1.hr" site_id="185##CGTN.png" xmltv_id="CGTN">CGTN</channel>
+    <channel update="i" site="a1.hr" site_id="192##Euronews.png" xmltv_id="Euronews">Euronews</channel>
+    <channel update="i" site="a1.hr" site_id="187##Deutsche Welle.png" xmltv_id="Deutsche Welle">Deutsche Welle</channel>
+    <channel update="i" site="a1.hr" site_id="186##CNBC.png" xmltv_id="CNBC">CNBC</channel>
+    <channel update="i" site="a1.hr" site_id="48##France24 English.png" xmltv_id="France 24 HD (eng)">France 24 HD (eng)</channel>
+    <channel update="i" site="a1.hr" site_id="49##France24 Francais.png" xmltv_id="France 24 HD (fra)">France 24 HD (fra)</channel>
+    <channel update="i" site="a1.hr" site_id="190##welt.png" xmltv_id="WELT">WELT</channel>
+    <channel update="i" site="a1.hr" site_id="191##russia_today_tv2.png" xmltv_id="Russia Today TV">Russia Today TV</channel>
+    <channel update="i" site="a1.hr" site_id="658##ICTbussinessTV.png" xmltv_id="ICTbusiness TV">ICTbusiness TV</channel>
+    <channel update="i" site="a1.hr" site_id="43##arte HD.png" xmltv_id="arte HD">arte HD</channel>
+    <channel update="i" site="a1.hr" site_id="44##Das Erste HD.png" xmltv_id="Das Erste HD">Das Erste HD</channel>
+    <channel update="i" site="a1.hr" site_id="45##zdf.png" xmltv_id="ZDF HD">ZDF HD</channel>
+    <channel update="i" site="a1.hr" site_id="197##rtl_television 140x67.png" xmltv_id="RTL Television">RTL Television</channel>
+    <channel update="i" site="a1.hr" site_id="198##rtl_2_720x264.png" xmltv_id="RTL2">RTL2</channel>
+    <channel update="i" site="a1.hr" site_id="194##VOX.png" xmltv_id="VOX">VOX</channel>
+    <channel update="i" site="a1.hr" site_id="199##pro_7.png" xmltv_id="Pro7">Pro7</channel>
+    <channel update="i" site="a1.hr" site_id="200##3_sat.png" xmltv_id="3sat">3sat</channel>
+    <channel update="i" site="a1.hr" site_id="195##Rai 1.png" xmltv_id="RAI Uno">RAI Uno</channel>
+    <channel update="i" site="a1.hr" site_id="196##rai_due1.png" xmltv_id="RAI Due">RAI Due</channel>
+    <channel update="i" site="a1.hr" site_id="204##Rai 3.png" xmltv_id="RAI Tre">RAI Tre</channel>
+    <channel update="i" site="a1.hr" site_id="205##Rai Scuola.png" xmltv_id="RAI Scuola">RAI Scuola</channel>
+    <channel update="i" site="a1.hr" site_id="207##Rai News 24.png" xmltv_id="RAI News 24">RAI News 24</channel>
+    <channel update="i" site="a1.hr" site_id="206##Rai Storia.png" xmltv_id="RAI Storia">RAI Storia</channel>
+    <channel update="i" site="a1.hr" site_id="201##Mediaset.png" xmltv_id="Mediaset Italia">Mediaset Italia</channel>
+    <channel update="i" site="a1.hr" site_id="202##TV5 Monde Europe.png" xmltv_id="TV5 Monde">TV5 Monde</channel>
+    <channel update="i" site="a1.hr" site_id="635##bnt4.png" xmltv_id="BNT4">BNT4</channel>
+    <channel update="i" site="a1.hr" site_id="208##otv.png" xmltv_id="OTV">OTV</channel>
+    <channel update="i" site="a1.hr" site_id="209##Z1.png" xmltv_id="Z1">Z1</channel>
+    <channel update="i" site="a1.hr" site_id="210##Mreza Zagreb.png" xmltv_id="MrezaZG">MrezaZG</channel>
+    <channel update="i" site="a1.hr" site_id="211##TV Zapad.png" xmltv_id="TV Zapad">TV Zapad</channel>
+    <channel update="i" site="a1.hr" site_id="228##trend_tv.png" xmltv_id="Trend TV">Trend TV</channel>
+    <channel update="i" site="a1.hr" site_id="212##TV Jadran.png" xmltv_id="TV Jadran">TV Jadran</channel>
+    <channel update="i" site="a1.hr" site_id="214##TVD-LOGO-140.png" xmltv_id="Televizija Dalmacija">Televizija Dalmacija</channel>
+    <channel update="i" site="a1.hr" site_id="233##Diadora.png" xmltv_id="Diadora TV">Diadora TV</channel>
+    <channel update="i" site="a1.hr" site_id="232##Libertas TV.png" xmltv_id="Libertas TV">Libertas TV</channel>
+    <channel update="i" site="a1.hr" site_id="217##TV Nova Pula.png" xmltv_id="TV Nova">TV Nova</channel>
+    <channel update="i" site="a1.hr" site_id="215##Kanal Ri.png" xmltv_id="KanalRi">KanalRi</channel>
+    <channel update="i" site="a1.hr" site_id="220##slavonska_tv.png" xmltv_id="Slavonska TV">Slavonska TV</channel>
+    <channel update="i" site="a1.hr" site_id="218##Osjecka TV.png" xmltv_id="Osjeèka TV">Osjeèka TV</channel>
+    <channel update="i" site="a1.hr" site_id="219##plava_vinkovacka.png" xmltv_id="Plava Vinkovacka">Plava Vinkovacka</channel>
+    <channel update="i" site="a1.hr" site_id="221##sbtv.png" xmltv_id="SBTV">SBTV</channel>
+    <channel update="i" site="a1.hr" site_id="225##VTV.png" xmltv_id="VTV Varazdin">VTV Varazdin</channel>
+    <channel update="i" site="a1.hr" site_id="229##Poljoprivredna TV.png" xmltv_id="Poljoprivredna TV">Poljoprivredna TV</channel>
+    <channel update="i" site="a1.hr" site_id="231##Zdrava TV 7.png" xmltv_id="Zdrava TV-7">Zdrava TV-7</channel>
+    <channel update="i" site="a1.hr" site_id="623##aurora_tv.png" xmltv_id="Aurora TV">Aurora TV</channel>
+    <channel update="i" site="a1.hr" site_id="235##Federalna TV.png" xmltv_id="Federalna TV">Federalna TV</channel>
+    <channel update="i" site="a1.hr" site_id="256##MKTV Sat.png" xmltv_id="MKTV Sat">MKTV Sat</channel>
+    <channel update="i" site="a1.hr" site_id="247##OTV Valentino.png" xmltv_id="OTV Valentino">OTV Valentino</channel>
+    <channel update="i" site="a1.hr" site_id="246##Hayat Plus.png" xmltv_id="Hayat PLUS">Hayat PLUS</channel>
+    <channel update="i" site="a1.hr" site_id="236##rts_1.png" xmltv_id="RTS 1">RTS 1</channel>
+    <channel update="i" site="a1.hr" site_id="237##rts_2.png" xmltv_id="RTS 2">RTS 2</channel>
+    <channel update="i" site="a1.hr" site_id="637##rts_3.png" xmltv_id="RTS 3">RTS 3</channel>
+    <channel update="i" site="a1.hr" site_id="238##RTS Svet.png" xmltv_id="RTS Svet">RTS Svet</channel>
+    <channel update="i" site="a1.hr" site_id="248##TV BN Sat.png" xmltv_id="TV BN Sat">TV BN Sat</channel>
+    <channel update="i" site="a1.hr" site_id="242##rtv1.png" xmltv_id="RTV1">RTV1</channel>
+    <channel update="i" site="a1.hr" site_id="243##rtv2.png" xmltv_id="RTV2">RTV2</channel>
+    <channel update="i" site="a1.hr" site_id="245##rtcg.png" xmltv_id="RTCG">RTCG</channel>
+    <channel update="i" site="a1.hr" site_id="239##tv_slo_1.png" xmltv_id="SLO1">SLO1</channel>
+    <channel update="i" site="a1.hr" site_id="240##tv_slo_2.png" xmltv_id="SLO2">SLO2</channel>
+    <channel update="i" site="a1.hr" site_id="253##TV Svlet Plus.png" xmltv_id="KCN Svet +3">KCN Svet +3</channel>
+    <channel update="i" site="a1.hr" site_id="254##Happy.png" xmltv_id="Happy TV">Happy TV</channel>
+    <channel update="i" site="a1.hr" site_id="257##Hustler TV.png" xmltv_id="Hustler TV">Hustler TV</channel>
+    <channel update="i" site="a1.hr" site_id="258##Brazzers TV Europe.png" xmltv_id="Brazzers TV Europe">Brazzers TV Europe</channel>
+    <channel update="i" site="a1.hr" site_id="259##Adult Channel.png" xmltv_id="Adult Channel">Adult Channel</channel>
+    <channel update="i" site="a1.hr" site_id="260##Playboy TV.png" xmltv_id="Vixen">Vixen</channel>
+    <channel update="i" site="a1.hr" site_id="261##Dorcel TV.png" xmltv_id="Dorcel TV">Dorcel TV</channel>
+    <channel update="i" site="a1.hr" site_id="262##Dusk.png" xmltv_id="Dusk! TV">Dusk! TV</channel>
+    <channel update="i" site="a1.hr" site_id="263##pure_babes.png" xmltv_id="Pure Babes">Pure Babes</channel>
+    <channel update="i" site="a1.hr" site_id="264##babes_tv.png" xmltv_id="Babes TV">Babes TV</channel>
+    <channel update="i" site="a1.hr" site_id="265##Hustler HD.png" xmltv_id="Hustler HD">Hustler HD</channel>
+    <channel update="i" site="a1.hr" site_id="266##dorcel_tv.png" xmltv_id="Dorcel HD">Dorcel HD</channel>
+    <channel update="i" site="a1.hr" site_id="267##Private TV.png" xmltv_id="Private TV">Private TV</channel>
+    <channel update="i" site="a1.hr" site_id="528##bang_u.png" xmltv_id="Bang U">Bang U</channel>
+    <channel update="i" site="a1.hr" site_id="531##rktv.png" xmltv_id="Reality Kings">Reality Kings</channel>
+  </channels>
+</site>

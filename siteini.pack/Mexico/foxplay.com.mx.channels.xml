@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V3.2.3.1 -- Jan van Straaten" site="foxplay.com.mx">
+  <channels>
+    <channel update="i" site="foxplay.com.mx" site_id="FOXSPORTS_MEXICO" xmltv_id="FOX Sports MEXICO">FOX Sports MEXICO</channel>
+    <channel update="i" site="foxplay.com.mx" site_id="FOXSPORTS_2_MEXICO" xmltv_id="FOX Sports 2 MEXICO">FOX Sports 2 MEXICO</channel>
+    <channel update="i" site="foxplay.com.mx" site_id="FOXSPORTS_3_MEXICO" xmltv_id="FOX Sports 3 MEXICO">FOX Sports 3 MEXICO</channel>
+    <channel update="i" site="foxplay.com.mx" site_id="FOXSPORTS_4_MEXICO" xmltv_id="FOX Sports Premium MEXICO">FOX Sports Premium MEXICO</channel>
+  </channels>
+</site>

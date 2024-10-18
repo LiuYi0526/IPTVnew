@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<settings>
+   
+  <!-- for detailed info about the settings see http://webgrabplus.com/documentation/configuration/webgrabconfigxml 
+  and http://webgrabplus.com/sites/default/files/downloads/Misc/Documented_Configuration_Files_0.zip -->
+   
+  <filename>guide.xml</filename>
+  <mode></mode>
+  <postprocess grab="y" run="n">rex</postprocess>
+  <user-agent>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59</user-agent>
+  <!-- to get access to sites which require your credentials -->
+  <credentials user="your username for the site" password="your password for the site">site name</credentials>
+  <!-- for siteini's that need a decrypt_userkey-->
+  <decryptkey site="site-name">decrypt_userkey</decryptkey>
+  <!-- add the correct license id values in the next line -->
+  <license wg-username="your webgrab+plus username" registered-email="your registered email address" password="your license password">f</license>
+  <logging>on</logging>
+  <retry time-out="10">4</retry>
+  <!-- timespan 0 is one day -->
+  <timespan>0</timespan>
+  <update>i</update>
+ 
+  <!--
+            Replace the next dummy channel entry with the channels you want.
+			You can look into the installed siteini.pack folder on your computer
+  
+            For the latest version,
+            see http://webgrabplus.com/epg-channels for the available sites/channels
+			or https://github.com/SilentButeo2/webgrabplus-siteinipack/tree/master/siteini.pack
+			or run SiteIni.Pack.Update.exe which is in the bin folder
+  -->
+  
+  <channel site="dummy" site_id="xx" update="i" xmltv_id="Example">Example</channel>
+ 
+</settings>

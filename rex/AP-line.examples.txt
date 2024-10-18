@@ -1,0 +1,241 @@
+A few examples to demonstrate the Allocation/Presentation command line of WG++ REX and MDB postprocess V3.3 WG++ V5.2
+
+EXAMPLES 1 - 10 applicable for both REX and MDB, 
+  specific MDB related examples after EXAMPLE 10
+
+Suppose the following source_element values : 
+---------------------------------------------
+<title lang="en">WebGrab+Plus</title>
+<sub-title lang="en">how, when, why</sub-title>
+<desc lang="es">Viva WG++</desc>
+<desc lang="en">Long live WG++</desc>
+<credits>
+	<actor role="Initiator/realisation">Jan</actor>
+	<actor role="Website">Francis</actor>
+	<actor role="Support/forum">David Chokachi</actor>
+	<actor role="Knows it all">Mike</actor>
+	<actor>users</actor>
+<credits>
+<date>2011</date>
+<episode-num system="onscreen">V5.2.0</episode-num>
+<star-rating system="ES">
+    <value>6/10</value>
+</star-rating>
+
+Global configuration settings (rex.confg.xml and mdb.config.xml) :
+----------------------------
+<episodenum_pattern>"V'S1'.'E1'.'P1'"</episodenum_pattern>
+-- the following settings are the default settings, 
+      only shown here as reference to their values for the following examples
+<enable_attributelist>false</enable_attributelist>
+<force_targetattribute>false</force_targetattribute> 
+<allow_full4restricted>false</allow_full4restricted> 
+<rex-starrating subtract="3" multiply="2.5" max="5" />
+
+EXAMPLES :
+----------
+EXAMPLE 1 Add actor to description
+AP-line  : <desc>{'description'}{'actor'}</desc>
+(alternative, not recommended  : <desc>'description''actor'</desc>)
+Result :
+    <desc lang="es">Viva WG++</desc>
+    <desc lang="en">Long live WG++</desc>
+    <desc>Jan</desc>
+    <desc>Francis</desc>
+    <desc>Mario</desc>
+    <desc>Mike</desc>
+    <desc>users</desc>
+Note : 
+No separator in the AP-line, so the defaualt | is used that results in multi value desc elements.
+The actor role attribute is ignored because attribute role is not an desc attribute.
+
+EXAMPLE 2 Same as 1 + add role attribute
+AP-line  : <desc>{'description'}{'actor/a'}</desc>
+Result :
+    <desc lang="es">Viva WG++</desc>
+    <desc lang="en">Long live WG++</desc>
+    <desc>Jan(Initiator/realisation)</desc>
+    <desc>Francis(Website)</desc>
+    <desc>Mario(Support/forum)</desc>
+    <desc>Mike(Knows it all)</desc>
+    <desc>users</desc>
+
+EXAMPLE 3 same as 2 + use a comma separator
+AP-line <desc>{'description(, )'}{'actor/a(, )'}</desc>
+Result :
+    <desc>Viva WG++, Long live WG++, Jan(Initiator/realisation), Francis(Website), Mario(Support/forum), Mike(Knows it all), users</desc>
+
+EXAMPLE 4 same as 3 + prefix and postfix text
+AP-line <desc>{'description(, )'}{//Realized by : 'actor/a(, )' //}</desc>
+         <desc>{'description(, )[cleanup(style=upper)]'}{//Realised by : 'actor/a(, )' //}</desc>
+Result :
+desc>Viva WG++, Long live WG++, //Realised by : Jan(Initiator/realisation), Francis(Website), Mario(Support/forum), Mike(Knows it all), users //</desc>
+
+EXAMPLE 5 same as 4 + an operation 
+AP-line <desc>{'description(, )[cleanup(style=upper)]'}{//Realised by : 'actor/a(, )' //}</desc>
+Result :
+<desc>VIVA WG++, LONG LIVE WG++, //Realised by : Jan(Initiator/realisation), Francis(Website), Mario(Support/forum), Mike(Knows it all), user //</desc>
+
+EXAMPLE 6.0 Use a target attribute to select
+AP-line  : <desc lang="en">{'description'}</desc>
+Result :
+    <desc lang="en">Long live WG++</desc>
+
+EXAMPLE 6.1 One more .. Use a target attribute to select
+AP-line  : <actor role="Knows it all">'actor'</actor>
+Result :
+    <actor role="Knows it all">Mike</actor>
+
+EXAMPLE 6.2 One more .. Use a zero value target attribute to select the elements with no attribute
+AP-line  : <actor role="">'actor'</actor>
+Result :
+    <actor role="?">user</actor>
+Note : Rex adds a ? as attribute value ..
+
+EXAMPLE 6.3 One more .. select all .. or simply leave all as it is 
+AP-line : <actor>'actor'</actor> or just nothing
+Note : this is the same as default action, when no AP-line for an element it is copied from the source
+
+EXAMPLE 7.0 Use a target attribute to remove
+AP-line : <desc lang="en"></desc> or  <desc lang="en"/>
+Result :
+    <desc lang="es">Viva WG++</desc>
+
+EXAMPLE 7.1 One more .. Use a target attribute to remove
+AP-line : <actor role="Website"></actor>
+Result :
+    <actor role="Initiator/realisation">Jan</actor>
+    <actor role="Support/forum">Mario</actor>
+    <actor role="Knows it all">Mike</actor>
+    <actor>user</actor>
+
+EXAMPLE 7.2 One more .. Use a zero value target attribute to remove the elements with no attribute
+AP-line : <actor role=""></actor>
+Result :
+      <actor role="Initiator/realisation">Jan</actor>
+      <actor role="Website">Francis</actor>
+      <actor role="Support/forum">Mario</actor>
+      <actor role="Knows it all">Mike</actor>
+
+EXAMPLE 7.3 One more remove .. Remove all 
+AP-line : <actor></actor> or <actor/>
+Result : all actor elements removed
+
+EXAMPLE 8 class 'restricted' vs 'remove/keep'
+remove/keep element date :
+AP-line : <date>'productiondate'</date>
+Result : 
+  <date>2011</date>
+
+EXAMPLE 8.1 Same with prefix-text
+AP-line : <date>{year of production : 'productiondate'}</date>
+Result In log .. :
+  [Warning ] xmltv element -date- is 'remove/keep' only!
+  [Warning ] It can only expand its own value
+  [Warning ] Irregular rex.config specification: <date>{year of production : 'productiondate'}</date> , ignored!!
+  [Warning ] Element -date- will remain unchanged!
+
+EXAMPLE 8.2 more class 'restricted' vs 'remove/keep'
+restricted element actor
+AP-line <actor>{Cast : 'actor/a(, )'}</actor>
+Result :
+      <actor>Cast : Jan(Initiator/realisation), Francis(Website), Mario(Support/forum), Mike(Knows it all), user</actor>
+
+EXAMPLE 8.3 restricted element with other element 
+AP-line : <actor>'actor/a(, )''description'</actor>
+Result in log .. :
+[Warning ] xmltv element -actor- cannot expand other than its own value
+[Warning ] Irregular rex.config specification: <actor>'actor/a(, )''description'</actor> , ignored!!
+[Warning ] Element -actor- will remain unchanged!
+
+EXAMPLE 8.4 same as 8.3 , with <allow_full4restricted>true</allow_full4restricted> 
+Result :
+      <actor>Jan(Initiator/realisation), Francis(Website), Mario(Support/forum), Mike(Knows it all), user</actor>
+      <actor>Viva WG++</actor>
+      <actor>Long live WG++</actor>
+      <actor>Lang leve WG++</actor>
+Note : Rather useless result ! This shows why <allow_full4restricted> is false by default
+
+EXAMPLE 9 episode system conversion 
+AP-line : <episode-num system="xmltv_ns">'episode'</episode-num>
+Result :
+  <episode-num system="xmltv_ns">4.1.</episode-num>
+
+EXAMPLE 10 add episode and date to sub-title with text
+AP-line : <sub-title>{WG++ 'subtitle(, )'}{Started 'date(, )}{Currently 'episode'}</sub-title>
+Result :
+  <sub-title lang="en">WG++ how, when, why, Started 2011, Currently V5.2.0</sub-title>
+
+MDB section 
+-----------
+
+Suppose the following mdb element values (e.g as stored in Local MDB dat file)
+  
+    <star-rating>6.2</star-rating>
+    <credits>
+      <actor>Scott Bakula (role=Dwayne Pride)</actor>
+      <actor>Lucas Black (role=Christopher LaSalle)</actor>
+      <actor>Zoe McLellan (role=Meredith Brody)</actor>
+      <actor>Rob Kerkovich (role=Sebastian Lund)</actor>
+      <actor>CCH Pounder (role=Loretta Wade)</actor>
+      <actor>Martin Bats Bradford (role=Ross P)</actor>
+    </credits>
+    <category>Action &amp; Adventure|Drama|Comedy</category>
+    <description>Brody attempts to find the perfect place to call home.</description>
+
+in mdb.config.xml
+<mdb-starrating subtract="3" multiply="5" max="5" /> <!-- this does the correction of the mdb-starrating -->
+<rex-starrating subtract="3" multiply="2.5" max="5" /> <!-- this does the correction of the starrating in the xmltv source -->
+
+<enable_attributelist>false</enable_attributelist> 
+<force_targetattribute>true</force_targetattribute> <!-- set to true for MDB !!-->
+<allow_full4restricted>false</allow_full4restricted> 
+
+EXAMPLE 11 The next two AP-lines replace the existing star-rating element(s) (if any) with the two specified here.  First is the existing followed by the mdb-starrating
+AP-lines
+  <star-rating>'starrating'</star-rating>
+  <star-rating system="imdb">'mdb-starrating'</star-rating>
+Result :
+    <star-rating system="ES">
+      <value>3.8/5</value>
+    </star-rating>
+    <star-rating system="imdb">
+      <value>4/5</value>
+    </star-rating>
+
+EXAMPLE 12 Add actors together
+AP line :
+<actor>{'mdb-actor'}{'actor'}</actor> or <actor>'mdb-actor''actor'</actor>
+Note : enclosing with {} is not stricly necessary because there are no text additions
+Result :
+   <credits>
+      <actor role="Dwayne Pride">Scott Bakula</actor>
+      <actor role="Christopher LaSalle">Lucas Black</actor>
+      <actor role="Meredith Brody">Zoe McLellan</actor>
+      <actor role="Sebastian Lund">Rob Kerkovich</actor>
+      <actor role="Loretta Wade">CCH Pounder</actor>
+      <actor role="Ross P">Martin Bats Bradford</actor>
+      <actor role="Initiator/realisation">Jan</actor>
+      <actor role="Website">Francis</actor>
+      <actor role="Support/forum">David Chokachi</actor>
+      <actor role="Knows it all">Mike</actor>
+      <actor role="?">users</actor>
+   </credits>
+
+
+EXAMPLE 13 : Element review
+EXAMPLE 13.1 : mdb-actors in review
+AP line :
+<review>{Movie DB actors: 'mdb-actor/a+(, )'}</review>
+Result :  creates a review element 
+<review type="text">Movie DB actors: Scott Bakula(role Dwayne Pride), Lucas Black(role Christopher LaSalle), Zoe McLellan(role Meredith Brody), Rob Kerkovich(role Sebastian Lund), CCH Pounder(role Loretta Wade), Martin Bats Bradford(role Ross P)</review>
+Note : use a separator or else each actors will have its own review element (default separator is |)
+
+EXAMPLE 13.2 : Two review elements User rating: 'mdb-starrating'}
+AP lines :
+<review>{Movie DB category: 'mdb-category( + )'}</review>
+<review>{Movie DB description: 'mdb-description( )'}{\nUser rating: 'mdb-starrating( )'}</review>
+Result :
+   <review type="text">Movie DB category: Action &amp; Adventure + Drama + Comedy</review>
+   <review type="text">Movie DB description: Brody attempts to find the perfect place to call home in New Orleans. User rating: 4/5</review>
+Note : use a space as separator to overwrite the default |
