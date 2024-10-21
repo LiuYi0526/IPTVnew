@@ -1,0 +1,6 @@
+MdbIni files: 
+-------------
+mdb site(s) specified in the <site line of mdb.config, must correspond with an mdb ini file in this mdb folder, e.g. if imdb.com.ask is specified, there must be an imdb.com.ask.ini. 
+There are two types of mdb ini files, for movies and for series.
+These files are updated now and then and are available at http://webgrabplus.com/epg-channels#stc_3E9 or https://github.com/SilentButeo2/webgrabplus-siteinipack/tree/master/siteini.pack/MDB%20postprocessor
+Currently (June 2024) the recommended MdbIni's are the latest revisions using imdb, themoviedb and tvdb.

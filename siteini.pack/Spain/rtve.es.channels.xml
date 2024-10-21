@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V4.2.1.7 -- Jan van Straaten" site="rtve.es">
+  <channels>
+    <channel update="i" site="rtve.es" site_id="canal-1" xmltv_id="1">1</channel>
+    <channel update="i" site="rtve.es" site_id="canal-1-can" xmltv_id="1 Canarias">1 Canarias</channel>
+    <channel update="i" site="rtve.es" site_id="canal-1-cat" xmltv_id="1 Catalunya">1 Catalunya</channel>
+    <channel update="i" site="rtve.es" site_id="canal-2" xmltv_id="2">2</channel>
+    <channel update="i" site="rtve.es" site_id="canal-2-can" xmltv_id="2 Canarias">2 Canarias</channel>
+    <channel update="i" site="rtve.es" site_id="canal-2-cat" xmltv_id="2 Catalunya">2 Catalunya</channel>
+    <channel update="i" site="rtve.es" site_id="canal-24" xmltv_id="24">24</channel>
+    <channel update="i" site="rtve.es" site_id="canal-24-cat" xmltv_id="24 Catalunya">24 Catalunya</channel>
+    <channel update="i" site="rtve.es" site_id="canal-clan" xmltv_id="clan">clan</channel>
+    <channel update="i" site="rtve.es" site_id="canal-tdp" xmltv_id="tdp">tdp</channel>
+  </channels>
+</site>

@@ -1,0 +1,22 @@
+﻿[        ] 
+[        ]       WebGrab+Plus/w MDB & REX Postprocess -- version  V5.2.0.0 -- build 2      
+[        ] 
+[        ]                                 Jan van Straaten                                
+[        ]                              Francis De Paemeleere                              
+[        ] 
+[        ]  thanks to Paul Weterings, Mat8861, Blackbear199 and all the contributing users 
+[        ] --------------------------------------------------------------------------------
+[        ] 
+[        ] Job started at 21/10/2024 16:08:45
+[  Debug ] 
+[  Debug ] Running  on: Unix 6.5.0.1025
+[  Debug ] Environment: 8.0.10
+[  Debug ] 
+[  Debug ] Loading timezone data
+[  Debug ] Embedded timezones source: WG.common.timezone.timezonesdata.txt
+[  Debug ] Reading config file: /home/runner/work/IPTVnew/IPTVnew/.wg++/./WebGrab++.config.xml
+[  Info  ] Checking Internet ..
+[  Info  ] For License request/update data, see WGLicense.log.txt
+[        ] 
+[Error   ] No Internet !!
+[Warning ] Program will close .. 

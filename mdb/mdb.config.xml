@@ -1,0 +1,278 @@
+﻿<?xml version="1.0"?>
+
+<settings>
+	<!-- Configuration file for the MDB (Movie Data Base) postprocessor of WebGrab+Plus
+by Jan van Straaten
+
+Version 8, June 2024 Postprocess 3.3.0
+Allocation/presentation section commands follow updated syntax of REX in Postprocess 3.3
+Version 7, August 2023 Postprocess 3.2.1
+- added attribute enum="absolute" in episodenum_pattern
+-->
+
+	<![CDATA[
+Introduction:
+-------------
+This MDB postprocessor of WebGrab+Plus, automatically adds movies and/or series(eg IMDb) data to the xmltv file created by the basic WebGrab+Plus EPG frontend grabber. 
+For series the MDB postprocessor can extract series episode data from MDB sites that provide that data. 
+
+This postprocessor runs trough the following steps:
+1. Select .. 'candidate' shows from the xmltv input file.      
+2. Match  .. the selected show 'candidates' with shows in an online MDB.      
+3. Grab   .. the MDB data. 
+4. Merge  .. the MDB data with the data of the xmltv input file. 
+ 
+re 1. Select.
+  This operation filters the programs listed in the XMLTV input file, identifying those that meet the criteria set in the selection settings for further data retrieval from MDB sites.
+  see <selectmovie> and <selectserie> settings further down in this file. 
+re 2. Match.
+  Matching the selected shows with series or movies in MDB sites is done in two steps:
+  - 2.1 Primary search in a general search site like BING, ASK or YAHOO or directly in the MDB site if that supports search.
+      This results in a number of possible show-id's ('candidates') for the next step:
+  - 2.2 Verify the results of the primary search in a MDB site like IMDb , tvdb or themoviedb etc
+      Each of the show-id candidates from step 2.1 is examined for a match with the <matchmovie> and <matchserie> settings. See <matchmovie> and <matchserie> settings. 
+re 3. Grab.
+  This step connects to the MDB site and grabs the data following the settings the 'MdbIni' file. This is similar to the 'SiteIni' used in the front end grabber. See MdbIni files further down. This MdbIni determines which site is used for 'Primary search' (see above) and which MDB site for grabbing of MDB data . It also determines which and how elements will be grabbed.
+   As example, depending on the MdbIni, the following data is grabbed :
+      (original show-) title, (for series also episodetitle, episodenumber), credits (directors, actors and producers) starrating, plot, date (of production), country (of origin), description, commentsummaries and reviews .. etc.  
+re 4. Merge.
+	(the grabbed MDB data with the epg data from existing xmltv file). The merged result is stored in a new xmltv file . See Target xmltv file. Merging is done with the allocation and presentation settings and uses the same processor and syntax as used in the REX postprocessor. 
+	
+The Match and Grab results can be saved in a 'local mdb' data file. This speeds up the process.
+   see local MDB data file.
+   
+This file (mdb.config.xml), the MdbIni files (e.g imdb.com.imdb.ini,  imdb.com.imdb_series.ini ) and the 'local mdb' data file are stored in the MDB postprocess home folder by default, which is a subfolder named MDB of the WebGrab+Plus home folder.
+(windows default C:\Users\username\AppData\Local\WebGrab+Plus, linux default ~/.wg++)   
+
+To activate/de-activate this postprocess, use the <postprocess> setting in WebGrab++.config.xml.
+This allows to run this MDB postprocess following a frontend epg grab run or as stand-alone using an existing xmltv input file.
+
+The mdb.config.xml file :
+-------------------------
+  -  This file contains all the settings needed to run the mdb postprocessor, such as the mdbini's to use, the target xmltv file path, the file path of the local mdb file, select and match setting .. 
+  and, finally important, the 'allocation/presentation' section. In this, every xmltv element of the target xmltv file that the user wants to differ from the one in the source xmltv, e.g. by adding mdb data or re-alocating existing elements of it, has a specification - let's call it the 'AP-line' - that contains how the content of that xmltv target element will be .
+  - This documented configuration file can be made fully functional, change the settings to your own needs as explained and save it in mdb sub-folder of the WebGrab+Plus homefolder as mdb.config.xml
+
+MdbIni files: 
+-------------
+mdb site(s) to use, must correspond with an mdb ini file, e.g. if imdb.com.ask is specified, there must be an imdb.com.ask.ini. 
+If a second site is entered here, it will be used as a 'second chance' if the first doesn't find a match for a certain show. There are two types of mdb ini files, for movies and for series. They must be specified separately.
+These files are updated now and then and are available at http://webgrabplus.com/epg-channels#stc_3E9 or https://github.com/SilentButeo2/webgrabplus-siteinipack/tree/master/siteini.pack/MDB%20postprocessor
+Currently (June 2024) the recommended MdbIni's are the latest revisions using imdb, themoviedb and tvdb.
+example : ]]>
+	<site movies="imdb.com.imdb, imdb.com.ask" series="imdb.com.imdb_series"></site>
+
+	<![CDATA[ 
+xmltv target file :
+-------------------
+The xmltv target file in which the updated data will be merged with the grabbed EPG.
+  - Because of the incremental nature of the grabbing process this file must be different (name and/or path) from the xmltv input file of the grabbing specified in <filename> in WebGrab++.config.xml . Specify path (obtional) + filename. Path can be specified absolute, such as 
+	<filename>C:\Users\username\AppData\Local\WebGrab+Plus\rex\guide.xml</filename> 
+  or relative to the path of this config file (rex.config.xml), such as 
+	<filename>guide.xml</filename>
+  - It may contain a variable 'source_file' that will take the value of the xmltv source file (without .xml) plus text elements:
+  e.g <filename>final_'source_file'_1.xml</filename> , will result in final_guide_1.xml if source_file is guide.xml]]>
+	<filename>guide.xml</filename>
+
+	<![CDATA[  
+Local MDB data file :
+---------------------
+The file that stores the mdb data locally with the intention to re-use already grabbed data which will speed up the grabbing of the mdb data.
+If not specified no local MDB data file will be used. Specify full path or relative.]]>
+	<ldbfilename update="f" add-nomatch="no" retry-nomatch="no">mdb.xml</ldbfilename>
+	<![CDATA[
+in which :
+- update ; determines how the local MDB database file is updated
+      update="" or "n" , left blank , will not be updated 
+      update="i" , incremental, only the selected shows will be saved in the local MDB data file
+      update="f" , all shows will be kept and new shows added. This is the prefered update mode.
+      (Over time this MDB data file could grow to an unpractical size with update="f", if the time to match a selected show in this file exceeds the time to do the same online).  
+	  update="r" , expert mode, refresh, will replace all <show> entries with new data from the mdb source 
+- optional add-nomatch="no" will not add unmatched shows. Default TRUE
+- optional retry-nomatch="yes" when unmatched shows are added, will retry a match. Default FALSE 
+	    If nomatch is the result of the matching step, retrying this show again when the show is selected again normally doesn't change the result. Hence the default FALSE]]>
+
+	<![CDATA[
+Selection :
+-----------
+  selectmovie and/or selectserie: the MDB postprocessor selects shows from the xmltv input file for which the it will attempt to optain MDB data.  The following selection settings determine which shows are selected.
+  <selectmovie duration="55" minumum="3" musthave="title" contains="" optional="productiondate,actor,director"/>
+  <selectserie duration="25" minumum="2" musthave="subtitle" contains="serie,soap,thriller,comedy,drama" optional="productiondate,actor,director"/>
+In which (examples):
+- duration="45" ; minumum duration is 45 minutes
+- optional contains="film,thriller,movie" ; the epg data must contain at least these words. This also allows to select single shows! 
+  (Optionally : Specify the xmltv element name : "xmltv_element_name=value1,value2,..,xmltv_element_name=value1,value2,.."
+    supported element_names are title, sub-title, desc, category and 'all' (default) 
+    Examples of contains with elementnames:
+        contains="category=film,thriller,movie,title=Friends,Spies" 
+        contains="title=Kill the Irishman", will select shows with that this sentence in the title.)
+- optional unselect="news" ; shows containing "news" will not be selected 
+  supports optional xmltv_element_names , see contains
+- musthave="title" ; obviously the epg show must have a title, if omitted the value is title. Other additional 'musthave' xmltv elements can be added.
+- optional="productiondate,actor,director" ; specifies which xmltv elements will be added to the selection if available.
+- minimum="2"; specifies how many of the musthave+optional elements must be available for a show to be selected.
+
+To make it simpler , defaults can be used:
+for movies:
+    <selectmovie>defaults</selectmovie> or with a contains argument:
+    <selectmovie contains="blabla">defaults</selectmovie>
+    which is the same as:
+    <selectmovie duration="45" minumum="2" musthave="title" contains="blabla" optional="productiondate,actor,director"/
+for series: (same syntaxt as for selectmovie) 
+    <selectserie>defaults</selectserie> or
+    <selectserie contains="blabla" >defaults</selectserie>
+    which is the same as:
+    <selectserie duration="25" minumum="2" musthave="title" contains="blabla" optional="sub-title, episode-num"/>
+    (note: To get the best result, specify the sub-title and episode-num as optional together with minimum=2, this will ensure that either sub-title and or episode-num is present in the selected show ! And do not add additional optional elements!!) ]]>
+	<selectmovie>defaults</selectmovie>
+	<selectserie>defaults</selectserie>
+
+	<![CDATA[
+matching :
+---------- 
+Setting that configures how the epg and mdb values are compared to result in a match. 
+- mustmatch ; default title
+- optional ; other elements that can be added to compare are: productiondate,actor,director
+- minimum ; how many of the above needs to match
+
+Similar to <select> defaults can be used 
+For movies :
+    <matchmovie>defaults</matchmovie>
+    which is the same as:
+    <matchmovie mustmatch="title" optional="productiondate,actor,director" minimum="2"/>
+For series:
+    <matchserie>defaults</matchserie>
+    which is the same as:
+    <matchserie mustmatch="title, episode-num, sub-title" optional="productiondate,actor,director" minimum="2"/>
+    (note specify episode-num and sub-title in mustmatch together with minimum="2" as described above in selection) ]]>
+	<matchmovie>defaults</matchmovie>
+	<matchserie>defaults</matchserie>
+
+	<![CDATA[
+Episode number pattern :
+------------------------
+Only required when the episode number of the selected serie needs to be matched with the episode number in the mdb site. Or to convert the system attribute of the episode-num in the xmltv input from onscreen to xmltv_ns viseversa. 
+With it, the program is able to recognise 'non standard' onscreen values.
+For the episode-num values in xmltv input file this conversion is done automatically for two formats: xmltv_ns and the onscreen format Sx Ey ( e.g. S3 E5 = season 3 episode 5). 
+Other onscreen formats need a pattern specification e.g. :
+    <episodenum_pattern site="se.timefor.tv">"Season'S1'Episode'E1'"</episodenum_pattern>
+    <episodenum_pattern enum="absolute" site="tv.wp" >"S'S1' E'E1'""E'E1'"</episodenum_pattern>
+In which:
+- 'optional' site is the site name for which the pattern is valid. This must be the site_id value.
+- 'optional' enum. Specifies if episode-num in xmltv source file is 'absolute'. That is the case when the episode value is given ignoring the season . Example : Season 4 Episode 6 of 10 , then absolute E is 3 * 10  + 6 = 36. In most cases the programm will recognise absolute episode numbers even when enum attribute is not specified. The enum value must be "absolute". Any other value or without the enum attribute will use the standard 'non' absolute. This attribute will not be used for system conversion! 
+
+- the pattern value must be composed of the following elements:
+ * strings , like Season or Temporada or Aflevering or Folge , whatever strings or characters accompany the numbers.
+ * One or more of the following standard expressions to indicate the meaning of the numbers:
+ 'S0' or 'S1' the season number, S0 for 'zero based numbers' (first season is season 0) 'S1' for 'one based numbers'
+ 'St0' or 'St1' the total number of seasons (if present)
+ 'E0' or 'E1' and eventual 'Et0' or 'Et1' for the episode number
+ 'P0' or 'P1' and eventual 'Pt0' or 'Pt1' for the part number
+Example :
+Value in xmltv input file  : Season 5, Episode 12   -->   pattern :   Season'S1',Epsode'E1' (for one based numbers)
+ or   : Ep12/24 of Sn3   -->  pattern : Ep'E0'/'Et1'ofSn'S0'  (partly zero based)   
+* multiple patterns can be specified if a site uses different formats in the xmltv source. The program automatically selects the one that gives the best matching. Each pattern must be enclosed by " ".
+* If not specified the default patterns "S'S1' E'E1'""E'E1'" are used .
+* No pattern is needed for episode-num values in system xmltv_ns
+Example:]]>
+	<episodenum_pattern>"Season'S1'Episode'E1'""Season'S1'Episode'E1'/'Et1'"</episodenum_pattern>
+	<!-- or with optional site argument :-->
+	<episodenum_pattern site="se.timefor.tv">"Season'S1'Episode'E1'""Season'S1'Episode'E1'/'Et1'"</episodenum_pattern>
+	<![CDATA[
+mdb-starrating correction:
+--------------------------
+  allows to convert the mdb-starrating into a value that suits a media-center starrating display. E.g. , the majority of the IMDb starrating values are between 4 (bad) and 8 (good) in a scale of 10. In the more usual 5 star display system , there is too little difference between these values.  
+  The following settings, first subtracts 4 from the grabbed mdb-starrating and multiplies the result by 2.5 with a maximum of 5 . That will convert the values above, in 0 (was 4) and 5 (was 8) 
+  Default values: subtract="0" multiply="1" and max="10"-->]]>
+	<mdb-starrating subtract="4" multiply="2.5" max="5"></mdb-starrating>
+	<![CDATA[
+The 'AP-line' allocation/presentation settings:
+-----------------------------------------------
+This MDB-postprocessor makes use of the REX-postprocessor. Please read the detailed explanation in rex.config.documentation.xml for detailed information of its possibilities , options and syntax.
+Here only the summary of it:
+
+Summary of Content/Values:
+1. Syntax :
+-----------
+<target-element optional-targetattribute="attribute-value">{content}</xmltv-element-name>
+in which :
+  - the optional-targetattribute value will perform a conditional selection or deletion
+  - content can be left empty to remove the xmltv element (except the element <title>)
+  - the content of the xmltv-target elements can be specified by means of a mixture of text and element-values enclosed by {},
+	in its most complete form : {prefix-text'element-value'postfix-text}
+  - the element-value must contain a source element (WG++ element-name, see below) followed by optional settings, together enclosed by ' '.
+  - These optional settings can be : 
+    * obtional /a or /a+ .. specifies that the attribute value of the source-element is added after its content, /a value only, /a+ attribute name and value.
+	* obtional separator ..  a string , enclosed by (), that separates the generated value of each of a multi value target element . 
+        A separator can only contain 'nonword' characters like , space - _ + | / etc. 
+	    When not specified the default separator | will be applied (which will split the content into separate xmltv elements). 
+    * obtional operation(s) .. enclosed by [], specifies (an) operation(s) that will be performed on the expanded source-element value. 
+	    These operation(s) .. can be one or more of the following , separated by a comma :
+		max_chars or max_words or max_sentences or max_elements=integer-value
+		cleanup(style=string-value) string-value : none or lower or upper or tags
+    Example :
+	  'description[cleanup(style=upper), max_sentences=2]' and 'mdb-actor/a+(, )[max_elements=5] 
+  - the optional prefix- and postfix-text are linked with the expanded element-value. 
+	This will ensure that, when the element-value is empty, everything between the {} is ignored.
+	prefix- and postfix-text may contain simple formatting : \n, \r (newline) and (tab) \t. 
+	Example of text addition : {\nProduced in: ('mdb-productiondate').} 
+	Note : text not within {content} is not allowed. It will produce an error that will disabled the AP-line !
+    
+	
+2.  MDB target elements: classes :
+----------------------------
+  2.1 Target element classes: 
+  there are three target classes, they differ in what the allocation/presentation setting is able to do with them :
+    * 1 'full' : title, subtitle, desc, review . Allows delete, keep, merge multivalue in content, add prefix and postfix-text, operations, select by attribute value, expand attributes in content, operations add (expand) elementvalues of any other source or mdb element. 
+    * 2 'restricted' : star-rating, episode-num, category, actor, director, producer, date, country. Same as 'full' but the AP-line content (see above) can only contain its own 'source-element' (or its mdb variant). 
+        (e.g. It will not expand 'productiondate' in a category target element)	
+    * 3 'remove/keep' only: All others (not 1 or 2) . The 'lowest' class. Can only be removed it or kept 'as is' in the source. 
+  2.2 Target elements supported :
+  the following xmltv elements are supported as target element, including most of their attributes :
+  title, sub-title, desc, credits, director, actor, producer, presenter, writr, composer, commentator, rating, category, date, episode-num, icon (not the channel icon) , video, aspect (video), guality (video), star-rating, country, url (not the channel), subtitles, premiere, previously-shown, review
+  
+3. WG++ elementnames :
+----------------------
+  - WG++ uses slightly different wrt the xmltv names for a few elements. The exceptions are :
+    xmltv name:         WG++ name:
+    -----------         ----------
+    sub-title           subtitle
+    desc                description
+    date                productiondate
+    star-rating         starrating
+    episode-num         episode
+    icon                showicon        (programme section , not channel )
+    previously-shown    previousshown
+    aspect              videaaspect     
+    quality             videoquality
+  - Use WG++ name for the 'source_element' in 'content'.
+  
+4. MDB elements :
+-----------------
+All MDB elements can be added as 'source-element'. They must be named with a mdb- prefix followed by the WG++ elementname. Such as .. mdb-actor or mdb-description.
+  They will be expanded to their mdb value in the same way as the 'normal' xmltv source-elements
+  The following mdb elements are supported .. 
+  mdb-showid, mdb-episodeid, mdb-episode, mdb-title, mdb-subtitle, mdb-description, mdb-starrating, mdb-actor, mdb-director, mdb-producer, mdb-showicon, mdb-category, mdb-productiondate, mdb-country, mdb-plot, mdb-commentsummary, mdb-review     
+
+AP-line examples :
+------------------
+  For example AP-lines see file AP-line.examples.txt 
+  Add your AP-lines here :
+  (the one below is just given as one to start with ..)
+]]>
+	<!-- these two AP-lines add a new title element with the content of the first mdb-title followed by the existing title-->
+	<title lang="en">{'mdb-title[max_elements=1]'}</title>
+	<title>'title'</title>
+
+	<![CDATA[
+Excluded channels :
+------------------
+with this, channels can be excluded that don’t need mdb processing.
+  As default, all channels in the WebGrab++.config.xml will be used to select shows.
+  Channels in the following list are excluded if update="" (left blank), any other value will keep the channel included.
+  This list has the same format as the channel-list in WebGrab++.config and the channel files in the SiteIni.pack.
+  Examples :
+  <channel update="" site="disney.nl" site_id="DisneyChannel" xmltv_id="Disney Channel">Disney Channel</channel>
+  <channel update="" site="tvgids.upc.nl" site_id="7K" xmltv_id="RTL 4">RTL 4</channel>
+]]>
+</settings>
