@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<!-- Configuration file for the REX (Re-arrange and Edit Xmltv) postprocessor of WebGrab+Plus
+by Jan van Straaten
+
+Version 6, May 2024 PostProcess V3.3.0 Program V5.2
+- A complete rewrite of UpdateXmltv, the code that updates the xmltv target file following the rex or mdb config settings
+- now based on the public standard xmltv schema.xsd and xmltv.dtd
+- introduction of the 'restricted' class of target xmltv elements beside 'full' and ''Remove/Keep' only
+- addition of three settings to fine-tune how target elements and attributes are handled 
+
+Version 5, August 2023 PostProcess V3.2.1
+- Conditional delete or select of xmltv attribute
+- supports episode-num system conversion
+- (REX is an integral part of the MDB postprocessor, if used there all xmltv elements for which MDB can grab a value , 
+      that mdb value can be added or replace the current value)
+-  Missing xmltv attributes can be added and existing ones can be changed -->
+
+	<![CDATA[
+Introduction :
+--------------
+  - The purpose of this REX post-processor is to re-arrange and edit the (source) xmltv file created by the grabber section of WebGrab+Plus.
+  This can be useful or necessary if the EPG viewer of the PVR/Media-Centre used, or the xmltv importer it uses, does not support all the xmltv elements in the xmltv file created by WG++ or simply because of the user's preferences. 
+  Example usage: If the PVR doesn't support import of credit xmltv elements (actors, directors etc.) it can add the content of them to the description and remove the original credit elements which are useless.
+  Or, it can move the episode data to the beginning or end of the subtitle element   Etc. ..   
+  - To activate/de-activate this postprocess, use the <postprocess> setting in WebGrab++.config.xml
+  - Its basic operation is to simply copy the content of the xmltv source for any element that is not set to be changed or removed and apply the changes for the others. The intended changes are specified in the 'allocation and presenttion' section of the rex.config (or mdb.config) file. 
+  These changes can:
+  - Move the content of xmltv elements to other xmltv elements
+  - Merge the content of several xmltv elements 
+  - Add comments/prefix/postfix text
+  - Remove or create xmltv elements 
+  - Select or remove multi value xmltv elements by their attribute value
+  - Convert episode-num system
+  - Adjust star-rating
+
+Remark: 
+  This post-processor is most effective when the source xmltv input has a 'clean' xmltv structure in which the data is properly allocated to the elements.
+  That depends on the EPG source site and the design of the SiteIni file. Some of the (e.g. customized) SiteIni files produce xmltv data that targets certain PVR/Media-Centre requirements already. In these cases this postprocessor is less useful.
+  
+To activate/de-activate this postprocess, use the <postprocess> setting in WebGrab++.config.xml.
+This allows to run this REX postprocess following a frontend epg grab run or as stand-alone using an existing xmltv input file.   
+  
+REX versus MDB:
+---------------
+  REX is a stand-alone postprocessor but is also an integral part of the MDB (Movie Data Base) postprocessor. In that it takes care of the way how the resulting mdb elements are added to the xmltv source . The mdb postprocessor has its own config file (mdb.config.xml) with an 'allocation/presentation' section that uses the same syntax as REX.
+
+The rex.config.xml file :  
+-------------------------
+  -  This file contains all the settings needed to run the rex postprocessor, such as the target xmltv file path, followed by a few optional settings .. 
+  and, the most important, the 'allocation/presentation' section. In this, every xmltv element of the target xmltv file that the user wants to differ from the one in the source xmltv, has a specification - let's call it the 'AP-line' - that contains how the content of that xmltv target element will be .
+  - It is stored in the REX postprocess home folder. By default, that is a subfolder named rex of the WebGrab+Plus home folder  (windows default C:\Users\username\AppData\Local\WebGrab+Plus, linux default ~/.wg++)   
+  - This documented configuration file can be made fully functional, change the settings to your own needs as explained and save it in the rex sub-folder of the WebGrab+Plus homefolder as rex.config.xml 
+
+xmltv target file :
+-------------------
+The xmltv target file in which the updated data will be merged with the grabbed EPG.
+  - Because of the incremental nature of the grabbing process this file must be different (name and/or path) from the xmltv  file of the grabbing specified in <filename> in WebGrab++.config.xml . Specify path (obtional) + filename. Path can be specified absolute, such as 
+	<filename>C:\Users\username\AppData\Local\WebGrab+Plus\rex\guide.xml</filename> 
+  or relative to the path of this config file (rex.config.xml), such as 
+	<filename>guide.xml</filename>
+  - It may contain a variable 'source_file' that will take the value of the xmltv source file (without .xml) plus text elements:
+  e.g <filename>final_'source_file'_1.xml</filename> , will result in final_guide_1.xml if source_file is guide.xml]]>
+	<filename>guide.xml</filename>
+
+	<!-- Configuration of the elements:-->
+
+	<![CDATA[  
+Global allocation/presentation settings :
+----------------------------------------
+The following three settings 'fine-tune' the effect of the allocation/presentation AP-line . 
+All three have default value false , no need to specify in that case. 
+  -  enable_attributelist  : <enable_attributelist>true</enable_attributelist> .. default is false  
+  When true, it will list the attributes values of the source elements as target attribute , separated with the same 
+  separator as the elements if specified. 
+  Example lang="en,es,nl"
+
+  - force_targetattribute : <force_targetattribute>true</force_targetattribute> .. default false
+  When true, it will add the target attribute value to the result, also when the expanded elements have other attribute values. 
+  If the attribute values are added to the element content with /a or /a+ and a target attribute is specified it will 
+  be added despite any of the force_targetattribute values
+
+  - allow_full4retricted : <allow_full4restricted>true</allow_full4restricted> .. default false
+  When true all restricted elements will be handled as full
+  (see further down for element classes .. restricted and full)
+  
+Syntax conventions :
+--------------------
+If a syntax is described below , they use the following conventions :
+	parts between !? are optional, 
+	the | separates alternatives
+	+ at the end means it can be repeated 
+	
+Episode number pattern :
+------------------------
+  Only required to convert episode number system value .. "onscreen" to "xmltv_ns" viceversa. 
+  With it, the program is able to recognise 'non standard' onscreen values.
+  syntax :
+  <episodenum_pattern !site="site_id"?>"pattern"+</episodenum_pattern>
+  In which:
+  - optional site is the site name for which the pattern is valid. This must be the site_id value.
+  - the pattern value must be composed of the following elements:
+   * strings , like Season or Temporada or Aflevering or Folge , whatever strings or characters accompany the numbers.
+   * One or more of the following standard expressions to indicate the meaning of the numbers:
+    'S0' or 'S1' the season number, S0 for 'zero based numbers' (first season is season 0) 'S1' for 'one based numbers'
+    'St0' or 'St1' the total number of seasons (if present)
+    'E0' or 'E1' and eventual 'Et0' or 'Et1' for the episode number
+    'P0' or 'P1' and eventual 'Pt0' or 'Pt1' for the part number
+  - Several pattern values can be specified, each enclosed by "". The program will select the one that matches best.
+  - Default patterns "S'S1'E'E1""E'E1". These are always used even if not specified. 
+  - Example : 
+  ]]>
+	<episodenum_pattern>"Season'S1'Episode'E1'""Episode'E1'"</episodenum_pattern>
+	<![CDATA[
+Starrating correctie :
+----------------------
+  allows to correct the starrating value in the xmltv input into a value that suits a PVR starrating display. E.g. , the majority of the tv guide sites starrating values are between 3 (bad) and 8 (good) in a scale of 10. In the more usual 5 star display system, there is too little difference between these values.  
+  The following settings, first subtracts 3 from the grabbed starrating and multiplies the result by 2 with a maximum of 5. That will convert the values above, in 0 (was 3) and 5 (was 8) 
+  Default values: subtract="0" multiply="1" and max="10"
+  - Example ]]>
+	<rex-starrating subtract="3" multiply="2" max="5" />
+	<![CDATA[
+The 'AP-line' allocation/presentation settings:
+------------------------------------------------
+As mentioned above these specify the content of the xmltv target element .
+A simple example that adds episode and date separated by commas to the sub-title target element 
+	<sub-title>'subtitle(, )''episode(, )''date'</sub-title>
+
+Syntax :
+--------
+  <target-element !target-attribute="value"?>!content?+</target-element>
+  in which : 
+  - target-element .. the xmltv element , e.g. title, desc, sub-title etc
+  - optional target-attribute .. e.g. lang="en" , use the attribute name of the target-element
+  -	content , without text additions :
+	{'source-element!/a|/a+?!(separator)?![operation,+]?'} 
+	  or , allowed but not recommended :
+	'source-element!/a|/a+?!(separator)?![operation,+]?'
+  - content , with text additions :
+	{!prefix-text?'source-element!/a|/a+?!(separator)?![operation,+]?'!postfix-text?}
+  in which , in the following order :
+  - obtional prefix-text ..  A string that will be added before the expanded source element value(s)
+  - source-element  .. the WG++ name of an element which value will be added (see below for WG++ elementnames)
+  - obtional /a or /a+ .. specifies that the attributes of the source-element is added after its content, /a value only, /a+ attribute name and value.
+  - obtional separator ..  a string , enclosed by (), that separates the generated value of each of the multi value target elements . 
+    A separator can only contain 'nonword' characters like , space - _ + | / etc. 
+  - obtional operation .. enclosed by [], specifies an operation that will be performed on the expanded source-element value. 
+    These operation(s) .. can be one or more of the following , separated by a comma :
+    max_chars|max_words|max_sentences|max_elements=integer-value
+	cleanup(style=string-value) string-value  none|lower|upper|tags
+  - obtional postfix-text ..  a string that will be added after the expanded source element value(s). 
+  - prefix and postfix-text may contain simple formatting :  \n, \r (newline) and (tab) \t.
+	
+Note !!
+  - The content , either specified without or with text additions, will only produce a value if the containing source-element has a value. 
+  That means that the text additions are ignored if the source-element has no value .
+  - The combination of source-element, + the optional /a or /a+ , + optional (separator) , + optional [operation] , MUST be enclosed by ' ' and specified in that order.
+  - Text elements, prefix and postfix, are only allowed within { }. Outside of these, an error is created which ignores the AP-line
+  -	When no separator is specified , the default | character is used. And, because that is the standard WG++ element separator, it will result in the creation multi value elements for the resulting target-element
+  
+The syntax described above may be confusing because of its many obtional elements. Having a look at the AP-line.examples.txt will hopefully make things clear.
+  
+REX target element classes :
+----------------------------
+  there are three classes, they differ in what REX is able to do with them :
+  - 1 'full' : title, subtitle, desc, review. Allows delete, keep, merge multivalue in content, add prefix and postfix-text, operations, select by attribute value, expand attributes in content, add (expand) elementvalues of any other source or mdb element. 
+  - 2 'restricted' : star-rating, episode-num, category, actor . Same as 'full' but the AP-line content (see above) can only contain its own 'source-element' (or its mdb variant). 
+  (e.g. It cannot expand 'productiondate' in a category target element)	
+  - 3 'remove/keep' only: All others (not 1 or 2) . The 'lowest' class. REX can only remove it or keep it as it is in the source. 
+  Note : for MDB, all 'remove/keep' source elements that have a mdb 'variant' are 'promoted' to restricted. E.g. country .. etc
+  
+Target elements supported :
+---------------------------
+  the following xmltv elements are supported including most of their attributes :
+title, sub-title, desc, credits, director, actor, producer, presenter, writr, composer, commentator, rating, category, date, episode-num,
+icon (not the channel icon) , video, aspect (video), quality (video), star-rating, country, url (not the channel), subtitles, premiere, previously-shown, review
+
+WG++ elementnames :
+-------------------
+  - WG++ uses slightly different names as the xmltv names for a few elements. The exceptions are :
+    xmltv name:         WG++ name:
+    -----------         ----------
+    sub-title           subtitle
+    desc                description
+    date                productiondate
+    star-rating         starrating
+    episode-num         episode
+    icon                showicon        (programme section , not channel )
+    previously-shown    previousshown
+    aspect              videaaspect     
+    quality             videoquality
+  - Use WG++ name for the 'source_element' in 'content'.
+  
+Add your AP-lines here :
+(the one below is just given as example)
+]]>
+	<desc>{Description : 'description(, )'}</desc>
+</settings>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V2.1.9 -- Jan van Straaten" site="gmanetwork_int.com">
+  <channels>
+    <channel update="i" site="gmanetwork_int.com" site_id="17" xmltv_id="GMA Pinoy">GMA Pinoy</channel>
+    <channel update="i" site="gmanetwork_int.com" site_id="16" xmltv_id="GMA Life">GMA Life</channel>
+    <channel update="i" site="gmanetwork_int.com" site_id="15" xmltv_id="GMA News">GMA News</channel>
+  </channels>
+</site>

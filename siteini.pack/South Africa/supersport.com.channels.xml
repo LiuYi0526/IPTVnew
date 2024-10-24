@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site generator-info-name="WebGrab+Plus/w MDB &amp; REX Postprocess -- version V5.0.1.1 -- Jan van Straaten" site="supersport.com">
+  <channels>
+    <channel update="i" site="supersport.com" site_id="48c468a0-76b3-486a-858c-1a5012609d54" xmltv_id="SuperSport Blitz">SuperSport Blitz</channel>
+    <channel update="i" site="supersport.com" site_id="7cfb679a-8dfe-417e-95af-60e6fb0d490c" xmltv_id="SS Grandstand">SS Grandstand</channel>
+    <channel update="i" site="supersport.com" site_id="0866e73b-6ece-42c9-8b87-68ad31db5847" xmltv_id="SuperSport PSL">SuperSport PSL</channel>
+    <channel update="i" site="supersport.com" site_id="aa0bc873-0cfa-4739-b213-e64243cd22ef" xmltv_id="SS Premier League">SS Premier League</channel>
+    <channel update="i" site="supersport.com" site_id="e6058f06-43f1-4ba2-beb5-caab09b63ef6" xmltv_id="SuperSport LaLiga">SuperSport LaLiga</channel>
+    <channel update="i" site="supersport.com" site_id="78b10706-18c3-4c7d-9a5e-2a02a0e2ea23" xmltv_id="SS Football">SS Football</channel>
+    <channel update="i" site="supersport.com" site_id="c9abd929-c698-4528-96c4-5309ff5ba3ca" xmltv_id="SS Variety 1">SS Variety 1</channel>
+    <channel update="i" site="supersport.com" site_id="6c2aede7-c1f6-463c-b1fa-b5444818aa7d" xmltv_id="SS Variety 2">SS Variety 2</channel>
+    <channel update="i" site="supersport.com" site_id="cf9ae0a9-c81d-4e73-a10b-97a84ed8abee" xmltv_id="SS Variety 3">SS Variety 3</channel>
+    <channel update="i" site="supersport.com" site_id="74f3dea1-40e0-4635-bc79-00d73c8095d8" xmltv_id="SS Variety 4">SS Variety 4</channel>
+    <channel update="i" site="supersport.com" site_id="547fd877-9913-4688-8776-4607122fdf4b" xmltv_id="SS Action">SS Action</channel>
+    <channel update="i" site="supersport.com" site_id="92046b9e-ec22-4a24-8ea6-a8892080d7ee" xmltv_id="SS Rugby">SS Rugby</channel>
+    <channel update="i" site="supersport.com" site_id="9224a474-1364-4025-922b-2997f2abf56d" xmltv_id="SS Cricket">SS Cricket</channel>
+    <channel update="i" site="supersport.com" site_id="1b4ed47c-3b0a-4b60-84cf-2240f9c22aa0" xmltv_id="SS Golf">SS Golf</channel>
+    <channel update="i" site="supersport.com" site_id="a1117afa-5198-4e99-bbc7-50d4785ffcf4" xmltv_id="SS Tennis">SS Tennis</channel>
+    <channel update="i" site="supersport.com" site_id="48678ec9-6003-498b-9896-8cd65c227569" xmltv_id="SS Motorsport">SS Motorsport</channel>
+    <channel update="i" site="supersport.com" site_id="16e85dd8-d0be-45a6-8f29-de83a04dd42f" xmltv_id="Ginx eSports TV">Ginx eSports TV</channel>
+    <channel update="i" site="supersport.com" site_id="a995be3f-277e-4449-8320-f83a2648d479" xmltv_id="ESPN HD">ESPN HD</channel>
+    <channel update="i" site="supersport.com" site_id="bdac286b-35ae-4ffa-bbca-aabe377d6771" xmltv_id="ESPN 2 HD">ESPN 2 HD</channel>
+    <channel update="i" site="supersport.com" site_id="ca9ffa70-5fb4-4685-a040-8011abd91ba5" xmltv_id="Community Services Network">Community Services Network</channel>
+    <channel update="i" site="supersport.com" site_id="75d61678-0d13-41c9-a48f-1306e8db3e33" xmltv_id="SuperSport OTT">SuperSport OTT</channel>
+    <channel update="i" site="supersport.com" site_id="0808b164-976a-477e-a1d6-0ef1a781b23b" xmltv_id="SuperSport OTT 2">SuperSport OTT 2</channel>
+    <channel update="i" site="supersport.com" site_id="c3eb128c-9222-4d61-bd38-63e1e057a278" xmltv_id="SuperSport OTT 3">SuperSport OTT 3</channel>
+    <channel update="i" site="supersport.com" site_id="e78220b1-77c8-45e9-b7cc-94051b6b88e0" xmltv_id="SuperSport OTT 5">SuperSport OTT 5</channel>
+    <channel update="i" site="supersport.com" site_id="9302f72e-7e79-40c1-8231-401f231b7703" xmltv_id="SuperSport OTT 6">SuperSport OTT 6</channel>
+    <channel update="i" site="supersport.com" site_id="2697bef1-c960-4d27-8706-3379e52b4d2b" xmltv_id="SuperSport OTT 7">SuperSport OTT 7</channel>
+    <channel update="i" site="supersport.com" site_id="3daeaf45-ef77-4657-9d79-c9fa76efdbf3" xmltv_id="SuperSport OTT 8">SuperSport OTT 8</channel>
+    <channel update="i" site="supersport.com" site_id="2a43f46b-6324-48ed-85ae-729f98fafb11" xmltv_id="SuperSport MáXimo 1">SuperSport MáXimo 1</channel>
+  </channels>
+</site>
