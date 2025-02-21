@@ -4,26 +4,29 @@
 推荐Android设备使用 GSE Smart IPTV 或 Televizo 进行观看
 
 推荐Android TV设备使用 Perfect IPTV Player 或 Tivimate 进行观看
-- M3U:https://raw.githubusercontent.com/LiuYi0526/IPTVnew/master/IPTV.m3u
-- 中国加速M3U-1：https://raw.iqiq.io/LiuYi0526/IPTVnew/master/IPTV.m3u
-- 中国加速M3U-2：https://hk1.monika.love/LiuYi0526/IPTVnew/master/IPTV.m3u
-- 中国加速M3U-3：https://raw.fastgit.org/LiuYi0526/IPTVnew/master/IPTV.m3u
-- 中国加速M3U-4：https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@master/IPTV.m3u
-- 中国加速M3U-5：https://cdn.staticaly.com/gh/LiuYi0526/IPTVnew/master/IPTV.m3u
-- EPG:https://raw.githubusercontent.com/LiuYi0526/IPTVnew/EPG/guide_merge.xml
-- 中国加速EPG-1：https://raw.iqiq.io/LiuYi0526/IPTVnew/EPG/guide_merge.xml
-- 中国加速EPG-2：https://hk1.monika.love/LiuYi0526/IPTVnew/EPG/guide_merge.xml
+- M3U:https://raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.m3u
+- 中国加速M3U-1：https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.m3u
+- 中国加速M3U-2：https://fastly.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.m3u
+- 中国加速M3U-3：https://testingcf.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.m3u
+- 中国加速M3U-4：https://ghfast.top/https://raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.m3u
+- 中国加速M3U-5：https://gh-proxy.com/raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.m3u
+- EPG:https://raw.githubusercontent.com/LiuYi0526/IPTVnew/EPG/EPG.xml
+- 中国加速EPG-1：https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@EPG/EPG.xml
+- 中国加速EPG-2：https://fastly.jsdelivr.net/gh/LiuYi0526/IPTVnew@EPG/EPG.xml
+- 中国加速EPG-3：https://testingcf.jsdelivr.net/gh/LiuYi0526/IPTVnew@EPG/EPG.xml
+- 中国加速EPG-4：https://ghfast.top/https://raw.githubusercontent.com/LiuYi0526/IPTVnew/EPG/EPG.xml
+- 中国加速EPG-5：https://gh-proxy.com/raw.githubusercontent.com/LiuYi0526/IPTVnew/EPG/EPG.xml
 
 # txt格式直播源
 推荐Android/Android TV设备使用 DIYP影音 进行观看
 - EPG-1:https://epg.112114.xyz
 - EPG-2:http://epg.51zmt.top:8000/api/diyp/
-- TXT,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/master/IPTV.txt
-- 中国加速TXT-1：https://raw.iqiq.io/LiuYi0526/IPTVnew/master/IPTV.txt
-- 中国加速TXT-2：https://hk1.monika.love/LiuYi0526/IPTVnew/master/IPTV.txt
-- 中国加速TXT-3：https://raw.fastgit.org/LiuYi0526/IPTVnew/master/IPTV.txt
-- 中国加速TXT-4：https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@master/IPTV.txt
-- 中国加速TXT-5：https://cdn.staticaly.com/gh/LiuYi0526/IPTVnew/master/IPTV.txt
+- TXT,https://raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.txt
+- 中国加速TXT-1：https://cdn.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.txt
+- 中国加速TXT-2：https://fastly.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.txt
+- 中国加速TXT-3：https://testingcf.jsdelivr.net/gh/LiuYi0526/IPTVnew@main/IPTVnews.txt
+- 中国加速TXT-4：https://ghfast.top/https://raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.txt
+- 中国加速TXT-5：https://gh-proxy.com/raw.githubusercontent.com/LiuYi0526/IPTVnew/main/IPTVnews.txt
 
 # 使用指南
 部分直播源需要特定地区ip或翻墙才能正常播放，教育网需IPv6网络观看，[检测地址](http://test-ipv6.com/)
@@ -31,7 +34,7 @@
 标注形式复杂，大多数人应该会挑选部分源重新编辑后使用，这里放上整个仓库的几个镜像站，有需要的可以去镜像里找单个文件链接
 
 GitHub：[主页](https://github.com/LiuYi0526/IPTV)  [文件打包](https://github.com/LiuYi0526/IPTVnew/archive/refs/heads/master.zip)  
-镜像1：[主页](https://hub.fastgit.org/LiuYi0526/IPTV)  [文件打包](https://hub.fastgit.org/LiuYi0526/IPTVnew/archive/master.zip)  
+镜像1：[文件打包](https://ghfast.top/https://github.com/LiuYi0526/IPTVnew/archive/master.zip)  
 
 ### 关于扫源  
 那么多不同来源的地址，难免会失效，而我不可能每次都能及时更新，这里放几个给小白使用的工具链接，可以试着扫一下  
