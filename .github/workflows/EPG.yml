@@ -15,8 +15,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Install xmltv
       run: |
-        cp /usr/share/zoneinfo/Asia/Taipei  /etc/localtime
-        sudo apt -y install xmltv
+        cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
         cd ./EPG
         pip3 install -r requirements.txt
     - name: Make EPG
@@ -26,14 +25,12 @@ jobs:
         mkdir xml
         mv epg0.xml xml
         mv README.md xml
-        mv PhoenixMoviesChannel.xml xml
-        cd xml
-        wget https://e.erw.cc/all.xml
-        wget https://raw.githubusercontent.com/taksssss/tv/refs/heads/main/epg/livednow.xml
+        mv merge_xmltv_files.py xml
     - name: Merge EPG
       run: |
         cd ./EPG/xml
-        tv_cat all.xml livednow.xml epg0.xml PhoenixMoviesChannel.xml > EPG.xml
+        wget https://e.erw.cc/all.xml
+        python3 merge_xmltv_files.py
         gzip -kf EPG.xml
     # - name : Upload artifact
     #   uses: actions/upload-artifact@master

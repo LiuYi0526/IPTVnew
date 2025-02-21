@@ -31,7 +31,7 @@ async def get_epgs_tbc(channel):
                 desc = li.attrs['desc']
                 date_ = li.attrs['date']
                 time_delay = li.attrs['time'].strip()
-                time_delay_re = re.search('(\d+:\d+)~(\d+:\d+)', time_delay)
+                time_delay_re = re.search(r'(\d+:\d+)~(\d+:\d+)', time_delay)
                 if time_delay_re:  # 有节目信息则解析
                     start_str, end_str = time_delay_re.group(1), time_delay_re.group(2)  # 将开始与结束时间的文本分开
                     starttime = datetime.datetime.strptime(date_ + start_str, '%Y/%m/%d%H:%M')

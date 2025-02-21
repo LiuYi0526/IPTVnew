@@ -19,10 +19,10 @@ from homeplus import *
 from suntv import *
 from xjtvs import *
 from hami import *
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
-
-
 
 async def get_epgs(c):
     logging.info(c)
@@ -290,11 +290,13 @@ async def get_epgs(c):
 
 
 async def gen_xml(channels, filename):
-    xmlhead = '<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n'
-    xmlbottom = '</tv>'
     tz = ' +0800'
-    tasks = [get_epgs(c) for c in channels]
-    epgs0 = await asyncio.gather(*tasks)
+    # tasks = [get_epgs(c) for c in channels]
+    # epgs0 = await asyncio.gather(*tasks)
+    epgs0 = []
+    for c in channels:
+        logging.info(c)
+        epgs0.append(await get_epgs(c))
     epgs = []
     README = ['|tvg-id|tvg-name|EPG状态|\n', '|:---:|:---:|:---:|\n']
     for i, text in epgs0:
@@ -304,32 +306,29 @@ async def gen_xml(channels, filename):
     f = open('README.md', 'w', encoding='utf-8')
     f.writelines(README)
     f.close()
-    f = open(filename, 'w', encoding='utf-8')
-    f.write(xmlhead)
+    tv = ET.Element('tv')
     for channel in channels:
-        c = ('    <channel id="%s">\n'
-             '        <display-name lang="zh">%s</display-name>\n'
-             '    </channel>\n') % (channel['id'], channel['name'])
-        f.write(c)
-    # noepg_channel = '<channel id="9999"><display-name lang="zh">noepg</display-name></channel>'
-    # f.write(noepg_channel)
+        channel_element = ET.SubElement(tv, 'channel', {'id': channel['id']})
+        display_name_element = ET.SubElement(channel_element, 'display-name')
+        display_name_element.text = channel["name"]
     for epg in epgs:
         # print(epg)
         start = epg['starttime'].astimezone(tz=beijing_tz).strftime('%Y%m%d%H%M%S') + tz
         end = epg['endtime'].astimezone(tz=beijing_tz).strftime('%Y%m%d%H%M%S') + tz
-        id = epg['channel_id']
-        title = html.escape(epg['title'])
-        desc = html.escape(epg['desc'])
-        programinfo = ('    <programme start="%s" stop="%s" channel="%s">\n'
-                       '        <title lang="zh">%s</title>\n'
-                       '        <desc lang="zh">%s</desc>\n'
-                       '    </programme>\n') % (start, end, id, title, desc)
-        f.write(programinfo)
-    # for x in range(10):
-    #     noepg_program_day = noepg('noepg','9999',(datetime.datetime.now().date() + datetime.timedelta(days=x-5)))
-    #     f.write(noepg_program_day)
-    f.write(xmlbottom)
-    f.close()
+        programme_element = ET.SubElement(tv, 'programme', {
+            'start': start,
+            'stop': end,
+            'channel': epg['channel_id']
+        })
+        title_element = ET.SubElement(programme_element, 'title')
+        title_element.text = epg['title']
+        desc_element = ET.SubElement(programme_element, 'desc')
+        desc_element.text = epg["desc"]
+    xml_str = ET.tostring(tv, encoding='utf-8', method='xml').decode()
+    xml_str = minidom.parseString(xml_str).toprettyxml(indent="  ")
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(xml_str)
+
 
 if __name__ == '__main__':
     channels = [{'id': 'cctv_cctv1', 'name': 'CCTV-1 综合', 'id0': 'cctv1', 'source': 'cctv'},
