@@ -596,4 +596,4 @@ if __name__ == '__main__':
                 {'id': 'tdm_7', 'name': '澳門綜藝 Ch.95', 'id0': '7', 'source': 'tdm'},
                 {'id': 'tdm_8', 'name': '澳門 - MACAU 衛星頻道 Ch.96', 'id0': '8', 'source': 'tdm'}
                 ]
-    asyncio.run(gen_xml(channels, 'epg0.xml'))
+    asyncio.run(gen_xml(channels, 'EPG.xml'))
