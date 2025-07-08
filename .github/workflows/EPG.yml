@@ -5,7 +5,6 @@ on:
   #     - main
   schedule:
     - cron: "50 6 * * *"
-    - cron: "30 16 * * *"
   workflow_dispatch:
 jobs:
   build:
@@ -23,14 +22,12 @@ jobs:
         cd ./EPG
         python3 ./gen_xml.py
         mkdir xml
-        mv epg0.xml xml
+        mv EPG.xml xml
         mv README.md xml
-        mv merge_xmltv_files.py xml
+    #    mv merge_xmltv_files.py xml
     - name: Merge EPG
       run: |
         cd ./EPG/xml
-    #    wget https://raw.githubusercontent.com/kuke31/xmlgz/refs/heads/main/all.xml
-    #    python3 merge_xmltv_files.py
         gzip -kf EPG.xml
     # - name : Upload artifact
     #   uses: actions/upload-artifact@master
