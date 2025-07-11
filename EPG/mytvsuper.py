@@ -11,12 +11,12 @@ headers = {
 }
 
 
-async def get_epgs_mytvsuper(channel, dt):  # channel_id,dt ，每次获取当天开始共7天数据
+async def get_epgs_mytvsuper(channel, dt):  # channel_id, dt ，每次获取当天开始共7天数据
     epgs = []
     msg = ''
     success = 1
     start_date_str = dt.strftime('%Y%m%d')
-    end_date = dt + datetime.timedelta(days=6)
+    end_date = dt + datetime.timedelta(days=7)
     end_date_str = end_date.strftime('%Y%m%d')
     channel_id = channel['id']
     channel_id0 = channel['id0']
@@ -28,7 +28,6 @@ async def get_epgs_mytvsuper(channel, dt):  # channel_id,dt ，每次获取当�
         res.encoding = 'utf-8'
         res_j = res.json()
         items = res_j[0]['item']
-        print(items)
         for item in items:
             epg_list = item['epg']
             firtst_line_date = 1
@@ -44,13 +43,15 @@ async def get_epgs_mytvsuper(channel, dt):  # channel_id,dt ，每次获取当�
                     last_program_date = starttime
                     first_line_date = 0
                 # print(title,starttime,title_en)
-                epg = {'channel_id': channel_id,
-                       'starttime': starttime,
-                       'endtime': None,
-                       'title': title,
-                       'desc': desc,
-                       'program_date': program_date,
-                       }
+                epg = {
+                    'channel_id': channel_id,
+                    'starttime': starttime,
+                    'endtime': None,
+                    'title': title,
+                    'desc': desc,
+                    'program_date': program_date,
+                }
+                # print(epg)
                 epgs.append(epg)
     except Exception as e:
         success = 0
@@ -90,4 +91,4 @@ async def get_channels_mytvsuper():
     return channels
 
 # asyncio.run(get_channels_mytvsuper())
-# get_epgs_mytvsuper({'name': '亞洲劇台', 'name_en': 'Asian Drama', 'id': 'CTVS', 'source': 'mytvsuper'}, datetime.datetime.now().date())
+# asyncio.run(get_epgs_mytvsuper({'name': '亞洲劇台', 'name_en': 'Asian Drama', 'id0': 'CTVS', 'id': 'CTVS', 'source': 'mytvsuper'}, datetime.datetime.now().date()))
