@@ -2,6 +2,7 @@
 import httpx
 import datetime
 import os
+import asyncio
 
 
 async def get_epgs_4gtv(channel):
@@ -49,7 +50,7 @@ async def get_epgs_4gtv(channel):
 
 
 async def get_channels_4gtv():
-    url = 'http://api2.4gtv.tv/Channel/GetAllChannel/pc/L'
+    url = 'https://api2.4gtv.tv/Channel/GetAllChannel/pc/L'
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Accept-Encoding': 'gzip, deflate, br',
@@ -64,7 +65,7 @@ async def get_channels_4gtv():
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
     }
     async with httpx.AsyncClient() as client:
-        res = await client(url, headers=headers)
+        res = await client.get(url, headers=headers)
     res.encoding = 'utf-8'
     js = res.json()['Data']
     channels = []
@@ -90,3 +91,4 @@ async def get_channels_4gtv():
     return channels
 
 # ret = await get_epgs_4gtv({'id': '4gtv_litv-ftv03', 'name': 'VOA美國之音', 'id0': '4gtv-live050', 'source': '4gtv'})
+# asyncio.run(get_channels_4gtv())

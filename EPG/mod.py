@@ -3,6 +3,7 @@ import httpx
 import datetime
 import os
 from bs4 import BeautifulSoup
+import asyncio
 
 
 async def get_epgs_mod(channel, dt):
@@ -84,4 +85,4 @@ async def get_channels_mod():
     return channels
 
 # print(get_epgs_mod({'name': '006 民視', 'id': '006', 'source': 'mod'}, datetime.datetime.now().date()))
-# await get_channels_mod()
+# asyncio.run(get_channels_mod())

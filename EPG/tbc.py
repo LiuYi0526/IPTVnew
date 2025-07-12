@@ -90,8 +90,5 @@ async def get_channels_tbc():
     return channels
 
 
-# 今天的日期数字  20190325  一次抓取多天数据,不能重复爬取
-# today_int = int(time.strftime('%Y%m%d', time.localtime()))
-
 # asyncio.run(get_channels_tbc())
 # get_epgs_tbc({'name': '寰宇新聞台灣台', 'id': '227', 'source': 'tbc'})
