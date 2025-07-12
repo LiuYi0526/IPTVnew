@@ -18,10 +18,13 @@ async def get_epgs_cctvplus(channel):
         items = res.json()
         for item in items:
             if item['CHANNEL'] == channel_id0:
-                title = item['TITLE']
-                desc = item['REMARKS']
-                starttime = datetime.datetime.strptime(item['dateTime1'], '%Y-%m-%d %H:%M')
-                endtime = datetime.datetime.strptime(item['dateTime2'], '%Y-%m-%d %H:%M')
+                try:
+                    title = item['TITLE']
+                    desc = item['REMARKS']
+                    starttime = datetime.datetime.strptime(item['dateTime1'], '%Y-%m-%d %H:%M')
+                    endtime = datetime.datetime.strptime(item['dateTime2'], '%Y-%m-%d %H:%M')
+                except:
+                    continue
                 epg = {
                     'channel_id': channel_id,
                     'starttime': starttime,
