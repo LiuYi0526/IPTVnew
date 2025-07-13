@@ -431,7 +431,7 @@ if __name__ == '__main__':
                 {'id': 'hami_OTT_LIVE_0000001560', 'name': 'TVBS 新聞台', 'id0': 'OTT_LIVE_0000001560', 'source': 'hami'},
                 {'id': 'hami_OTT_LIVE_0000001516', 'name': '三立新聞台', 'id0': 'OTT_LIVE_0000001516', 'source': 'hami'},
                 {'id': 'hami_OTT_LIVE_0000001690', 'name': '三立 iNEWS', 'id0': 'OTT_LIVE_0000001690', 'source': 'hami'},
-                {'id': 'hami_OTT_LIVE_0000001562', 'name': '中天新聞台', 'id0': 'OTT_LIVE_0000001562', 'source': 'hami'},
+#                {'id': 'hami_OTT_LIVE_0000001562', 'name': '中天新聞台', 'id0': 'OTT_LIVE_0000001562', 'source': 'hami'},
                 {'id': 'hami_OTT_LIVE_0000001508', 'name': '中央氣象署影音頻道', 'id0': 'OTT_LIVE_0000001508', 'source': 'hami'},
 #                {'id': 'hami_OTT_LIVE_0000001567', 'name': '中視新聞台', 'id0': 'OTT_LIVE_0000001567', 'source': 'hami'},
                 {'id': 'hami_OTT_LIVE_0000001565', 'name': '台視新聞台', 'id0': 'OTT_LIVE_0000001565', 'source': 'hami'},
