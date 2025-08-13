@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 import datetime
 import pytz
-import html
 import asyncio
 import logging
 import xml.etree.ElementTree as ET
@@ -24,6 +23,7 @@ from hami import *
 from mytvsuper import *
 from cctvplus import *
 from hoy import *
+from litv import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -50,7 +50,7 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
-    if c['source'] == 'tvmao':
+    elif c['source'] == 'tvmao':
         for get_days in range(-6, 2):  # 7+1天
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
@@ -68,7 +68,7 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
-    if c['source'] == 'xjtvs':
+    elif c['source'] == 'xjtvs':
         for get_days in [-1, 0, 1]:  # 昨今明3天
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
@@ -86,7 +86,7 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
-    if c['source'] == 'nowtv':
+    elif c['source'] == 'nowtv':
         for get_days in [-1, 0, 1]:  # 昨今明3天
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
@@ -140,7 +140,7 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
-    if c['source'] == 'ETTVAmerica':
+    elif c['source'] == 'ETTVAmerica':
         for get_days in [-1, 0, 1]:  # 昨今明3天
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
@@ -158,7 +158,7 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
-    if c['source'] == 'tdm':
+    elif c['source'] == 'tdm':
         for get_days in [-1, 0, 1]:  # 昨今明3天
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
@@ -339,6 +339,22 @@ async def get_epgs(c):
             success = '❌'
         for i in epg:
             epgs.append(i)
+    elif c['source'] == 'litv':
+        while times < 5:
+            ret = await get_epgs_litv(c)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
 
@@ -384,6 +400,7 @@ async def gen_xml(channels, filename):
 
 
 if __name__ == '__main__':
+    asyncio.run(download_litv_epgs())
     channels = [
         {'id': 'cctv_cctv1', 'name': 'CCTV-1 综合', 'id0': 'cctv1', 'source': 'cctv'},
         {'id': 'cctv_cctv2', 'name': 'CCTV-2 财经', 'id0': 'cctv2', 'source': 'cctv'},
@@ -429,10 +446,6 @@ if __name__ == '__main__':
         {'id': 'XJTV-5', 'name': 'XJTV-5', 'id0': '17', 'source': 'xjtvs'},
         {'id': 'XJTV-7', 'name': 'XJTV-7', 'id0': '21', 'source': 'xjtvs'},
         {'id': 'XJTV-8', 'name': 'XJTV-8', 'id0': '23', 'source': 'xjtvs'},
-        {'id': 'hami_OTT_LIVE_0000001853', 'name': '愛爾達體育MAX1台', 'id0': 'OTT_LIVE_0000001853', 'source': 'hami'},
-        {'id': 'hami_OTT_LIVE_0000001854', 'name': '愛爾達體育MAX2台', 'id0': 'OTT_LIVE_0000001854', 'source': 'hami'},
-        {'id': 'hami_OTT_LIVE_0000001855', 'name': '愛爾達體育MAX3台', 'id0': 'OTT_LIVE_0000001855', 'source': 'hami'},
-        {'id': 'hami_OTT_LIVE_0000001856', 'name': '愛爾達體育MAX4台', 'id0': 'OTT_LIVE_0000001856', 'source': 'hami'},
         {'id': 'RTHK_31', 'name': '港台電視31', 'id0': '368550', 'source': 'epg.pw'},
         {'id': 'RTHK_32', 'name': '港台電視32', 'id0': '368551', 'source': 'epg.pw'},
         {'id': 'RTHK_33', 'name': '港台電視33', 'id0': '368552', 'source': 'epg.pw'},
@@ -680,8 +693,18 @@ if __name__ == '__main__':
         {'id': 'tbc_221', 'name': '寵物頻道', 'id0': '369277', 'source': 'epg.pw'},
         {'id': 'tbc_222', 'name': '歷史頻道', 'id0': '369276', 'source': 'epg.pw'},
         {'id': 'tbc_249', 'name': 'Euronews', 'id0': '369329', 'source': 'epg.pw'},
-        {'id': '4gtv_4gtv-4gtv009', 'name': '中天新聞台', 'id0': '370177', 'source': 'epg.pw'},
-        {'id': '4gtv_litv-ftv03', 'name': 'VOA美國之音', 'id0': 'litv-ftv03', 'source': '4gtv'},
+        {'id': 'hami_OTT_LIVE_0000001853', 'name': '愛爾達體育MAX1台', 'id0': 'OTT_LIVE_0000001853', 'source': 'hami'},
+        {'id': 'hami_OTT_LIVE_0000001854', 'name': '愛爾達體育MAX2台', 'id0': 'OTT_LIVE_0000001854', 'source': 'hami'},
+        {'id': 'hami_OTT_LIVE_0000001855', 'name': '愛爾達體育MAX3台', 'id0': 'OTT_LIVE_0000001855', 'source': 'hami'},
+        {'id': 'hami_OTT_LIVE_0000001856', 'name': '愛爾達體育MAX4台', 'id0': 'OTT_LIVE_0000001856', 'source': 'hami'},
+        {'id': 'litv_4gtv-4gtv009', 'name': '中天新聞台', 'id0': 'ch52', 'source': 'litv'},
+        {'id': 'litv_litv-longturn01', 'name': '龍華卡通台', 'id0': 'ch1040', 'source': 'litv'},
+        {'id': 'litv_litv-longturn18', 'name': '龍華戲劇台', 'id0': 'ch1042', 'source': 'litv'},
+        {'id': 'litv_litv-longturn12', 'name': '龍華偶像台', 'id0': 'ch1077', 'source': 'litv'},
+        {'id': 'litv_litv-longturn11', 'name': '龍華日韓台', 'id0': 'ch1078', 'source': 'litv'},
+        {'id': 'litv_litv-longturn03', 'name': '龍華電影台', 'id0': 'ch1166', 'source': 'litv'},
+        {'id': 'litv_litv-longturn21', 'name': '龍華經典台', 'id0': 'ch1188', 'source': 'litv'},
+        {'id': 'litv_litv-longturn02', 'name': '龍華洋片台', 'id0': 'ch1231', 'source': 'litv'},
         {'id': 'ETTVAmerica_China', 'name': '東森中國台', 'id0': '1-中國台', 'source': 'ETTVAmerica'},
         {'id': 'ETTVAmerica_East', 'name': '東森美東衛視台', 'id0': '20-美東衛視台', 'source': 'ETTVAmerica'},
         {'id': 'ntd_china', 'name': '新唐人中國台', 'id0': 'ntd_china', 'source': 'ntdtv'},
