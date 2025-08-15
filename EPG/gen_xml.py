@@ -24,6 +24,7 @@ from mytvsuper import *
 from cctvplus import *
 from hoy import *
 from litv import *
+from cctv6m1905 import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -355,6 +356,23 @@ async def get_epgs(c):
             success = '❌'
         for i in epg:
             epgs.append(i)
+    elif c['source'] == '1905':
+        need_date = datetime.datetime.now().date()
+        while times < 5:
+            ret = await get_epgs_1905(c, need_date)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
 
@@ -429,6 +447,8 @@ if __name__ == '__main__':
         {'id': 'tvmao_NANCHANG-NANCHANG1', 'name': '南昌电视台新闻综合频道', 'id0': 'NANCHANG-NANCHANG1', 'source': 'tvmao'},
         {'id': 'tvmao_NANCHANG-NANCHANG4', 'name': '南昌电视台都市频道', 'id0': 'NANCHANG-NANCHANG4', 'source': 'tvmao'},
         {'id': 'tvmao_NANCHANG-NANCHANG3', 'name': '南昌电视台资讯频道', 'id0': 'NANCHANG-NANCHANG3', 'source': 'tvmao'},
+        {'id': '1905_xl', 'name': '初秋·电影放映厅', 'id0': 'xl', 'source': '1905'},
+        {'id': '1905_1905tv', 'name': '环球经典', 'id0': '1905tv', 'source': '1905'},
         {'id': 'jxgdw_87', 'name': '江西卫视', 'id0': '87', 'source': 'jxgdw'},
         {'id': 'jxgdw_86', 'name': '都市频道', 'id0': '86', 'source': 'jxgdw'},
         {'id': 'jxgdw_153', 'name': '经济生活', 'id0': '153', 'source': 'jxgdw'},
