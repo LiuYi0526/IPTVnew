@@ -23,4 +23,4 @@ def merge_xmltv_files(file_list, output_file):
 
 
 if __name__ == '__main__':
-    merge_xmltv_files(['all.xml', 'epg0.xml'], 'EPG.xml')
+    merge_xmltv_files(['all.xml', 'epg.xml', 'epg0.xml'], 'EPG.xml')

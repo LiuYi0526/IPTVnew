@@ -30,6 +30,7 @@ jobs:
       run: |
         cd ./EPG/xml
         wget https://raw.githubusercontent.com/kuke31/xmlgz/refs/heads/main/all.xml
+        wget https://tvpass.org/epg.xml
         python3 merge_xmltv_files.py
         gzip -kf EPG.xml
     # - name : Upload artifact
