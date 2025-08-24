@@ -25,6 +25,7 @@ from cctvplus import *
 from hoy import *
 from litv import *
 from cctv6m1905 import *
+from radiocn import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -56,6 +57,24 @@ async def get_epgs(c):
             need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
             while times < 5:
                 ret = await get_epgs_tvmao(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'radiocn':
+        for get_days in range(-6, 2):  # 7+1天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_radiocn(c, need_date)
                 if ret['success'] == True:
                     epg = ret['epgs']
                     break
@@ -466,6 +485,28 @@ if __name__ == '__main__':
         {'id': 'XJTV-5', 'name': 'XJTV-5', 'id0': '17', 'source': 'xjtvs'},
         {'id': 'XJTV-7', 'name': 'XJTV-7', 'id0': '21', 'source': 'xjtvs'},
         {'id': 'XJTV-8', 'name': 'XJTV-8', 'id0': '23', 'source': 'xjtvs'},
+        {'id': 'radiocn_639', 'name': '中国之声', 'id0': '639', 'source': 'radiocn'},
+        {'id': 'radiocn_640', 'name': '经济之声', 'id0': '640', 'source': 'radiocn'},
+        {'id': 'radiocn_692', 'name': '环球资讯广播', 'id0': '692', 'source': 'radiocn'},
+        {'id': 'radiocn_641', 'name': '音乐之声', 'id0': '641', 'source': 'radiocn'},
+        {'id': 'radiocn_653', 'name': '中国交通广播', 'id0': '653', 'source': 'radiocn'},
+        {'id': 'radiocn_648', 'name': '文艺之声', 'id0': '648', 'source': 'radiocn'},
+        {'id': 'radiocn_645', 'name': '大湾区之声', 'id0': '645', 'source': 'radiocn'},
+        {'id': 'radiocn_642', 'name': '经典音乐广播', 'id0': '642', 'source': 'radiocn'},
+        {'id': 'radiocn_643', 'name': '台海之声', 'id0': '643', 'source': 'radiocn'},
+        {'id': 'radiocn_644', 'name': '神州之声', 'id0': '644', 'source': 'radiocn'},
+        {'id': 'radiocn_646', 'name': '香港之声', 'id0': '646', 'source': 'radiocn'},
+        {'id': 'radiocn_647', 'name': '民族之声', 'id0': '647', 'source': 'radiocn'},
+        {'id': 'radiocn_649', 'name': '老年之声', 'id0': '649', 'source': 'radiocn'},
+        {'id': 'radiocn_650', 'name': '藏语广播', 'id0': '650', 'source': 'radiocn'},
+        {'id': 'radiocn_651', 'name': '维吾尔语广播', 'id0': '651', 'source': 'radiocn'},
+        {'id': 'radiocn_652', 'name': '阅读之声', 'id0': '652', 'source': 'radiocn'},
+        {'id': 'radiocn_654', 'name': '中国乡村之声', 'id0': '654', 'source': 'radiocn'},
+        {'id': 'radiocn_655', 'name': '哈萨克语广播', 'id0': '655', 'source': 'radiocn'},
+        {'id': 'radiocn_662', 'name': 'HITFM劲曲调频', 'id0': '662', 'source': 'radiocn'},
+        {'id': 'radiocn_689', 'name': '轻松调频', 'id0': '689', 'source': 'radiocn'},
+        {'id': 'radiocn_664', 'name': '南海之声', 'id0': '664', 'source': 'radiocn'},
+        {'id': 'radiocn_734', 'name': '英语资讯广播 CGTN Radio', 'id0': '734', 'source': 'radiocn'},
         {'id': 'RTHK_31', 'name': '港台電視31', 'id0': '368550', 'source': 'epg.pw'},
         {'id': 'RTHK_32', 'name': '港台電視32', 'id0': '368551', 'source': 'epg.pw'},
         {'id': 'RTHK_33', 'name': '港台電視33', 'id0': '368552', 'source': 'epg.pw'},

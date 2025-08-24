@@ -27,13 +27,13 @@ async def get_epgs_4gtv(channel):
                 '%s%s' % (start_date, start_time), '%Y-%m-%d%H:%M:%S')
             endtime = datetime.datetime.strptime(
                 '%s%s' % (end_date, end_time), '%Y-%m-%d%H:%M:%S')
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': '',
-                   'program_date': starttime.date(),
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             epgs.append(epg)
     except Exception as e:
         success = 0

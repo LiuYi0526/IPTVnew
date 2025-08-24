@@ -2,8 +2,7 @@ import httpx
 import re
 import datetime
 import json
-import os
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 
 
 async def get_epgs_cctv(channel, dt):
@@ -24,18 +23,17 @@ async def get_epgs_cctv(channel, dt):
             title = prog_list['title']
             starttime = datetime.datetime.fromtimestamp(prog_list['startTime'])
             endtime = datetime.datetime.fromtimestamp(prog_list['endTime'])
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': ''
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             epgs.append(epg)
             # print(epg)
-        epglen = len(epgs)
     except Exception as e:
         success = 0
-        spidername = os.path.basename(__file__).split('.')[0]
         msg = 'spider-%s-%s' % (channel_id, e)
     ret = {
         'success': success,
@@ -52,7 +50,7 @@ async def get_channels_cctv():
     async with httpx.AsyncClient() as client:
         res = await client.get('https://tv.cctv.com/epg/index.shtml')
     res.encoding = 'utf-8'
-    soup = bs(res.text, 'html.parser')
+    soup = BeautifulSoup(res.text, 'html.parser')
     lis = soup.select('div.channel_con > div > ul > li')
     need_date = datetime.datetime.now().strftime('%Y%m%d')
     for li in lis:

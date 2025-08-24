@@ -24,12 +24,13 @@ async def get_epgs_xjtvs(channel, dt):
             endtime = datetime.datetime.strptime(prog_list['TVDate'] + prog_list['EndTime'], '%Y-%m-%d%H:%M')
             if starttime > endtime:
                 endtime = endtime + datetime.timedelta(days=1)
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': ''
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             epgs.append(epg)
             # print(epg)
     except Exception as e:

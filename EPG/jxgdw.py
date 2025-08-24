@@ -25,13 +25,13 @@ async def get_epgs_jxgdw(channel, dt):  # channel_id,dt ，每次获取当天开
                 title = item['programName']
                 endtime = starttime
                 starttime = datetime.datetime.strptime(item['playTime'], '%Y-%m-%d %H:%M:%S')
-                epg = {'channel_id': channel_id,
-                       'starttime': starttime,
-                       'endtime': endtime,
-                       'title': title,
-                       'desc': '',
-                       'program_date': date,
-                       }
+                epg = {
+                    'channel_id': channel_id,
+                    'starttime': starttime,
+                    'endtime': endtime,
+                    'title': title,
+                    'desc': ''
+                }
                 epgs.append(epg)
     except Exception as e:
         success = 0

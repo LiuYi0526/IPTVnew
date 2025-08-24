@@ -22,12 +22,13 @@ async def get_epgs_hami(channel, dt):
             title = prog_list['programName']
             starttime = datetime.datetime.fromtimestamp(int(prog_list['startTime']))
             endtime = datetime.datetime.fromtimestamp(int(prog_list['endTime']))
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': ''
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             epgs.append(epg)
             # print(epg)
     except Exception as e:

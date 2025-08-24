@@ -37,12 +37,13 @@ async def get_epgs_tvmao(channel, dt):
             title = data['name']
             starttime_str = data['time']
             starttime = datetime.datetime.combine(dt, datetime.time(int(starttime_str[:2]), int(starttime_str[-2:])))
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': ''
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             epgs.append(epg)
             # print(epg)
             endtime = starttime

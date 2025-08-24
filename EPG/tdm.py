@@ -48,12 +48,13 @@ async def get_epgs_tdm(channel, dt):
                 desc = data0['content'] if data0['content'] else ''
             else:
                 desc = ''
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': desc,
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': desc
+            }
             epgs.append(epg)
             # print(epg)
     except Exception as e:

@@ -31,13 +31,14 @@ async def get_epgs_homeplus(channel):
                     endTime = datetime.datetime.strptime(date + j['endTime'], '%Y-%m-%d%H:%M')
                     if beginTime > endTime:
                         beginTime = beginTime - datetime.timedelta(days=1)
-                    epg = {'channel_id': channel_id,
-                           'starttime': beginTime,
-                           'endtime': endTime,
-                           'title': name,
-                           'desc': description
-                           }
-                    print(epg)
+                    epg = {
+                        'channel_id': channel_id,
+                        'starttime': beginTime,
+                        'endtime': endTime,
+                        'title': name,
+                        'desc': description
+                    }
+                    # print(epg)
     except Exception as e:
         success = 0
         spidername = os.path.basename(__file__).split('.')[0]

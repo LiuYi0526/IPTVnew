@@ -40,13 +40,13 @@ async def get_epgs_tbc(channel):
                         endtime = endtime + datetime.timedelta(days=1)
                     # if starttime.date() < dt:
                     #     continue
-                epg = {'channel_id': channel_id,
-                       'starttime': starttime,
-                       'endtime': endtime,
-                       'title': title,
-                       'desc': desc,
-                       'program_date': starttime.date(),
-                       }
+                epg = {
+                    'channel_id': channel_id,
+                    'starttime': starttime,
+                    'endtime': endtime,
+                    'title': title,
+                    'desc': desc
+                }
                 if epg not in epgs:
                     epgs.append(epg)
     except Exception as e:

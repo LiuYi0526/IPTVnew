@@ -39,12 +39,13 @@ async def get_epgs_ettvamerica(channel, dt):
                     endtime = pst.localize(datetime.datetime(dt.year, dt.month, dt.day, endtime0.hour, endtime0.minute)).astimezone(bjt)
                 else:
                     endtime = pst.localize(datetime.datetime(dt.year, dt.month, dt.day+1, endtime0.hour, endtime0.minute)).astimezone(bjt)
-                epg = {'channel_id': channel_id,
-                       'starttime': starttime,
-                       'endtime': endtime,
-                       'title': title,
-                       'desc': '',
-                       }
+                epg = {
+                    'channel_id': channel_id,
+                    'starttime': starttime,
+                    'endtime': endtime,
+                    'title': title,
+                    'desc': ''
+                }
                 epgs.append(epg)
                 # print(epg)
     except Exception as e:

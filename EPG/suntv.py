@@ -21,12 +21,13 @@ async def get_epgs_suntv(channel):
         for program in programlist[-2::-1]:
             title = program['prgName']
             starttime = datetime.datetime.strptime(program['PlayTime'], "%Y-%m-%dT%H:%M:%S.%fZ") + datetime.timedelta(hours=8)
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': '',
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             endtime = starttime
             epgs.append(epg)
             # print(epg)

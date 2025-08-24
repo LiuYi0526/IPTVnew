@@ -21,12 +21,13 @@ async def get_epgs_epgpw(channel):
             desc = i['desc'] if i['desc'] != None else ''
             endtime = starttime
             starttime = datetime.datetime.strptime(i['start_date'][:14], '%Y%m%d%H%M%S')
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': desc,
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': desc
+            }
             epgs.append(epg)
             # print(epg)
     except Exception as e:
