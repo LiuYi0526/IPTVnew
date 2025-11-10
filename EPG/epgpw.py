@@ -15,12 +15,12 @@ async def get_epgs_epgpw(channel):
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
         epg_list = res.json()['epg_list']
-        starttime = datetime.datetime.strptime(epg_list[-1]['start_date'][:8], '%Y%m%d') + datetime.timedelta(days=1)
+        starttime = datetime.datetime.strptime(epg_list[-1]['start_date'][:10], '%Y-%m-%d') + datetime.timedelta(days=1)
         for i in epg_list[::-1]:
             title = i['title']
             desc = i['desc'] if i['desc'] != None else ''
             endtime = starttime
-            starttime = datetime.datetime.strptime(i['start_date'][:14], '%Y%m%d%H%M%S')
+            starttime = datetime.datetime.strptime(i['start_date'][:19], '%Y-%m-%dT%H:%M:%S')
             epg = {
                 'channel_id': channel_id,
                 'starttime': starttime,
@@ -42,4 +42,4 @@ async def get_epgs_epgpw(channel):
     }
     return ret
 
-# await get_epgs_epgpw({'id': 'tvb_C28', 'name': '28AI智慧賽馬', 'id0': '394087', 'source': 'epg.pw'})
+# await get_epgs_epgpw({'id': 'tvb_CCCM', 'name': '天映經典頻道', 'id0': '368371', 'source': 'epg.pw'})
