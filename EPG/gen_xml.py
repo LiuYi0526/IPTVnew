@@ -26,6 +26,7 @@ from hoy import *
 from litv import *
 from cctv6m1905 import *
 from radiocn import *
+from RTHK import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -392,6 +393,25 @@ async def get_epgs(c):
             success = '❌'
         for i in epg:
             epgs.append(i)
+    elif c['source'] == 'RTHK':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_RTHK(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
 
@@ -457,6 +477,7 @@ if __name__ == '__main__':
         {'id': 'cctv_cctv5plus', 'name': 'CCTV-5+ 体育赛事', 'id0': 'cctv5plus', 'source': 'cctv'},
         {'id': 'cctv_cctv16', 'name': 'CCTV-16奥林匹克', 'id0': 'cctv16', 'source': 'cctv'},
         {'id': 'cctv_cctv17', 'name': 'CCTV-17农业农村', 'id0': 'cctv17', 'source': 'cctv'},
+        {'id': 'CCTV-8K', 'name': 'CCTV-8K', 'id0': '464605', 'source': 'epg.pw'},
         {'id': 'cctv_cctveurope', 'name': 'CCTV-4 (欧洲)', 'id0': 'cctveurope', 'source': 'cctv'},
         {'id': 'cctv_cctvamerica', 'name': 'CCTV-4 (美洲)', 'id0': 'cctvamerica', 'source': 'cctv'},
         {'id': 'cctvplus_channel1', 'name': 'CCTV+ Channel 1', 'id0': 'channel1', 'source': 'cctvplus'},
@@ -507,11 +528,13 @@ if __name__ == '__main__':
         {'id': 'radiocn_689', 'name': '轻松调频', 'id0': '689', 'source': 'radiocn'},
         {'id': 'radiocn_664', 'name': '南海之声', 'id0': '664', 'source': 'radiocn'},
         {'id': 'radiocn_734', 'name': '英语资讯广播 CGTN Radio', 'id0': '734', 'source': 'radiocn'},
-        {'id': 'RTHK_31', 'name': '港台電視31', 'id0': '368550', 'source': 'epg.pw'},
-        {'id': 'RTHK_32', 'name': '港台電視32', 'id0': '368551', 'source': 'epg.pw'},
-        {'id': 'RTHK_33', 'name': '港台電視33', 'id0': '368552', 'source': 'epg.pw'},
-        {'id': 'RTHK_34', 'name': '港台電視34', 'id0': '368553', 'source': 'epg.pw'},
-        {'id': 'RTHK_35', 'name': '港台電視35', 'id0': '368554', 'source': 'epg.pw'},
+        {'name': '港台電視 31', 'id': 'RTHK_tv31', 'id0': 'tv31', 'source': 'RTHK'},
+        {'name': '港台電視 32', 'id': 'RTHK_tv32', 'id0': 'tv32', 'source': 'RTHK'},
+        {'name': '港台電視 33', 'id': 'RTHK_tv33', 'id0': 'tv33', 'source': 'RTHK'},
+        {'name': '港台電視 34', 'id': 'RTHK_tv34', 'id0': 'tv34', 'source': 'RTHK'},
+        {'name': '港台電視 35', 'id': 'RTHK_tv35', 'id0': 'tv35', 'source': 'RTHK'},
+        {'name': '港台電視 36', 'id': 'RTHK_tv36', 'id0': 'tv36', 'source': 'RTHK'},
+        {'name': '香港電台普通話台', 'id': 'RTHK_pth', 'id0': 'pth', 'source': 'RTHK'},
         {'id': 'HOY_76', 'name': 'HOY 國際財經台', 'id0': '76', 'source': 'hoy'},
         {'id': 'HOY_77', 'name': 'HOY TV', 'id0': '77', 'source': 'hoy'},
         {'id': 'HOY_78', 'name': 'HOY TV 資訊台', 'id0': '78', 'source': 'hoy'},
@@ -650,14 +673,6 @@ if __name__ == '__main__':
         {'id': 'tvb_CNHK', 'name': 'NHK World-Japan', 'id0': '368337', 'source': 'epg.pw'},
         {'id': 'tvb_CARI', 'name': 'Arirang TV', 'id0': '368370', 'source': 'epg.pw'},
         {'id': 'tvb_NSWD', 'name': 'NewsWorld (免費)', 'id0': '430247', 'source': 'epg.pw'},
-        {'id': 'tvb_OL00', 'name': '全運800台', 'id0': '476539', 'source': 'epg.pw'},
-        {'id': 'tvb_OL01', 'name': '全運801台', 'id0': '476536', 'source': 'epg.pw'},
-        {'id': 'tvb_OL02', 'name': '全運802台', 'id0': '476540', 'source': 'epg.pw'},
-        {'id': 'tvb_OL03', 'name': '全運803台', 'id0': '476542', 'source': 'epg.pw'},
-        {'id': 'tvb_OL04', 'name': '全運804台', 'id0': '476538', 'source': 'epg.pw'},
-        {'id': 'tvb_OL05', 'name': '全運805台', 'id0': '476537', 'source': 'epg.pw'},
-        {'id': 'tvb_OL06', 'name': '全運806台', 'id0': '476541', 'source': 'epg.pw'},
-        {'id': 'tvb_OL07', 'name': '全運818台 (4合1 801-804)', 'id0': '478151', 'source': 'epg.pw'},
         {'id': 'tvb_EVT2', 'name': 'myTV SUPER直播足球2台', 'id0': '397763', 'source': 'epg.pw'},
         {'id': 'tvb_EVT3', 'name': 'myTV SUPER直播足球3台', 'id0': '368345', 'source': 'epg.pw'},
         {'id': 'tvb_EVT4', 'name': 'myTV SUPER直播足球4台', 'id0': '368328', 'source': 'epg.pw'},
