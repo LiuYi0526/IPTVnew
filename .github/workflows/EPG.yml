@@ -27,9 +27,15 @@ jobs:
         mv README.md xml
         mv merge_xmltv_files.py xml
     - name: Merge EPG
+      continue-on-error: true
       run: |
         cd ./EPG/xml
-        wget http://e.erw.cc/all.xml
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://e.erw.cc/all.xml)
+        if [ "$HTTP_CODE" -eq "404" ]; then
+          echo "File not found (404), skipping..."
+        else
+          curl -O http://e.erw.cc/all.xml
+        fi
         wget https://tvpass.org/epg.xml
         python3 merge_xmltv_files.py
         gzip -kf EPG.xml

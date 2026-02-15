@@ -12,17 +12,17 @@ async def get_epgs_cctv(channel, dt):
     need_date = dt.strftime('%Y%m%d')
     channel_id = channel['id']
     channel_id0 = channel['id0']
-    url = 'http://api.cntv.cn/epg/getEpgInfoByChannelNew?c=%s&serviceId=tvcctv&d=%s&t=jsonp&cb=set' % (channel_id0, need_date)
+    url = 'http://api.cntv.cn/epg/epginfo?c=%s&serviceId=shiyi&d=%s' % (channel_id0, need_date)
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=10)
         res.encoding = 'utf-8'
-        programs = json.loads(res.text[4:-2])
-        prog_lists = programs['data'][channel_id0]['list']
+        programs = res.json()
+        prog_lists = programs[channel_id0]["program"]
         for prog_list in prog_lists:
-            title = prog_list['title']
-            starttime = datetime.datetime.fromtimestamp(prog_list['startTime'])
-            endtime = datetime.datetime.fromtimestamp(prog_list['endTime'])
+            title = prog_list["t"]
+            starttime = datetime.datetime.fromtimestamp(prog_list["st"])
+            endtime = datetime.datetime.fromtimestamp(prog_list["et"])
             epg = {
                 'channel_id': channel_id,
                 'starttime': starttime,
@@ -75,4 +75,4 @@ async def get_channels_cctv():
 
 
 # await get_channels_cctv()
-# get_epgs_cctv({'id': 'cctv_cctv1', 'name': 'CCTV-1 综合', 'id0': 'cctv1', 'source': 'cctv'}, datetime.datetime.now())
+# await get_epgs_cctv({'id': 'cctv_cctv8k', 'name': 'CCTV-8K', 'id0': 'cctv8k', 'source': 'cctv'}, datetime.datetime.now())
