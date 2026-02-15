@@ -34,13 +34,14 @@ async def get_epg_nowtv(channelepg, channel_id):
         response = await client.get(url=f'https://nowplayer.now.com/tvguide/epgprogramdetail?programId={vimProgramId}', headers=headers, timeout=8)
     res2 = json.loads(response.text)
     desc = res2['chiSynopsis'] if 'chiSynopsis' in res2 else ''
-    epg = {'channel_id': channel_id,
-           'starttime': starttime,
-           'endtime': endtime,
-           'title': title,
-           'desc': desc,
-           'program_date': starttime.date(),
-           }
+    epg = {
+        'channel_id': channel_id,
+        'starttime': starttime,
+        'endtime': endtime,
+        'title': title,
+        'desc': desc,
+        'program_date': starttime.date(),
+    }
     return epg
 
 
