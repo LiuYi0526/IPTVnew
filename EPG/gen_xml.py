@@ -553,6 +553,7 @@ if __name__ == '__main__':
         {'id': 'nowtv_138', 'name': 'Now爆谷星影台', 'id0': '138', 'source': 'nowtv'},
         {'id': 'nowtv_162', 'name': '東森亞洲衛視', 'id0': '162', 'source': 'nowtv'},
         {'id': 'nowtv_218', 'name': 'Love Nature 4K', 'id0': '218', 'source': 'nowtv'},
+        {'id': 'nowtv_209', 'name': 'Discovery Channel', 'id0': '209', 'source': 'nowtv'},
         {'id': 'nowtv_316', 'name': 'CNN 國際新聞網絡', 'id0': '316', 'source': 'nowtv'},
         {'id': 'nowtv_329', 'name': 'RT', 'id0': '329', 'source': 'nowtv'},
         {'id': 'nowtv_331', 'name': 'Now直播台', 'id0': '331', 'source': 'nowtv'},
