@@ -31,6 +31,7 @@ async def get_epgs_tvmao(channel, dt):
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
         res_j = res.json()
+        # print(res_j)
         datas = res_j[2]['pro']
         endtime = datetime.datetime.combine(dt, datetime.time(23, 59))
         for data in datas[::-1]:

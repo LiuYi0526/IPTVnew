@@ -3,7 +3,7 @@ import datetime
 import os
 import httpx
 
-async def get_epgs_jxgdw(channel, dt):  # channel_id,dt ，每次获取当天开始共7天数据
+async def get_epgs_jxgdw(channel, dt):
     epgs = []
     msg = ''
     success = 1
@@ -66,4 +66,4 @@ async def get_channels_jxgdw():
 
 
 # get_channels_jxgdw()
-# await get_epgs_jxgdw({'name': '都市频道', 'id': '86', 'source': 'jxgdw'}, datetime.datetime.now().date())
+# await get_epgs_jxgdw({'name': '都市频道', 'id': '86', 'id0': '86', 'source': 'jxgdw'}, datetime.datetime.now().date())

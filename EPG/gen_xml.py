@@ -27,6 +27,12 @@ from litv import *
 from cctv6m1905 import *
 from radiocn import *
 from RTHK import *
+from gdtv import *
+from hnntv import *
+from hntv import *
+from cztv import *
+from gxntv import *
+from iqilu import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -48,7 +54,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -66,7 +72,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -84,7 +90,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -102,7 +108,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -120,7 +126,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -138,7 +144,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -156,7 +162,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -174,7 +180,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -192,7 +198,7 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -225,7 +231,7 @@ async def get_epgs(c):
                 times += 1
                 logging.warning(f"{msg}, 将进行第{times}次重试！")
         else:
-            logging.warning(f"{c}获取失败！")
+            logging.warning(f"{c}, {need_date}获取失败！")
             epg = []
             success = '❌'
         for i in epg:
@@ -322,7 +328,7 @@ async def get_epgs(c):
                 times += 1
                 logging.warning(f"{msg}, 将进行第{times}次重试！")
         else:
-            logging.warning(f"{c}获取失败！")
+            logging.warning(f"{c}, {need_date}获取失败！")
             epg = []
             success = '❌'
         for i in epg:
@@ -355,7 +361,7 @@ async def get_epgs(c):
                 times += 1
                 logging.warning(f"{msg}, 将进行第{times}次重试！")
         else:
-            logging.warning(f"{c}获取失败！")
+            logging.warning(f"{c}, {need_date}获取失败！")
             epg = []
             success = '❌'
         for i in epg:
@@ -388,7 +394,7 @@ async def get_epgs(c):
                 times += 1
                 logging.warning(f"{msg}, 将进行第{times}次重试！")
         else:
-            logging.warning(f"{c}获取失败！")
+            logging.warning(f"{c}, {need_date}获取失败！")
             epg = []
             success = '❌'
         for i in epg:
@@ -406,7 +412,113 @@ async def get_epgs(c):
                     times += 1
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                logging.warning(f"{c}获取失败！")
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'gdtv':
+        need_date = datetime.datetime.now().date()
+        while times < 5:
+            ret = await get_epgs_gdtv(c, need_date)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}, {need_date}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
+    elif c['source'] == 'hnntv':
+        need_date = datetime.datetime.now().date()
+        while times < 5:
+            ret = await get_epgs_hnntv(c)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}, {need_date}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
+    elif c['source'] == 'hntv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_hntv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'cztv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_cztv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'gxntv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_gxntv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'iqilu':
+        for get_days in [-2, -1, 0]:
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_iqilu(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -415,9 +527,17 @@ async def get_epgs(c):
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
 
+async def limited_get_epgs(c, semaphore):
+    async with semaphore:
+        result = await get_epgs(c)
+        return result
+
+
 async def gen_xml(channels, filename):
     tz = ' +0800'
     # tasks = [get_epgs(c) for c in channels]
+    # semaphore = asyncio.Semaphore(3)
+    # tasks = [limited_get_epgs(c, semaphore) for c in channels]
     # epgs0 = await asyncio.gather(*tasks)
     epgs0 = []
     for c in channels:
@@ -499,6 +619,57 @@ if __name__ == '__main__':
         {'id': 'jxgdw_112', 'name': '移动电视', 'id0': '112', 'source': 'jxgdw'},
         {'id': 'jxgdw_78', 'name': '陶瓷频道', 'id0': '78', 'source': 'jxgdw'},
         {'id': 'jxgdw_79', 'name': '风尚购物', 'id0': '79', 'source': 'jxgdw'},
+        {'id': 'gdtv_34', 'name': '广东卫视4K', 'id0': '34', 'source': 'gdtv'},
+        {'id': 'gdtv_1', 'name': '广东卫视', 'id0': '1', 'source': 'gdtv'},
+        {'id': 'gdtv_2', 'name': '广东珠江', 'id0': '2', 'source': 'gdtv'},
+        {'id': 'gdtv_6', 'name': '广东新闻', 'id0': '6', 'source': 'gdtv'},
+        {'id': 'gdtv_4', 'name': '广东民生', 'id0': '4', 'source': 'gdtv'},
+        {'id': 'gdtv_3', 'name': '广东体育', 'id0': '3', 'source': 'gdtv'},
+        {'id': 'gdtv_14', 'name': '大湾区卫视', 'id0': '14', 'source': 'gdtv'},
+        {'id': 'gdtv_17', 'name': '广东影视', 'id0': '17', 'source': 'gdtv'},
+        {'id': 'gdtv_16', 'name': '广东4K超高清', 'id0': '16', 'source': 'gdtv'},
+        {'id': 'gdtv_18', 'name': '广东少儿', 'id0': '18', 'source': 'gdtv'},
+        {'id': 'gdtv_7', 'name': '嘉佳卡通', 'id0': '7', 'source': 'gdtv'},
+        {'id': 'gdtv_31', 'name': '现代教育', 'id0': '31', 'source': 'gdtv'},
+        {'id': 'gdtv_32', 'name': '广东移动', 'id0': '32', 'source': 'gdtv'},
+        {'id': 'gxntv_广西卫视', 'name': '广西卫视', 'id0': '广西卫视', 'source': 'gxntv'},
+        {'id': 'gxntv_综艺旅游频道', 'name': '广西综艺旅游频道', 'id0': '综艺旅游频道', 'source': 'gxntv'},
+        {'id': 'gxntv_都市频道', 'name': '广西都市频道', 'id0': '都市频道', 'source': 'gxntv'},
+        {'id': 'gxntv_新闻频道', 'name': '广西新闻频道', 'id0': '新闻频道', 'source': 'gxntv'},
+        {'id': 'gxntv_影视频道', 'name': '广西影视频道', 'id0': '影视频道', 'source': 'gxntv'},
+        {'id': 'gxntv_国际频道', 'name': '广西国际频道', 'id0': '国际频道', 'source': 'gxntv'},
+        {'id': 'gxntv_乐思购频道', 'name': '广西乐思购频道', 'id0': '乐思购频道', 'source': 'gxntv'},
+        {'id': 'hnntv_13', 'name': '海南卫视', 'id0': '13', 'source': 'hnntv'},
+        {'id': 'hnntv_5', 'name': '三沙卫视', 'id0': '5', 'source': 'hnntv'},
+        {'id': 'hnntv_1', 'name': '海南自贸', 'id0': '1', 'source': 'hnntv'},
+        {'id': 'hnntv_3', 'name': '海南新闻', 'id0': '3', 'source': 'hnntv'},
+        {'id': 'hnntv_4', 'name': '海南社会与法', 'id0': '4', 'source': 'hnntv'},
+        {'id': 'hnntv_6', 'name': '海南文旅', 'id0': '6', 'source': 'hnntv'},
+        {'id': 'hnntv_7', 'name': '海南少儿', 'id0': '7', 'source': 'hnntv'},
+        {'id': 'hntv_145', 'name': '河南卫视', 'id0': '145', 'source': 'hntv'},
+        {'id': 'hntv_149', 'name': '河南新闻频道', 'id0': '149', 'source': 'hntv'},
+        {'id': 'hntv_141', 'name': '河南都市频道', 'id0': '141', 'source': 'hntv'},
+        {'id': 'hntv_146', 'name': '河南民生频道', 'id0': '146', 'source': 'hntv'},
+        {'id': 'hntv_147', 'name': '河南法治频道', 'id0': '147', 'source': 'hntv'},
+        {'id': 'hntv_151', 'name': '河南公共频道', 'id0': '151', 'source': 'hntv'},
+        {'id': 'hntv_152', 'name': '河南乡村频道', 'id0': '152', 'source': 'hntv'},
+        {'id': 'hntv_148', 'name': '河南电视剧频道', 'id0': '148', 'source': 'hntv'},
+        {'id': 'hntv_154', 'name': '梨园频道', 'id0': '154', 'source': 'hntv'},
+        {'id': 'hntv_155', 'name': '文物宝库', 'id0': '155', 'source': 'hntv'},
+        {'id': 'hntv_156', 'name': '武术世界', 'id0': '156', 'source': 'hntv'},
+        {'id': 'hntv_157', 'name': '睛彩中原', 'id0': '157', 'source': 'hntv'},
+        {'id': 'hntv_183', 'name': '象视界', 'id0': '183', 'source': 'hntv'},
+        {'id': 'hntv_194', 'name': '国学频道', 'id0': '194', 'source': 'hntv'},
+        {'id': 'hntv_150', 'name': '欢腾购物', 'id0': '150', 'source': 'hntv'},
+        {'id': 'iqilu_24', 'name': '山东卫视', 'id0': '24', 'source': 'iqilu'},
+        {'id': 'iqilu_25', 'name': '齐鲁频道', 'id0': '25', 'source': 'iqilu'},
+        {'id': 'iqilu_26', 'name': '山东体育休闲频道', 'id0': '26', 'source': 'iqilu'},
+        {'id': 'iqilu_27', 'name': '山东文旅频道', 'id0': '27', 'source': 'iqilu'},
+        {'id': 'iqilu_28', 'name': '山东综艺频道', 'id0': '28', 'source': 'iqilu'},
+        {'id': 'iqilu_29', 'name': '山东生活频道', 'id0': '29', 'source': 'iqilu'},
+        {'id': 'iqilu_30', 'name': '山东农科频道', 'id0': '30', 'source': 'iqilu'},
+        {'id': 'iqilu_31', 'name': '山东新闻频道', 'id0': '31', 'source': 'iqilu'},
+        {'id': 'iqilu_32', 'name': '山东少儿频道', 'id0': '32', 'source': 'iqilu'},
         {'id': 'XJTV-1', 'name': 'XJTV-1', 'id0': '1', 'source': 'xjtvs'},
         {'id': 'XJTV-2', 'name': 'XJTV-2', 'id0': '3', 'source': 'xjtvs'},
         {'id': 'XJTV-3', 'name': 'XJTV-3', 'id0': '4', 'source': 'xjtvs'},
@@ -506,6 +677,16 @@ if __name__ == '__main__':
         {'id': 'XJTV-5', 'name': 'XJTV-5', 'id0': '17', 'source': 'xjtvs'},
         {'id': 'XJTV-7', 'name': 'XJTV-7', 'id0': '21', 'source': 'xjtvs'},
         {'id': 'XJTV-8', 'name': 'XJTV-8', 'id0': '23', 'source': 'xjtvs'},
+        {'id': 'cztv_101', 'name': '浙江卫视', 'id0': '101', 'source': 'cztv'},
+        {'id': 'cztv_102', 'name': '钱江都市', 'id0': '102', 'source': 'cztv'},
+        {'id': 'cztv_103', 'name': '浙江经济生活', 'id0': '103', 'source': 'cztv'},
+        {'id': 'cztv_104', 'name': '浙江教科影视', 'id0': '104', 'source': 'cztv'},
+        {'id': 'cztv_106', 'name': '浙江民生休闲', 'id0': '106', 'source': 'cztv'},
+        {'id': 'cztv_107', 'name': '浙江新闻', 'id0': '107', 'source': 'cztv'},
+        {'id': 'cztv_108', 'name': '浙江少儿', 'id0': '108', 'source': 'cztv'},
+        {'id': 'cztv_110', 'name': '浙江国际', 'id0': '110', 'source': 'cztv'},
+        {'id': 'cztv_111', 'name': '浙江好易购', 'id0': '111', 'source': 'cztv'},
+        {'id': 'cztv_112', 'name': '之江纪录', 'id0': '112', 'source': 'cztv'},
         {'id': 'radiocn_639', 'name': '中国之声', 'id0': '639', 'source': 'radiocn'},
         {'id': 'radiocn_640', 'name': '经济之声', 'id0': '640', 'source': 'radiocn'},
         {'id': 'radiocn_692', 'name': '环球资讯广播', 'id0': '692', 'source': 'radiocn'},
@@ -528,13 +709,13 @@ if __name__ == '__main__':
         {'id': 'radiocn_689', 'name': '轻松调频', 'id0': '689', 'source': 'radiocn'},
         {'id': 'radiocn_664', 'name': '南海之声', 'id0': '664', 'source': 'radiocn'},
         {'id': 'radiocn_734', 'name': '英语资讯广播 CGTN Radio', 'id0': '734', 'source': 'radiocn'},
-        {'name': '港台電視 31', 'id': 'RTHK_tv31', 'id0': 'tv31', 'source': 'RTHK'},
-        {'name': '港台電視 32', 'id': 'RTHK_tv32', 'id0': 'tv32', 'source': 'RTHK'},
-        {'name': '港台電視 33', 'id': 'RTHK_tv33', 'id0': 'tv33', 'source': 'RTHK'},
-        {'name': '港台電視 34', 'id': 'RTHK_tv34', 'id0': 'tv34', 'source': 'RTHK'},
-        {'name': '港台電視 35', 'id': 'RTHK_tv35', 'id0': 'tv35', 'source': 'RTHK'},
-        {'name': '港台電視 36', 'id': 'RTHK_tv36', 'id0': 'tv36', 'source': 'RTHK'},
-        {'name': '香港電台普通話台', 'id': 'RTHK_pth', 'id0': 'pth', 'source': 'RTHK'},
+        {'id': 'RTHK_tv31', 'name': '港台電視 31', 'id0': 'tv31', 'source': 'RTHK'},
+        {'id': 'RTHK_tv32', 'name': '港台電視 32', 'id0': 'tv32', 'source': 'RTHK'},
+        {'id': 'RTHK_tv33', 'name': '港台電視 33', 'id0': 'tv33', 'source': 'RTHK'},
+        {'id': 'RTHK_tv34', 'name': '港台電視 34', 'id0': 'tv34', 'source': 'RTHK'},
+        {'id': 'RTHK_tv35', 'name': '港台電視 35', 'id0': 'tv35', 'source': 'RTHK'},
+        {'id': 'RTHK_tv36', 'name': '港台電視 36', 'id0': 'tv36', 'source': 'RTHK'},
+        {'id': 'RTHK_pth', 'name': '香港電台普通話台', 'id0': 'pth', 'source': 'RTHK'},
         {'id': 'HOY_76', 'name': 'HOY 國際財經台', 'id0': '76', 'source': 'hoy'},
         {'id': 'HOY_77', 'name': 'HOY TV', 'id0': '77', 'source': 'hoy'},
         {'id': 'HOY_78', 'name': 'HOY TV 資訊台', 'id0': '78', 'source': 'hoy'},
@@ -567,6 +748,7 @@ if __name__ == '__main__':
         {'id': 'nowtv_611', 'name': 'Now Sports 4K 1', 'id0': '611', 'source': 'nowtv'},
         {'id': 'nowtv_612', 'name': 'Now Sports 4K 2', 'id0': '410385', 'source': 'epg.pw'},
         {'id': 'nowtv_613', 'name': 'Now Sports 4K 3', 'id0': '410386', 'source': 'epg.pw'},
+        {'id': 'nowtv_620', 'name': 'Now Sports Premier League TV', 'id0': '410387', 'source': 'epg.pw'},
         {'id': 'nowtv_621', 'name': 'Now Sports 英超1台', 'id0': '621', 'source': 'nowtv'},
         {'id': 'nowtv_622', 'name': 'Now Sports 英超2台', 'id0': '622', 'source': 'nowtv'},
         {'id': 'nowtv_623', 'name': 'Now Sports 英超3台', 'id0': '623', 'source': 'nowtv'},
@@ -591,6 +773,7 @@ if __name__ == '__main__':
         {'id': 'nowtv_644', 'name': 'beIN SPORTS 4', 'id0': '410409', 'source': 'epg.pw'},
         {'id': 'nowtv_645', 'name': 'beIN SPORTS 5', 'id0': '410410', 'source': 'epg.pw'},
         {'id': 'nowtv_646', 'name': 'beIN SPORTS 6', 'id0': '410411', 'source': 'epg.pw'},
+        {'id': 'nowtv_647', 'name': 'Now Sports 647', 'id0': '421332', 'source': 'epg.pw'},
         {'id': 'nowtv_651', 'name': 'Now Sports 651', 'id0': '410412', 'source': 'epg.pw'},
         {'id': 'nowtv_652', 'name': 'Now Sports 652', 'id0': '410413', 'source': 'epg.pw'},
         {'id': 'nowtv_668', 'name': 'Now668', 'id0': '410414', 'source': 'epg.pw'},

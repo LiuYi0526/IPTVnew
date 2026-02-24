@@ -12,9 +12,17 @@ async def get_epgs_xjtvs(channel, dt):
     channel_id = channel['id']
     channel_id0 = channel['id0']
     url = 'https://slstapi.xjtvs.com.cn/api/TVLiveV100/TVGuideList?tvChannelId=%s&date=%s+00:00:00&json=true' % (channel_id0, need_date)
+    headers = {
+        "Host": "slstapi.xjtvs.com.cn",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+        "Accept": "*/*",
+        "Accept-Language": "zh-CN,zh-HK;q=0.9",
+        "Referer": "https://www.xjtvs.com.cn/",
+        "Origin": "https://www.xjtvs.com.cn",
+    }
     try:
         async with httpx.AsyncClient() as client:
-            res = await client.get(url, timeout=10)
+            res = await client.get(url, headers=headers)
         res.encoding = 'utf-8'
         programs = json.loads(res.text)
         prog_lists = programs['data']
@@ -47,5 +55,4 @@ async def get_epgs_xjtvs(channel, dt):
     return ret
 
 
-# await get_channels_cctv()
 # await get_epgs_xjtvs({'id': 'XJTV-2', 'name': 'XJTV-2', 'id0': '3', 'source': 'xjtvs'}, datetime.datetime.now())
