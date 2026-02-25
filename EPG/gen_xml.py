@@ -33,6 +33,10 @@ from hntv import *
 from cztv import *
 from gxntv import *
 from iqilu import *
+from kankanews import *
+from jstv import *
+from hebtv import *
+from fjtv import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -523,6 +527,76 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'kankanews':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_kankanews(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'jstv':
+        need_date = datetime.datetime.now().date()
+        while times < 5:
+            ret = await get_epgs_jstv(c)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}, {need_date}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
+    elif c['source'] == 'hebtv':
+        need_date = datetime.datetime.now().date()
+        while times < 5:
+            ret = await get_epgs_hebtv(c, need_date)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}, {need_date}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
+    elif c['source'] == 'fjtv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_fjtv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -646,6 +720,14 @@ if __name__ == '__main__':
         {'id': 'hnntv_4', 'name': '海南社会与法', 'id0': '4', 'source': 'hnntv'},
         {'id': 'hnntv_6', 'name': '海南文旅', 'id0': '6', 'source': 'hnntv'},
         {'id': 'hnntv_7', 'name': '海南少儿', 'id0': '7', 'source': 'hnntv'},
+        {'id': 'hebtv_462', 'name': "河北卫视", 'id0': '462', 'source': 'hebtv'},
+        {'id': 'hebtv_114', 'name': "河北经济生活", 'id0': '114', 'source': 'hebtv'},
+        {'id': 'hebtv_118', 'name': "农民频道", 'id0': '118', 'source': 'hebtv'},
+        {'id': 'hebtv_62', 'name': "河北都市", 'id0': '62', 'source': 'hebtv'},
+        {'id': 'hebtv_334', 'name': "河北影视剧", 'id0': '334', 'source': 'hebtv'},
+        {'id': 'hebtv_70', 'name': "河北少儿科教", 'id0': '70', 'source': 'hebtv'},
+        {'id': 'hebtv_338', 'name': "河北文旅·公共", 'id0': '338', 'source': 'hebtv'},
+        {'id': 'hebtv_330', 'name': "三佳购物", 'id0': '330', 'source': 'hebtv'},
         {'id': 'hntv_145', 'name': '河南卫视', 'id0': '145', 'source': 'hntv'},
         {'id': 'hntv_149', 'name': '河南新闻频道', 'id0': '149', 'source': 'hntv'},
         {'id': 'hntv_141', 'name': '河南都市频道', 'id0': '141', 'source': 'hntv'},
@@ -661,6 +743,16 @@ if __name__ == '__main__':
         {'id': 'hntv_183', 'name': '象视界', 'id0': '183', 'source': 'hntv'},
         {'id': 'hntv_194', 'name': '国学频道', 'id0': '194', 'source': 'hntv'},
         {'id': 'hntv_150', 'name': '欢腾购物', 'id0': '150', 'source': 'hntv'},
+        {'id': 'jstv_670', 'name': '江苏卫视', 'id0': '670', 'source': 'jstv'},
+        {'id': 'jstv_676', 'name': '江苏卫视4K超高清', 'id0': '676', 'source': 'jstv'},
+        {'id': 'jstv_669', 'name': '江苏城市', 'id0': '669', 'source': 'jstv'},
+        {'id': 'jstv_663', 'name': '江苏综艺', 'id0': '663', 'source': 'jstv'},
+        {'id': 'jstv_664', 'name': '江苏影视', 'id0': '664', 'source': 'jstv'},
+        {'id': 'jstv_668', 'name': '江苏新闻', 'id0': '668', 'source': 'jstv'},
+        {'id': 'jstv_666', 'name': '江苏教育', 'id0': '666', 'source': 'jstv'},
+        {'id': 'jstv_665', 'name': '体育休闲', 'id0': '665', 'source': 'jstv'},
+        {'id': 'jstv_667', 'name': '优漫卡通', 'id0': '667', 'source': 'jstv'},
+        {'id': 'jstv_671', 'name': '江苏国际', 'id0': '671', 'source': 'jstv'},
         {'id': 'iqilu_24', 'name': '山东卫视', 'id0': '24', 'source': 'iqilu'},
         {'id': 'iqilu_25', 'name': '齐鲁频道', 'id0': '25', 'source': 'iqilu'},
         {'id': 'iqilu_26', 'name': '山东体育休闲频道', 'id0': '26', 'source': 'iqilu'},
@@ -670,6 +762,12 @@ if __name__ == '__main__':
         {'id': 'iqilu_30', 'name': '山东农科频道', 'id0': '30', 'source': 'iqilu'},
         {'id': 'iqilu_31', 'name': '山东新闻频道', 'id0': '31', 'source': 'iqilu'},
         {'id': 'iqilu_32', 'name': '山东少儿频道', 'id0': '32', 'source': 'iqilu'},
+        {'id': 'kankanews_1', 'name': '东方卫视', 'id0': '1', 'source': 'kankanews'},
+        {'id': 'kankanews_2', 'name': '上海新闻综合', 'id0': '2', 'source': 'kankanews'},
+        {'id': 'kankanews_5', 'name': '第一财经', 'id0': '5', 'source': 'kankanews'},
+        {'id': 'kankanews_10', 'name': '五星体育', 'id0': '10', 'source': 'kankanews'},
+        {'id': 'kankanews_4', 'name': '上海都市频道', 'id0': '4', 'source': 'kankanews'},
+        {'id': 'kankanews_9', 'name': '哈哈炫动', 'id0': '9', 'source': 'kankanews'},
         {'id': 'XJTV-1', 'name': 'XJTV-1', 'id0': '1', 'source': 'xjtvs'},
         {'id': 'XJTV-2', 'name': 'XJTV-2', 'id0': '3', 'source': 'xjtvs'},
         {'id': 'XJTV-3', 'name': 'XJTV-3', 'id0': '4', 'source': 'xjtvs'},
