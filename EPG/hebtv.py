@@ -13,7 +13,17 @@ async def get_epgs_hebtv(channel, dt):
     channel_id = channel['id']
     channel_id0 = channel['id0']
     url = 'https://api.cmc.hebtv.com/spidercrms/api/live/liveShowSet/findNoPage'
-    headers = {'Content-Type': 'application/json', 'tenantId': '0d91d6cfb98f5b206ac1e752757fc5a9'}
+    headers = {
+        "Host": "api.cmc.hebtv.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0",
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept-Language": "zh-CN,zh-HK;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Content-Type": "application/json",
+        "tenantId": "0d91d6cfb98f5b206ac1e752757fc5a9",
+        "Origin": "https://www.hebtv.com",
+        "Referer": "https://www.hebtv.com/"
+    }
     payload = {"sourceId": channel_id0, "tenantId": "0d91d6cfb98f5b206ac1e752757fc5a9", "day": dt_str, "dayEnd": dt_end}
     try:
         async with httpx.AsyncClient() as client:

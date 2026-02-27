@@ -37,6 +37,8 @@ from kankanews import *
 from jstv import *
 from hebtv import *
 from fjtv import *
+from wisetv import *
+from sztv import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -422,22 +424,23 @@ async def get_epgs(c):
             for i in epg:
                 epgs.append(i)
     elif c['source'] == 'gdtv':
-        need_date = datetime.datetime.now().date()
-        while times < 5:
-            ret = await get_epgs_gdtv(c, need_date)
-            if ret['success'] == True:
-                epg = ret['epgs']
-                break
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_gdtv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
-                msg = ret['msg']
-                times += 1
-                logging.warning(f"{msg}, 将进行第{times}次重试！")
-        else:
-            logging.warning(f"{c}, {need_date}获取失败！")
-            epg = []
-            success = '❌'
-        for i in epg:
-            epgs.append(i)
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
     elif c['source'] == 'hnntv':
         need_date = datetime.datetime.now().date()
         while times < 5:
@@ -597,6 +600,40 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'wisetv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_wisetv(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'sztv':
+        while times < 5:
+            ret = await get_epgs_sztv(c)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}, {need_date}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -675,6 +712,29 @@ if __name__ == '__main__':
         {'id': 'cctv_cctv8k', 'name': 'CCTV-8K', 'id0': 'cctv8k', 'source': 'cctv'},
         {'id': 'cctv_cctveurope', 'name': 'CCTV-4 (欧洲)', 'id0': 'cctveurope', 'source': 'cctv'},
         {'id': 'cctv_cctvamerica', 'name': 'CCTV-4 (美洲)', 'id0': 'cctvamerica', 'source': 'cctv'},
+        {'id': 'cctv_cctvfyzq', 'name': 'CCTV风云足球', 'id0': 'cctvfyzq', 'source': 'cctv'},
+        {'id': 'cctv_cctvgaowang', 'name': 'CCTV高尔夫网球', 'id0': 'cctvgaowang', 'source': 'cctv'},
+        {'id': 'cctv_cctvlaogushi', 'name': 'CCTV老故事', 'id0': 'cctvlaogushi', 'source': 'cctv'},
+        {'id': 'cctv_cctvqixiang', 'name': 'CCTV气象', 'id0': 'cctvqixiang', 'source': 'cctv'},
+        {'id': 'cctv_cctvxiqu', 'name': 'CCTV戏曲', 'id0': 'cctvxiqu', 'source': 'cctv'},
+        {'id': 'cctv_cctvyule', 'name': 'CCTV娱乐', 'id0': 'cctvyule', 'source': 'cctv'},
+        {'id': 'cctv_diyijuchang', 'name': 'CCTV第一剧场', 'id0': 'diyijuchang', 'source': 'cctv'},
+        {'id': 'cctv_dianshigouwu', 'name': 'CCTV中视购物', 'id0': 'dianshigouwu', 'source': 'cctv'},
+        {'id': 'cctv_fyjc', 'name': 'CCTV风云剧场', 'id0': 'fyjc', 'source': 'cctv'},
+        {'id': 'cctv_fyyy', 'name': 'CCTV风云音乐', 'id0': 'fyyy', 'source': 'cctv'},
+        {'id': 'cctv_guofang', 'name': 'CCTV国防军事', 'id0': 'guofang', 'source': 'cctv'},
+        {'id': 'cctv_hjjc', 'name': 'CCTV怀旧剧场', 'id0': 'hjjc', 'source': 'cctv'},
+        {'id': 'cctv_jingpin', 'name': 'CCTV央视文化精品', 'id0': 'jingpin', 'source': 'cctv'},
+        {'id': 'cctv_shijiedili', 'name': 'CCTV世界地理', 'id0': 'shijiedili', 'source': 'cctv'},
+        {'id': 'cctv_shishang', 'name': 'CCTV女性时尚', 'id0': 'shishang', 'source': 'cctv'},
+        {'id': 'cctv_taiqiu', 'name': 'CCTV央视台球', 'id0': 'taiqiu', 'source': 'cctv'},
+        {'id': 'cctv_wsjk', 'name': '卫生健康', 'id0': 'wsjk', 'source': 'cctv'},
+        {'id': 'cctv_zhinan', 'name': 'CCTV电视指南', 'id0': 'zhinan', 'source': 'cctv'},
+        {'id': 'cctv_cetv1', 'name': 'CETV-1', 'id0': 'cetv1', 'source': 'cctv'},
+        {'id': 'cctv_cetv2', 'name': 'CETV-2', 'id0': 'cetv2', 'source': 'cctv'},
+        {'id': 'cctv_cetv3', 'name': 'CETV-3', 'id0': 'cetv3', 'source': 'cctv'},
+        {'id': 'cctv_cetv4', 'name': 'CETV-4', 'id0': 'cetv4', 'source': 'cctv'},
+        {'id': 'cctv_zaoqijiaoyu', 'name': '早期教育', 'id0': 'zaoqijiaoyu', 'source': 'cctv'},
         {'id': 'cctvplus_channel1', 'name': 'CCTV+ Channel 1', 'id0': 'channel1', 'source': 'cctvplus'},
         {'id': 'cctvplus_channel2', 'name': 'CCTV+ Channel 2', 'id0': 'channel2', 'source': 'cctvplus'},
         {'id': 'cctvplus_channel3', 'name': 'CCTV+ Channel 3', 'id0': 'channel3', 'source': 'cctvplus'},
@@ -684,6 +744,16 @@ if __name__ == '__main__':
         {'id': 'tvmao_NANCHANG-NANCHANG3', 'name': '南昌电视台资讯频道', 'id0': 'NANCHANG-NANCHANG3', 'source': 'tvmao'},
         {'id': '1905_xl', 'name': '会员专享放映厅', 'id0': 'xl', 'source': '1905'},
         {'id': '1905_1905tv', 'name': '环球经典', 'id0': '1905tv', 'source': '1905'},
+        {'id': 'fjtv_665248990102917120', 'name': '福建综合频道', 'id0': '665248990102917120', 'source': 'fjtv'},
+        {'id': 'fjtv_665248966136664064', 'name': '东南卫视', 'id0': '665248966136664064', 'source': 'fjtv'},
+        {'id': 'fjtv_665248940467523584', 'name': '福建乡村振兴·公共频道', 'id0': '665248940467523584', 'source': 'fjtv'},
+        {'id': 'fjtv_665248914378952704', 'name': '福建新闻频道', 'id0': '665248914378952704', 'source': 'fjtv'},
+        {'id': 'fjtv_665248891478052864', 'name': '福建电视剧频道', 'id0': '665248891478052864', 'source': 'fjtv'},
+        {'id': 'fjtv_665248752898248704', 'name': '福建旅游频道', 'id0': '665248752898248704', 'source': 'fjtv'},
+        {'id': 'fjtv_665248614498799616', 'name': '福建经济生活频道', 'id0': '665248614498799616', 'source': 'fjtv'},
+        {'id': 'fjtv_665248584991870976', 'name': '福建文体频道', 'id0': '665248584991870976', 'source': 'fjtv'},
+        {'id': 'fjtv_665248553475870720', 'name': '福建少儿频道', 'id0': '665248553475870720', 'source': 'fjtv'},
+        {'id': 'fjtv_665248523855695872', 'name': '海峡卫视', 'id0': '665248523855695872', 'source': 'fjtv'},
         {'id': 'jxgdw_87', 'name': '江西卫视', 'id0': '87', 'source': 'jxgdw'},
         {'id': 'jxgdw_86', 'name': '都市频道', 'id0': '86', 'source': 'jxgdw'},
         {'id': 'jxgdw_153', 'name': '经济生活', 'id0': '153', 'source': 'jxgdw'},
@@ -750,7 +820,7 @@ if __name__ == '__main__':
         {'id': 'jstv_664', 'name': '江苏影视', 'id0': '664', 'source': 'jstv'},
         {'id': 'jstv_668', 'name': '江苏新闻', 'id0': '668', 'source': 'jstv'},
         {'id': 'jstv_666', 'name': '江苏教育', 'id0': '666', 'source': 'jstv'},
-        {'id': 'jstv_665', 'name': '体育休闲', 'id0': '665', 'source': 'jstv'},
+        {'id': 'jstv_665', 'name': '江苏体育休闲', 'id0': '665', 'source': 'jstv'},
         {'id': 'jstv_667', 'name': '优漫卡通', 'id0': '667', 'source': 'jstv'},
         {'id': 'jstv_671', 'name': '江苏国际', 'id0': '671', 'source': 'jstv'},
         {'id': 'iqilu_24', 'name': '山东卫视', 'id0': '24', 'source': 'iqilu'},
@@ -768,6 +838,22 @@ if __name__ == '__main__':
         {'id': 'kankanews_10', 'name': '五星体育', 'id0': '10', 'source': 'kankanews'},
         {'id': 'kankanews_4', 'name': '上海都市频道', 'id0': '4', 'source': 'kankanews'},
         {'id': 'kankanews_9', 'name': '哈哈炫动', 'id0': '9', 'source': 'kankanews'},
+        {'id': 'sztv_24725', 'name': '深圳卫视4K超高清', 'id0': 24725, 'source': 'sztv'},
+        {'id': 'sztv_7867', 'name': '深圳卫视', 'id0': 7867, 'source': 'sztv'},
+        {'id': 'sztv_7868', 'name': '深圳都市频道', 'id0': 7868, 'source': 'sztv'},
+        {'id': 'sztv_7880', 'name': '深圳电视剧频道', 'id0': 7880, 'source': 'sztv'},
+        {'id': 'sztv_7881', 'name': '深圳少儿频道', 'id0': 7881, 'source': 'sztv'},
+        {'id': 'sztv_7869', 'name': '深圳移动电视', 'id0': 7869, 'source': 'sztv'},
+        {'id': 'sztv_7878', 'name': '深圳宜和购物频道', 'id0': 7878, 'source': 'sztv'},
+        {'id': 'sztv_7944', 'name': '深圳国际频道', 'id0': 7944, 'source': 'sztv'},
+        {'id': 'wisetv_30001110000000000000000000000698', 'name': '天津卫视', 'id0': '30001110000000000000000000000698', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000699', 'name': '天津新闻', 'id0': '30001110000000000000000000000699', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000700', 'name': '天津文艺', 'id0': '30001110000000000000000000000700', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000701', 'name': '天津影视', 'id0': '30001110000000000000000000000701', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000702', 'name': '天津都市', 'id0': '30001110000000000000000000000702', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000692', 'name': '天津体育', 'id0': '30001110000000000000000000000692', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000693', 'name': '天津教育', 'id0': '30001110000000000000000000000693', 'source': 'wisetv'},
+        {'id': 'wisetv_30001110000000000000000000000697', 'name': '三佳购物', 'id0': '30001110000000000000000000000697', 'source': 'wisetv'},
         {'id': 'XJTV-1', 'name': 'XJTV-1', 'id0': '1', 'source': 'xjtvs'},
         {'id': 'XJTV-2', 'name': 'XJTV-2', 'id0': '3', 'source': 'xjtvs'},
         {'id': 'XJTV-3', 'name': 'XJTV-3', 'id0': '4', 'source': 'xjtvs'},

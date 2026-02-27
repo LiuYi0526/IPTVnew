@@ -3,6 +3,8 @@ import datetime
 import asyncio
 import os
 from bs4 import BeautifulSoup
+import hashlib
+import time
 
 async def get_epgs_fjtv(channel, dt):
     epgs = []
@@ -11,9 +13,19 @@ async def get_epgs_fjtv(channel, dt):
     dt_str = dt.strftime('%Y-%m-%d')
     channel_id = channel['id']
     channel_id0 = channel['id0']
-    url = f'https://live.fjtv.net/m2o/program_switch.php?channel_id={channel_id0}&play_time=0&dates={dt_str}&shownums=7'
+    timestamp = str(int(time.time()))
+    url = f'https://live.fjtv.net/m2o/program_switch.php?channel_id={channel_id0}&play_time=0&dates={dt_str}&shownums=7&_={timestamp}'
+    key = '877a9ba7a98f75b90a9d49f53f15a858'
+    signature = hashlib.md5(f"{key}&NjhhMDRiODE3N2JkYzllNWUxNmE4OWU2Nzc3YTdiNjY=&1.0.0&{timestamp}".encode()).hexdigest()
     headers = {
-        'Referer': 'https://live.fjtv.net/'
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0",
+        'X-API-TIMESTAMP': timestamp,
+        'X-API-KEY': key,
+        'X-AUTH-TYPE': 'md5',
+        'X-API-VERSION': '1.0.0',
+        'X-API-SIGNATURE': signature,
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://live.fjtv.net/"
     }
     try:
         async with httpx.AsyncClient() as client:
@@ -56,4 +68,4 @@ async def get_epgs_fjtv(channel, dt):
     return ret
 
 
-# asyncio.run(get_epgs_fjtv({'id': 'fjtv_665248990102917120', 'name': '福建综合频道', 'id0': '665248990102917120', 'source': 'fjtv'}, datetime.datetime.now()))
+# asyncio.run(get_epgs_fjtv({'id': 'fjtv_665248966136664064', 'name': '东南卫视', 'id0': '665248966136664064', 'source': 'fjtv'}, datetime.datetime.now()))

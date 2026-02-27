@@ -19,12 +19,13 @@ async def get_epgs_gdtv(channel, dt):
             res = await client.get(f'http://epg.gdtv.cn/f/{channel_id0}/{need_date}.xml')
         res.encoding = 'utf-8'
         root = ET.fromstring(res.text)
+        print(res.text)
         epgs_contents = root.findall('.//content')
         epgs = []
         for epga in epgs_contents:
             starttime = datetime.datetime.fromtimestamp(int(epga.get('time1')))
             endtime = datetime.datetime.fromtimestamp(int(epga.get('time2')))
-            title = html.unescape(epga.text.strip())
+            title = html.unescape(epga.text.replace("<br />", "\n").strip())
             epg = {
                 'channel_id': channel_id,
                 'starttime': starttime,
@@ -69,4 +70,4 @@ async def get_channels_gdtv():
 
 
 # asyncio.run(get_channels_gdtv())
-# asyncio.run(get_epgs_gdtv({'id': 'gdtv_3', 'name': '广东体育', 'id0': '3', 'source': 'gdtv'}, datetime.datetime.now().date()))
+# asyncio.run(get_epgs_gdtv({'id': 'gdtv_7', 'name': '嘉佳卡通', 'id0': '7', 'source': 'gdtv'}, datetime.datetime.now().date()))

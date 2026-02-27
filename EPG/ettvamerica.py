@@ -38,7 +38,7 @@ async def get_epgs_ettvamerica(channel, dt):
                 if endtime0 > starttime0:
                     endtime = pst.localize(datetime.datetime(dt.year, dt.month, dt.day, endtime0.hour, endtime0.minute)).astimezone(bjt)
                 else:
-                    endtime = pst.localize(datetime.datetime(dt.year, dt.month, dt.day+1, endtime0.hour, endtime0.minute)).astimezone(bjt)
+                    endtime = pst.localize(datetime.datetime(dt.year, dt.month, dt.day, endtime0.hour, endtime0.minute) + datetime.timedelta(days=1)).astimezone(bjt)
                 epg = {
                     'channel_id': channel_id,
                     'starttime': starttime,
