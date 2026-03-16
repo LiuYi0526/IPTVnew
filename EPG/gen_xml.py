@@ -40,6 +40,7 @@ from fjtv import *
 from wisetv import *
 from sztv import *
 from gehua import *
+from sc96655 import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -653,6 +654,24 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'sc96655':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_sc96655(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -874,6 +893,17 @@ if __name__ == '__main__':
         {'id': 'sztv_7869', 'name': '深圳移动电视', 'id0': 7869, 'source': 'sztv'},
         {'id': 'sztv_7878', 'name': '深圳宜和购物频道', 'id0': 7878, 'source': 'sztv'},
         {'id': 'sztv_7944', 'name': '深圳国际频道', 'id0': 7944, 'source': 'sztv'},
+        {'id': 'sc96655_3496', 'name': '四川卫视', 'id0': 3496, 'source': 'sc96655'},
+        {'id': 'sc96655_3498', 'name': '四川文化旅游', 'id0': 3498, 'source': 'sc96655'},
+        {'id': 'sc96655_3500', 'name': '四川经济', 'id0': 3500, 'source': 'sc96655'},
+        {'id': 'sc96655_3501', 'name': '四川新闻资讯', 'id0': 3501, 'source': 'sc96655'},
+        {'id': 'sc96655_3504', 'name': '四川影视文艺', 'id0': 3504, 'source': 'sc96655'},
+        {'id': 'sc96655_3789', 'name': '四川星空购物（高清）', 'id0': 3789, 'source': 'sc96655'},
+        {'id': 'sc96655_3506', 'name': '四川妇女儿童', 'id0': 3506, 'source': 'sc96655'},
+        {'id': 'sc96655_3509', 'name': '四川乡村', 'id0': 3509, 'source': 'sc96655'},
+        {'id': 'sc96655_3508', 'name': '四川科教', 'id0': 3508, 'source': 'sc96655'},
+        {'id': 'sc96655_3492', 'name': '四川峨眉电影', 'id0': 3492, 'source': 'sc96655'},
+        {'id': 'sc96655_3943', 'name': '重温经典', 'id0': 3943, 'source': 'sc96655'},
         {'id': 'wisetv_30001110000000000000000000000698', 'name': '天津卫视', 'id0': '30001110000000000000000000000698', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000699', 'name': '天津新闻', 'id0': '30001110000000000000000000000699', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000700', 'name': '天津文艺', 'id0': '30001110000000000000000000000700', 'source': 'wisetv'},
