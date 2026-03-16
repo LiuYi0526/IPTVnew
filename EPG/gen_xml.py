@@ -41,6 +41,7 @@ from wisetv import *
 from sztv import *
 from gehua import *
 from sc96655 import *
+from bfgd import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -672,6 +673,24 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'bfgd':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_bfgd(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -872,6 +891,15 @@ if __name__ == '__main__':
         {'id': 'jstv_671', 'name': '江苏国际', 'id0': '671', 'source': 'jstv'},
         {'id': 'iqilu_24', 'name': '山东卫视', 'id0': '24', 'source': 'iqilu'},
         {'id': 'iqilu_25', 'name': '齐鲁频道', 'id0': '25', 'source': 'iqilu'},
+        {'id': 'bfgd_4200000058', 'name': '辽宁卫视高清', 'id0': 4200000058, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000610', 'name': '辽宁都市高清', 'id0': 4200000610, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000071', 'name': '辽宁北方高清', 'id0': 4200000071, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000611', 'name': '辽宁体育休闲高清', 'id0': 4200000611, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000073', 'name': '辽宁生活高清', 'id0': 4200000073, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000075', 'name': '辽宁教育青少高清', 'id0': 4200000075, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000076', 'name': '辽宁经济高清', 'id0': 4200000076, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000077', 'name': '辽宁公共高清', 'id0': 4200000077, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000070', 'name': '辽宁影视剧高清', 'id0': 4200000070, 'source': 'bfgd'},
         {'id': 'iqilu_26', 'name': '山东体育休闲频道', 'id0': '26', 'source': 'iqilu'},
         {'id': 'iqilu_27', 'name': '山东文旅频道', 'id0': '27', 'source': 'iqilu'},
         {'id': 'iqilu_28', 'name': '山东综艺频道', 'id0': '28', 'source': 'iqilu'},
