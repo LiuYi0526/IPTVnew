@@ -42,6 +42,8 @@ from sztv import *
 from gehua import *
 from sc96655 import *
 from bfgd import *
+from sxtvs import *
+from xmtv import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -632,7 +634,7 @@ async def get_epgs(c):
                 times += 1
                 logging.warning(f"{msg}, 将进行第{times}次重试！")
         else:
-            logging.warning(f"{c}, {need_date}获取失败！")
+            logging.warning(f"{c}获取失败！")
             epg = []
             success = '❌'
         for i in epg:
@@ -687,6 +689,39 @@ async def get_epgs(c):
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
                 logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'sxtvs':
+        while times < 5:
+            ret = await get_epgs_sxtvs(c)
+            if ret['success'] == True:
+                epg = ret['epgs']
+                break
+            else:
+                msg = ret['msg']
+                times += 1
+                logging.warning(f"{msg}, 将进行第{times}次重试！")
+        else:
+            logging.warning(f"{c}获取失败！")
+            epg = []
+            success = '❌'
+        for i in epg:
+            epgs.append(i)
+    elif c['source'] == 'xmtv':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            while times < 5:
+                ret = await get_epgs_xmtv(c, get_days)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {get_days}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -892,14 +927,15 @@ if __name__ == '__main__':
         {'id': 'iqilu_24', 'name': '山东卫视', 'id0': '24', 'source': 'iqilu'},
         {'id': 'iqilu_25', 'name': '齐鲁频道', 'id0': '25', 'source': 'iqilu'},
         {'id': 'bfgd_4200000058', 'name': '辽宁卫视高清', 'id0': 4200000058, 'source': 'bfgd'},
-        {'id': 'bfgd_4200000610', 'name': '辽宁都市高清', 'id0': 4200000610, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000070', 'name': '辽宁影视剧高清', 'id0': 4200000070, 'source': 'bfgd'},
         {'id': 'bfgd_4200000071', 'name': '辽宁北方高清', 'id0': 4200000071, 'source': 'bfgd'},
-        {'id': 'bfgd_4200000611', 'name': '辽宁体育休闲高清', 'id0': 4200000611, 'source': 'bfgd'},
         {'id': 'bfgd_4200000073', 'name': '辽宁生活高清', 'id0': 4200000073, 'source': 'bfgd'},
         {'id': 'bfgd_4200000075', 'name': '辽宁教育青少高清', 'id0': 4200000075, 'source': 'bfgd'},
         {'id': 'bfgd_4200000076', 'name': '辽宁经济高清', 'id0': 4200000076, 'source': 'bfgd'},
         {'id': 'bfgd_4200000077', 'name': '辽宁公共高清', 'id0': 4200000077, 'source': 'bfgd'},
-        {'id': 'bfgd_4200000070', 'name': '辽宁影视剧高清', 'id0': 4200000070, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000610', 'name': '辽宁都市高清', 'id0': 4200000610, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000611', 'name': '辽宁体育休闲高清', 'id0': 4200000611, 'source': 'bfgd'},
+        {'id': 'bfgd_4200000636', 'name': '重温经典', 'id0': 4200000636, 'source': 'bfgd'},
         {'id': 'iqilu_26', 'name': '山东体育休闲频道', 'id0': '26', 'source': 'iqilu'},
         {'id': 'iqilu_27', 'name': '山东文旅频道', 'id0': '27', 'source': 'iqilu'},
         {'id': 'iqilu_28', 'name': '山东综艺频道', 'id0': '28', 'source': 'iqilu'},
@@ -907,6 +943,15 @@ if __name__ == '__main__':
         {'id': 'iqilu_30', 'name': '山东农科频道', 'id0': '30', 'source': 'iqilu'},
         {'id': 'iqilu_31', 'name': '山东新闻频道', 'id0': '31', 'source': 'iqilu'},
         {'id': 'iqilu_32', 'name': '山东少儿频道', 'id0': '32', 'source': 'iqilu'},
+        {'id': 'sxtvs_star','name': '陕西卫视', 'id0': 'star', 'source': 'sxtvs'},
+        {'id': 'sxtvs_1', 'name': '陕西新闻资讯', 'id0': '1', 'source': 'sxtvs'},
+        {'id': 'sxtvs_2', 'name': '陕西都市青春', 'id0': '2', 'source': 'sxtvs'},
+        {'id': 'sxtvs_3', 'name': '陕西银龄频道', 'id0': '3', 'source': 'sxtvs'},
+        {'id': 'sxtvs_5', 'name': '陕西秦腔频道', 'id0': '5', 'source': 'sxtvs'},
+        {'id': 'sxtvs_6', 'name': '陕西乐家购物', 'id0': '6', 'source': 'sxtvs'},
+        {'id': 'sxtvs_7', 'name': '陕西体育休闲', 'id0': '7', 'source': 'sxtvs'},
+        {'id': 'sxtvs_nl', 'name': '陕西农林', 'id0': 'nl', 'source': 'sxtvs'},
+        {'id': 'sxtvs_11', 'name': '陕西移动电视', 'id0': '11', 'source': 'sxtvs'},
         {'id': 'kankanews_1', 'name': '东方卫视', 'id0': '1', 'source': 'kankanews'},
         {'id': 'kankanews_2', 'name': '上海新闻综合', 'id0': '2', 'source': 'kankanews'},
         {'id': 'kankanews_5', 'name': '第一财经', 'id0': '5', 'source': 'kankanews'},
@@ -921,17 +966,17 @@ if __name__ == '__main__':
         {'id': 'sztv_7869', 'name': '深圳移动电视', 'id0': 7869, 'source': 'sztv'},
         {'id': 'sztv_7878', 'name': '深圳宜和购物频道', 'id0': 7878, 'source': 'sztv'},
         {'id': 'sztv_7944', 'name': '深圳国际频道', 'id0': 7944, 'source': 'sztv'},
+        {'id': 'sc96655_3492', 'name': '四川峨眉电影', 'id0': 3492, 'source': 'sc96655'},
+        {'id': 'sc96655_3494', 'name': '康巴卫视', 'id0': 3494, 'source': 'sc96655'},
         {'id': 'sc96655_3496', 'name': '四川卫视', 'id0': 3496, 'source': 'sc96655'},
         {'id': 'sc96655_3498', 'name': '四川文化旅游', 'id0': 3498, 'source': 'sc96655'},
         {'id': 'sc96655_3500', 'name': '四川经济', 'id0': 3500, 'source': 'sc96655'},
         {'id': 'sc96655_3501', 'name': '四川新闻资讯', 'id0': 3501, 'source': 'sc96655'},
         {'id': 'sc96655_3504', 'name': '四川影视文艺', 'id0': 3504, 'source': 'sc96655'},
-        {'id': 'sc96655_3789', 'name': '四川星空购物（高清）', 'id0': 3789, 'source': 'sc96655'},
         {'id': 'sc96655_3506', 'name': '四川妇女儿童', 'id0': 3506, 'source': 'sc96655'},
-        {'id': 'sc96655_3509', 'name': '四川乡村', 'id0': 3509, 'source': 'sc96655'},
         {'id': 'sc96655_3508', 'name': '四川科教', 'id0': 3508, 'source': 'sc96655'},
-        {'id': 'sc96655_3492', 'name': '四川峨眉电影', 'id0': 3492, 'source': 'sc96655'},
-        {'id': 'sc96655_3943', 'name': '重温经典', 'id0': 3943, 'source': 'sc96655'},
+        {'id': 'sc96655_3509', 'name': '四川乡村', 'id0': 3509, 'source': 'sc96655'},
+        {'id': 'sc96655_3789', 'name': '四川星空购物（高清）', 'id0': 3789, 'source': 'sc96655'},
         {'id': 'wisetv_30001110000000000000000000000698', 'name': '天津卫视', 'id0': '30001110000000000000000000000698', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000699', 'name': '天津新闻', 'id0': '30001110000000000000000000000699', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000700', 'name': '天津文艺', 'id0': '30001110000000000000000000000700', 'source': 'wisetv'},
@@ -940,6 +985,9 @@ if __name__ == '__main__':
         {'id': 'wisetv_30001110000000000000000000000692', 'name': '天津体育', 'id0': '30001110000000000000000000000692', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000693', 'name': '天津教育', 'id0': '30001110000000000000000000000693', 'source': 'wisetv'},
         {'id': 'wisetv_30001110000000000000000000000697', 'name': '三佳购物', 'id0': '30001110000000000000000000000697', 'source': 'wisetv'},
+        {'id': 'xmtv_84', 'name': '厦门卫视', 'id0': '84', 'source': 'xmtv'},
+        {'id': 'xmtv_16', 'name': '厦门一套', 'id0': '16', 'source': 'xmtv'},
+        {'id': 'xmtv_17', 'name': '厦门二套', 'id0': '17', 'source': 'xmtv'},
         {'id': 'XJTV-1', 'name': 'XJTV-1', 'id0': '1', 'source': 'xjtvs'},
         {'id': 'XJTV-2', 'name': 'XJTV-2', 'id0': '3', 'source': 'xjtvs'},
         {'id': 'XJTV-3', 'name': 'XJTV-3', 'id0': '4', 'source': 'xjtvs'},
@@ -1006,7 +1054,6 @@ if __name__ == '__main__':
         {'id': 'nowtv_218', 'name': 'Love Nature 4K', 'id0': '218', 'source': 'nowtv'},
         {'id': 'nowtv_209', 'name': 'Discovery Channel', 'id0': '209', 'source': 'nowtv'},
         {'id': 'nowtv_316', 'name': 'CNN 國際新聞網絡', 'id0': '316', 'source': 'nowtv'},
-        {'id': 'nowtv_329', 'name': 'RT', 'id0': '329', 'source': 'nowtv'},
         {'id': 'nowtv_331', 'name': 'Now直播台', 'id0': '331', 'source': 'nowtv'},
         {'id': 'nowtv_332', 'name': 'Now新聞台', 'id0': '332', 'source': 'nowtv'},
         {'id': 'nowtv_333', 'name': 'Now財經台', 'id0': '333', 'source': 'nowtv'},
@@ -1241,7 +1288,6 @@ if __name__ == '__main__':
         {'id': 'tbc_220', 'name': '罪案偵緝頻道', 'id0': '456667', 'source': 'epg.pw'},
         {'id': 'tbc_221', 'name': '寵物頻道', 'id0': '456668', 'source': 'epg.pw'},
         {'id': 'tbc_222', 'name': '歷史頻道', 'id0': '456670', 'source': 'epg.pw'},
-        {'id': 'tbc_249', 'name': 'Euronews', 'id0': '456820', 'source': 'epg.pw'},
         {'id': 'hami_OTT_LIVE_0000001853', 'name': '愛爾達體育MAX1台', 'id0': 'OTT_LIVE_0000001853', 'source': 'hami'},
         {'id': 'hami_OTT_LIVE_0000001854', 'name': '愛爾達體育MAX2台', 'id0': 'OTT_LIVE_0000001854', 'source': 'hami'},
         {'id': 'hami_OTT_LIVE_0000001855', 'name': '愛爾達體育MAX3台', 'id0': 'OTT_LIVE_0000001855', 'source': 'hami'},
@@ -1309,11 +1355,7 @@ if __name__ == '__main__':
         {'id': 'astro_398', 'name': 'NHK World Premium', 'id0': '3929', 'source': 'epg.pw'},
         {'id': 'astro_401', 'name': 'HITS Movies HD', 'id0': '3575', 'source': 'epg.pw'},
         {'id': 'astro_404', 'name': 'BOO HD', 'id0': '2636', 'source': 'epg.pw'},
-        {'id': 'astro_411', 'name': 'HBO HD', 'id0': '1425', 'source': 'epg.pw'},
-        {'id': 'astro_412', 'name': 'CINEMAX HD', 'id0': '3200', 'source': 'epg.pw'},
         {'id': 'astro_413', 'name': 'SHOWCASE MOVIES', 'id0': '4057', 'source': 'epg.pw'},
-        {'id': 'astro_414', 'name': 'HBO Family', 'id0': '4008', 'source': 'epg.pw'},
-        {'id': 'astro_415', 'name': 'HBO Hits', 'id0': '3994', 'source': 'epg.pw'},
         {'id': 'astro_416', 'name': 'tvN Movies HD', 'id0': '2726', 'source': 'epg.pw'},
         {'id': 'astro_501', 'name': 'Astro Awani HD', 'id0': '3958', 'source': 'epg.pw'},
         {'id': 'astro_502', 'name': 'BERNAMA', 'id0': '1835', 'source': 'epg.pw'},
@@ -1469,6 +1511,17 @@ if __name__ == '__main__':
         {'id': 'starhubtvplus_855', 'name': 'Hub VVDrama', 'id0': '412156', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_859', 'name': 'TVB Xing He', 'id0': '412106', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_868', 'name': 'Celestial Movies HD', 'id0': '412099', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_869', 'name': 'CCM', 'id0': '412162', 'source': 'epg.pw'}
+        {'id': 'starhubtvplus_869', 'name': 'CCM', 'id0': '412162', 'source': 'epg.pw'},
+        {'id': 'epgpw_6580', 'name': 'RT News', 'id0': '6580', 'source': 'epg.pw'},
+        {'id': 'epgpw_7374', 'name': 'RT Д English', 'id0': '7374', 'source': 'epg.pw'},
+        {'id': 'epgpw_10770', 'name': 'NHK BS4K', 'id0': '10770', 'source': 'epg.pw'},
+        {'id': 'epgpw_12162', 'name': 'BBC NEWS HD', 'id0': '12162', 'source': 'epg.pw'},
+        {'id': 'epgpw_12523', 'name': 'TRT World HD', 'id0': '12523', 'source': 'epg.pw'},
+        {'id': 'epgpw_464835', 'name': 'CSPAN', 'id0': '464835', 'source': 'epg.pw'},
+        {'id': 'epgpw_464889', 'name': 'MS NOW HD', 'id0': '464889', 'source': 'epg.pw'},
+        {'id': 'epgpw_464941', 'name': 'CBS News National Stream', 'id0': '464941', 'source': 'epg.pw'},
+        {'id': 'epgpw_465150', 'name': 'ABC News Live', 'id0': '465150', 'source': 'epg.pw'},
+        {'id': 'epgpw_465243', 'name': 'CSPAN2', 'id0': '465243', 'source': 'epg.pw'},
+        {'id': 'epgpw_486317', 'name': 'NBC News NOW', 'id0': '486317', 'source': 'epg.pw'}
     ]
     asyncio.run(gen_xml(channels, 'epg0.xml'))

@@ -47,7 +47,7 @@ async def get_epgs_bfgd(channel, dt):
 
 
 async def get_channels_bfgd():
-    url = "http://slave.bfgd.com.cn/media/channel/get_list?accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&pageidx=1&pagenum=100"
+    url = "http://slave.bfgd.com.cn/media/channel/get_list?accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&pageidx=1&pagenum=150"
     async with httpx.AsyncClient() as client:
         res = await client.get(url)
     chnl_list = res.json()["chnl_list"]

@@ -21,6 +21,7 @@ async def get_epgs_gehua(channel, dt):
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
         res.encoding = "utf-8"
+        # print(res.text)
         res_list = res.json()["response"]["responseBody"]["list"]
         for item in res_list:
             title = item["title"]
