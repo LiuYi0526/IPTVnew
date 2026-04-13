@@ -16,7 +16,8 @@ async def get_epgs_gdtv(channel, dt):
     channel_id0 = channel['id0']
     try:
         async with httpx.AsyncClient() as client:
-            res = await client.get(f'http://epg.gdtv.cn/f/{channel_id0}/{need_date}.xml')
+            # res = await client.get(f'http://epg.gdtv.cn/f/{channel_id0}/{need_date}.xml')
+            res = await client.get(f'https://api.liuyi0526.com/gdtv/{channel_id0}/{need_date}.xml')
         res.encoding = 'utf-8'
         root = ET.fromstring(res.text)
         print(res.text)

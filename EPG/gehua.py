@@ -12,7 +12,8 @@ async def get_epgs_gehua(channel, dt):
     channel_id0 = channel["id0"]
     date_str = dt.strftime("%Y-%m-%d")
     try:
-        url = f"https://yfsxcx.yun.gehua.net.cn/ghyx-api/api/v1/epg/liveEpg.json?date={date_str}&channelId={channel_id0}&type=&pageNo=1&pageSize=100&scope=1&openId="
+        # url = f"https://yfsxcx.yun.gehua.net.cn/ghyx-api/api/v1/epg/liveEpg.json?date={date_str}&channelId={channel_id0}&type=&pageNo=1&pageSize=100&scope=1&openId="
+        url = f"https://api.liuyi0526.com/yfsxcx?date={date_str}&channelId={channel_id0}"
         headers = {
             "charset": "utf-8",
             "User-Agent": "Mozilla/5.0 (Linux) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/142.0.7444.173 Safari/537.36",

@@ -44,6 +44,7 @@ from sc96655 import *
 from bfgd import *
 from sxtvs import *
 from xmtv import *
+from fengshows import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -726,6 +727,24 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'fengshows':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_fengshows(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {get_days}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -1048,17 +1067,26 @@ if __name__ == '__main__':
         {'id': 'nowtv_114', 'name': 'HBO Signature', 'id0': '114', 'source': 'nowtv'},
         {'id': 'nowtv_115', 'name': 'HBO', 'id0': '115', 'source': 'nowtv'},
         {'id': 'nowtv_116', 'name': 'MOVIE MOVIE', 'id0': '116', 'source': 'nowtv'},
+        {'id': 'nowtv_119', 'name': 'HITS MOVIES', 'id0': '119', 'source': 'nowtv'},
         {'id': 'nowtv_133', 'name': 'Now 爆谷台', 'id0': '133', 'source': 'nowtv'},
         {'id': 'nowtv_138', 'name': 'Now爆谷星影台', 'id0': '138', 'source': 'nowtv'},
         {'id': 'nowtv_155', 'name': 'tvN', 'id0': '410288', 'source': 'epg.pw'},
         {'id': 'nowtv_218', 'name': 'Love Nature 4K', 'id0': '218', 'source': 'nowtv'},
+        {'id': 'nowtv_208', 'name': 'Discovery Asia', 'id0': '208', 'source': 'nowtv'},
         {'id': 'nowtv_209', 'name': 'Discovery Channel', 'id0': '209', 'source': 'nowtv'},
+        {'id': 'nowtv_210', 'name': '動物星球頻道', 'id0': '210', 'source': 'nowtv'},
+        {'id': 'nowtv_211', 'name': 'Discovery 科學頻道', 'id0': '211', 'source': 'nowtv'},
+        {'id': 'nowtv_212', 'name': 'DMAX', 'id0': '212', 'source': 'nowtv'},
+        {'id': 'nowtv_213', 'name': 'TLC旅遊生活頻道', 'id0': '213', 'source': 'nowtv'},
+        {'id': 'nowtv_217', 'name': 'Love Nature', 'id0': '217', 'source': 'nowtv'},
+        {'id': 'nowtv_221', 'name': '戶外頻道', 'id0': '221', 'source': 'nowtv'},
         {'id': 'nowtv_316', 'name': 'CNN 國際新聞網絡', 'id0': '316', 'source': 'nowtv'},
         {'id': 'nowtv_331', 'name': 'Now直播台', 'id0': '331', 'source': 'nowtv'},
         {'id': 'nowtv_332', 'name': 'Now新聞台', 'id0': '332', 'source': 'nowtv'},
         {'id': 'nowtv_333', 'name': 'Now財經台', 'id0': '333', 'source': 'nowtv'},
         {'id': 'nowtv_366', 'name': '鳳凰衛視資訊台', 'id0': '366', 'source': 'nowtv'},
         {'id': 'nowtv_502', 'name': 'BBC Lifestyle', 'id0': '410365', 'source': 'epg.pw'},
+        {'id': 'nowtv_513', 'name': 'HITS', 'id0': '513', 'source': 'nowtv'},
         {'id': 'nowtv_517', 'name': 'ROCK Entertainment', 'id0': '410367', 'source': 'epg.pw'},
         {'id': 'nowtv_525', 'name': 'Lifetime', 'id0': '410368', 'source': 'epg.pw'},
         {'id': 'nowtv_538', 'name': '中天亞洲台', 'id0': '538', 'source': 'nowtv'},
@@ -1516,12 +1544,16 @@ if __name__ == '__main__':
         {'id': 'starhubtvplus_868', 'name': 'Celestial Movies HD', 'id0': '412099', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_869', 'name': 'CCM', 'id0': '412162', 'source': 'epg.pw'},
         {'id': 'epgpw_6580', 'name': 'RT News', 'id0': '6580', 'source': 'epg.pw'},
+        {'id': 'epgpw_6856', 'name': 'TVP World', 'id0': '6856', 'source': 'epg.pw'},
         {'id': 'epgpw_7374', 'name': 'RT Д English', 'id0': '7374', 'source': 'epg.pw'},
         {'id': 'epgpw_10770', 'name': 'NHK BS4K', 'id0': '10770', 'source': 'epg.pw'},
         {'id': 'epgpw_12162', 'name': 'BBC NEWS HD', 'id0': '12162', 'source': 'epg.pw'},
         {'id': 'epgpw_12523', 'name': 'TRT World HD', 'id0': '12523', 'source': 'epg.pw'},
+        {'id': 'epgpw_463912', 'name': 'DD INDIA', 'id0': '463912', 'source': 'epg.pw'},
+        {'id': 'epgpw_463973', 'name': 'WION', 'id0': '463973', 'source': 'epg.pw'},
         {'id': 'epgpw_464835', 'name': 'CSPAN', 'id0': '464835', 'source': 'epg.pw'},
         {'id': 'epgpw_464889', 'name': 'MS NOW HD', 'id0': '464889', 'source': 'epg.pw'},
+        {'id': 'epgpw_464920', 'name': 'i24 News English', 'id0': '464920', 'source': 'epg.pw'},
         {'id': 'epgpw_464941', 'name': 'CBS News National Stream', 'id0': '464941', 'source': 'epg.pw'},
         {'id': 'epgpw_465150', 'name': 'ABC News Live', 'id0': '465150', 'source': 'epg.pw'},
         {'id': 'epgpw_465243', 'name': 'CSPAN2', 'id0': '465243', 'source': 'epg.pw'},
