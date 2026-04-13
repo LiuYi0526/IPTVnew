@@ -45,6 +45,7 @@ from bfgd import *
 from sxtvs import *
 from xmtv import *
 from fengshows import *
+from starhub import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -741,6 +742,24 @@ async def get_epgs(c):
                     logging.warning(f"{msg}, 将进行第{times}次重试！")
             else:
                 logging.warning(f"{c}, {get_days}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
+    elif c['source'] == 'starhub':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_starhub(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
                 epg = []
                 success = '❌'
             for i in epg:
@@ -1443,7 +1462,7 @@ if __name__ == '__main__':
         {'id': 'astro_832', 'name': 'Astro Cricket HD', 'id0': '2442', 'source': 'epg.pw'},
         {'id': 'astro_833', 'name': 'Premier Sports', 'id0': '3625', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_101', 'name': 'Preview Channel', 'id0': '412148', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_111', 'name': 'Hub E City HD', 'id0': '412191', 'source': 'epg.pw'},
+        {'id': 'starhubtvplus_111', 'name': 'Hub E City HD', 'id0': '3181b9a2-f8f4-489c-b8fd-d19f923c6f62', 'source': 'starhub'},
         {'id': 'starhubtvplus_115', 'name': 'Citra Entertainment', 'id0': '412104', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_116', 'name': 'Karisma', 'id0': '412117', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_118', 'name': 'Astro Warna HD', 'id0': '412155', 'source': 'epg.pw'},
@@ -1524,25 +1543,25 @@ if __name__ == '__main__':
         {'id': 'starhubtvplus_711', 'name': 'CNN HD', 'id0': '412201', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_722', 'name': 'CGTN', 'id0': '412109', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_724', 'name': 'France24', 'id0': '412190', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_801', 'name': 'CCTV-4', 'id0': '412139', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_805', 'name': 'Phoenix Chinese Channel HD', 'id0': '412189', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_806', 'name': 'Phoenix InfoNews Channel HD', 'id0': '412145', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_808', 'name': 'TVBS-NEWS', 'id0': '412149', 'source': 'epg.pw'},
+        {'id': 'starhubtvplus_801', 'name': 'CCTV-4', 'id0': 'cb80faa0-ad72-4bcb-a777-434464325c5f', 'source': 'starhub'},
+        {'id': 'starhubtvplus_805', 'name': 'Phoenix Chinese Channel HD', 'id0': '3d4b11b5-c883-44ae-921b-4d7e07fe852f', 'source': 'starhub'},
+        {'id': 'starhubtvplus_806', 'name': 'Phoenix InfoNews Channel HD', 'id0': 'd440ee6e-6f9a-4d78-b37b-5be89051145a', 'source': 'starhub'},
+        {'id': 'starhubtvplus_808', 'name': 'TVBS-NEWS', 'id0': 'ea2a19ac-da50-4e86-8083-d8938112641f', 'source': 'starhub'},
         {'id': 'starhubtvplus_811', 'name': 'NHK World Premium HD', 'id0': '412130', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_812', 'name': 'NHK WORLD - JAPAN HD', 'id0': '412179', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_815', 'name': 'KBS World HD', 'id0': '412101', 'source': 'epg.pw'},
         {'id': 'starhubtvplus_817', 'name': 'Arirang TV HD', 'id0': '412147', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_820', 'name': 'ETTV ASIA HD', 'id0': '412168', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_823', 'name': 'ONE HD', 'id0': '412180', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_825', 'name': 'Hub E City HD', 'id0': '412200', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_827', 'name': 'CTI TV HD', 'id0': '412176', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_828', 'name': 'TVBS Asia', 'id0': '412193', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_832', 'name': 'Dragon TV', 'id0': '412142', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_838', 'name': 'TVB Jade HD', 'id0': '412135', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_855', 'name': 'Hub VVDrama', 'id0': '412156', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_859', 'name': 'TVB Xing He', 'id0': '412106', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_868', 'name': 'Celestial Movies HD', 'id0': '412099', 'source': 'epg.pw'},
-        {'id': 'starhubtvplus_869', 'name': 'CCM', 'id0': '412162', 'source': 'epg.pw'},
+        {'id': 'starhubtvplus_820', 'name': 'ETTV ASIA HD', 'id0': '39a2d989-f51d-45de-b4e3-90cc58aa54f4', 'source': 'starhub'},
+        {'id': 'starhubtvplus_823', 'name': 'ONE HD', 'id0': '0bde83aa-c1b1-40c0-934d-e0f541808ade', 'source': 'starhub'},
+        {'id': 'starhubtvplus_825', 'name': 'Hub E City HD', 'id0': 'aa5a523d-562b-499b-b04b-1d75fbbc88f5', 'source': 'starhub'},
+        {'id': 'starhubtvplus_827', 'name': 'CTI TV HD', 'id0': '0629c0f2-b352-4b01-93aa-f37c91b07866', 'source': 'starhub'},
+        {'id': 'starhubtvplus_828', 'name': 'TVBS Asia', 'id0': 'e1b53e0d-f371-4918-8cbd-6e99a4d79c76', 'source': 'starhub'},
+        {'id': 'starhubtvplus_832', 'name': 'Dragon TV', 'id0': '69303210-3157-4dd2-b923-809c5ce2371a', 'source': 'starhub'},
+        {'id': 'starhubtvplus_838', 'name': 'TVB Jade HD', 'id0': '38251a1a-9368-410c-9dc5-ab806d74420f', 'source': 'starhub'},
+        {'id': 'starhubtvplus_855', 'name': 'Hub VVDrama', 'id0': '792aa2b5-cb06-45b9-bf37-e919c27c097e', 'source': 'starhub'},
+        {'id': 'starhubtvplus_859', 'name': 'TVB Xing He', 'id0': '8a0cfe88-6627-49e8-8eed-a2f73e609b5d', 'source': 'starhub'},
+        {'id': 'starhubtvplus_868', 'name': 'Celestial Movies HD', 'id0': 'b8b921c8-3798-40b7-aab9-cb2eca3a5159', 'source': 'starhub'},
+        {'id': 'starhubtvplus_869', 'name': 'CCM', 'id0': 'd2bac03e-7024-48be-83b2-d56cc3852a7c', 'source': 'starhub'},
         {'id': 'epgpw_6580', 'name': 'RT News', 'id0': '6580', 'source': 'epg.pw'},
         {'id': 'epgpw_6856', 'name': 'TVP World', 'id0': '6856', 'source': 'epg.pw'},
         {'id': 'epgpw_7374', 'name': 'RT Д English', 'id0': '7374', 'source': 'epg.pw'},
