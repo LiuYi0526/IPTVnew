@@ -38,17 +38,22 @@ async def get_epgs_starhub(channel, dt):
         for resource in data.get('resources', []):
             if resource.get('metatype') == 'Schedule':
                 title = resource.get('title', '')
+                description = resource.get('description', '')
+
+                episode_number = resource.get('episode_number')
+                if episode_number:
+                    if has_chinese(title) or has_chinese(description):
+                        title = f"{title} - E{episode_number}"
+                    else:
+                        title = f"E{episode_number} - {title}"
+                
                 serie_title = resource.get('serie_title', '')
                 if serie_title:
                     title = f"{serie_title} - {title}"
-                description = resource.get('description', '')
-                episode_number = resource.get('episode_number')
 
-                if episode_number:
-                    if has_chinese(title) or has_chinese(description):
-                        title += f" 第{episode_number}集"
-                    else:
-                        title += f" Ep{episode_number}"
+                rating = resource.get('rating', '')
+                if rating:
+                    title = f"{title}[{rating}]"
 
                 start_time = datetime.datetime.fromtimestamp(resource.get('start')).astimezone(datetime.timezone(datetime.timedelta(hours=8)))
                 end_time = datetime.datetime.fromtimestamp(resource.get('end')).astimezone(datetime.timezone(datetime.timedelta(hours=8)))
