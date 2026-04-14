@@ -14,22 +14,24 @@ async def get_epgs_fjtv(channel, dt):
     channel_id = channel['id']
     channel_id0 = channel['id0']
     timestamp = str(int(time.time()))
-    url = f'https://live.fjtv.net/m2o/program_switch.php?channel_id={channel_id0}&play_time=0&dates={dt_str}&shownums=7&_={timestamp}'
-    key = '877a9ba7a98f75b90a9d49f53f15a858'
-    signature = hashlib.md5(f"{key}&NjhhMDRiODE3N2JkYzllNWUxNmE4OWU2Nzc3YTdiNjY=&1.0.0&{timestamp}".encode()).hexdigest()
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0",
-        'X-API-TIMESTAMP': timestamp,
-        'X-API-KEY': key,
-        'X-AUTH-TYPE': 'md5',
-        'X-API-VERSION': '1.0.0',
-        'X-API-SIGNATURE': signature,
-        "X-Requested-With": "XMLHttpRequest",
-        "Referer": "https://live.fjtv.net/"
-    }
+    # url = f'https://live.fjtv.net/m2o/program_switch.php?channel_id={channel_id0}&play_time=0&dates={dt_str}&shownums=7&_={timestamp}'
+    url = f'https://api.liuyi0526.com/fjtv_live?channel_id={channel_id0}&dates={dt_str}'
+    # key = '877a9ba7a98f75b90a9d49f53f15a858'
+    # signature = hashlib.md5(f"{key}&NjhhMDRiODE3N2JkYzllNWUxNmE4OWU2Nzc3YTdiNjY=&1.0.0&{timestamp}".encode()).hexdigest()
+    # headers = {
+    #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0",
+    #     'X-API-TIMESTAMP': timestamp,
+    #     'X-API-KEY': key,
+    #     'X-AUTH-TYPE': 'md5',
+    #     'X-API-VERSION': '1.0.0',
+    #     'X-API-SIGNATURE': signature,
+    #     "X-Requested-With": "XMLHttpRequest",
+    #     "Referer": "https://live.fjtv.net/"
+    # }
     try:
         async with httpx.AsyncClient() as client:
-            res = await client.get(url, headers=headers)
+            # res = await client.get(url, headers=headers)
+            res = await client.get(url)
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser')
         items = soup.find("div", id="liveSchedule").find_all('li')
@@ -51,7 +53,7 @@ async def get_epgs_fjtv(channel, dt):
         for i in range(len(epgs) - 1):
             epgs[i]['endtime'] = epgs[i+1]['starttime']
         if epgs:
-            epgs[-1]['endtime'] = datetime.datetime.strptime(f"{dt_str} 23:59:59", "%Y-%m-%d %H:%M:%S")
+            epgs[-1]['endtime'] = datetime.datetime.strptime(f"{dt_str} 00:00:00", "%Y-%m-%d %H:%M:%S") + datetime.timedelta(days=1)
         # for i in epgs:
         #     print(i)
     except Exception as e:

@@ -20,7 +20,6 @@ async def get_epgs_gdtv(channel, dt):
             res = await client.get(f'https://api.liuyi0526.com/gdtv/{channel_id0}/{need_date}.xml')
         res.encoding = 'utf-8'
         root = ET.fromstring(res.text)
-        print(res.text)
         epgs_contents = root.findall('.//content')
         epgs = []
         for epga in epgs_contents:

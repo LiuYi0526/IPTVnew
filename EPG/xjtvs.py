@@ -12,7 +12,7 @@ async def get_epgs_xjtvs(channel, dt):
     channel_id = channel['id']
     channel_id0 = channel['id0']
     # url = 'https://slstapi.xjtvs.com.cn/api/TVLiveV100/TVGuideList?tvChannelId=%s&date=%s+00:00:00&json=true' % (channel_id0, need_date)
-    url = f"https://api.liuyi0526.com/yfsxcx?tvChannelId={channel_id0}&date={need_date}"
+    url = f"https://api.liuyi0526.com/slstapi?tvChannelId={channel_id0}&date={need_date}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
         "Accept": "*/*",

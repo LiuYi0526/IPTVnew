@@ -46,6 +46,7 @@ from sxtvs import *
 from xmtv import *
 from fengshows import *
 from starhub import *
+from btzx import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -764,6 +765,24 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'btzx':
+        for get_days in [-1, 0, 1]:  # 昨今明3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_btzx(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -883,6 +902,7 @@ if __name__ == '__main__':
         {'id': 'guhua_27', 'name': 'BRTV生活', 'id0': '27', 'source': 'gehua'},
         {'id': 'guhua_629', 'name': 'BRTV新闻高清', 'id0': '629', 'source': 'gehua'},
         {'id': 'guhua_30', 'name': '卡酷少儿', 'id0': '30', 'source': 'gehua'},
+        {'id': 'btzx', 'name': "兵团卫视", 'id0': 'TvCh1540979167111228', 'source': 'bztx'},
         {'id': 'fjtv_665248990102917120', 'name': '福建综合频道', 'id0': '665248990102917120', 'source': 'fjtv'},
         {'id': 'fjtv_665248966136664064', 'name': '东南卫视', 'id0': '665248966136664064', 'source': 'fjtv'},
         {'id': 'fjtv_665248940467523584', 'name': '福建乡村振兴·公共频道', 'id0': '665248940467523584', 'source': 'fjtv'},

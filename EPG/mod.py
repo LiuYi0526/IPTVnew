@@ -32,13 +32,14 @@ async def get_epgs_mod(channel, dt):
             else:
                 starttime = datetime.datetime(dt.year, dt.month, dt.day, int(timestr[:2]), int(timestr[-2:])) - datetime.timedelta(days=1)
             timestr0 = timestr
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': '',
-                   'program_date': dt,
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': '',
+                'program_date': dt,
+            }
             epgs.append(epg)
     except Exception as e:
         success = 0

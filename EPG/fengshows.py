@@ -30,7 +30,7 @@ async def get_epgs_fengshows(channel, dt):
         for i in range(len(epgs) - 1):
             epgs[i]['endtime'] = epgs[i+1]['starttime']
         if epgs:
-            epgs[-1]['endtime'] = datetime.datetime.strptime(f"{date_str} 23:59:59", "%Y%m%d %H:%M:%S").astimezone(datetime.timezone(datetime.timedelta(hours=8)))
+            epgs[-1]['endtime'] = (datetime.datetime.strptime(f"{date_str} 00:00:00", "%Y%m%d %H:%M:%S") + datetime.timedelta(days=1)).astimezone(datetime.timezone(datetime.timedelta(hours=8)))
         # for i in epgs:
         #     print(i)
     except Exception as e:

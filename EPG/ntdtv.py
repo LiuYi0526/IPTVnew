@@ -31,12 +31,13 @@ async def get_epgs_ntdtv(channel):
         for item in items[::-1]:
             title = item['title']
             starttime = datetime.datetime.fromtimestamp(item['time_start'])
-            epg = {'channel_id': channel_id,
-                   'starttime': starttime,
-                   'endtime': endtime,
-                   'title': title,
-                   'desc': '',
-                   }
+            epg = {
+                'channel_id': channel_id,
+                'starttime': starttime,
+                'endtime': endtime,
+                'title': title,
+                'desc': ''
+            }
             endtime = starttime
             epgs.append(epg)
             # print(epg)
