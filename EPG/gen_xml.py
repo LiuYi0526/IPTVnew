@@ -47,6 +47,7 @@ from xmtv import *
 from fengshows import *
 from starhub import *
 from btzx import *
+from astro import *
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -783,6 +784,24 @@ async def get_epgs(c):
                 success = '❌'
             for i in epg:
                 epgs.append(i)
+    elif c['source'] == 'astro':
+        for get_days in [0, 1, 2]:  # 今明后3天
+            need_date = datetime.datetime.now().date() + datetime.timedelta(days=get_days)
+            while times < 5:
+                ret = await get_epgs_astro(c, need_date)
+                if ret['success'] == True:
+                    epg = ret['epgs']
+                    break
+                else:
+                    msg = ret['msg']
+                    times += 1
+                    logging.warning(f"{msg}, 将进行第{times}次重试！")
+            else:
+                logging.warning(f"{c}, {need_date}获取失败！")
+                epg = []
+                success = '❌'
+            for i in epg:
+                epgs.append(i)
 
     return epgs, f"|{c['id']}|{c['name']}|{success}|\n"
 
@@ -902,7 +921,7 @@ if __name__ == '__main__':
         {'id': 'guhua_27', 'name': 'BRTV生活', 'id0': '27', 'source': 'gehua'},
         {'id': 'guhua_629', 'name': 'BRTV新闻高清', 'id0': '629', 'source': 'gehua'},
         {'id': 'guhua_30', 'name': '卡酷少儿', 'id0': '30', 'source': 'gehua'},
-        {'id': 'btzx', 'name': "兵团卫视", 'id0': 'TvCh1540979167111228', 'source': 'bztx'},
+        {'id': 'btzx', 'name': "兵团卫视", 'id0': 'TvCh1540979167111228', 'source': 'btzx'},
         {'id': 'fjtv_665248990102917120', 'name': '福建综合频道', 'id0': '665248990102917120', 'source': 'fjtv'},
         {'id': 'fjtv_665248966136664064', 'name': '东南卫视', 'id0': '665248966136664064', 'source': 'fjtv'},
         {'id': 'fjtv_665248940467523584', 'name': '福建乡村振兴·公共频道', 'id0': '665248940467523584', 'source': 'fjtv'},
@@ -1402,24 +1421,24 @@ if __name__ == '__main__':
         {'id': 'astro_223', 'name': 'Zee Tamil HD', 'id0': '2885', 'source': 'epg.pw'},
         {'id': 'astro_241', 'name': 'ABO Movies Thangathirai HD', 'id0': '2181', 'source': 'epg.pw'},
         {'id': 'astro_251', 'name': 'Zee Cinema', 'id0': '4221', 'source': 'epg.pw'},
-        {'id': 'astro_300', 'name': 'iQIYI HD', 'id0': '3290', 'source': 'epg.pw'},
+        {'id': 'astro_300', 'name': 'iQIYI HD', 'id0': '1006', 'source': 'astro'},
         {'id': 'astro_305', 'name': 'TVB Classic HD', 'id0': '3895', 'source': 'epg.pw'},
-        {'id': 'astro_306', 'name': 'Astro AEC', 'id0': '2226', 'source': 'epg.pw'},
-        {'id': 'astro_308', 'name': 'Astro QJ', 'id0': '1781', 'source': 'epg.pw'},
-        {'id': 'astro_309', 'name': 'Celestial Movies HD', 'id0': '1298', 'source': 'epg.pw'},
-        {'id': 'astro_310', 'name': 'TVB Jade', 'id0': '2524', 'source': 'epg.pw'},
-        {'id': 'astro_311', 'name': 'Astro AOD', 'id0': '2124', 'source': 'epg.pw'},
-        {'id': 'astro_316', 'name': 'CTI Asia HD', 'id0': '3885', 'source': 'epg.pw'},
-        {'id': 'astro_317', 'name': 'TVB Entertainment News HD', 'id0': '3920', 'source': 'epg.pw'},
-        {'id': 'astro_319', 'name': 'TVB Xing He HD', 'id0': '3493', 'source': 'epg.pw'},
-        {'id': 'astro_320', 'name': 'TVBS Asia HD', 'id0': '3509', 'source': 'epg.pw'},
-        {'id': 'astro_321', 'name': 'Celestial Classic Movies', 'id0': '2280', 'source': 'epg.pw'},
-        {'id': 'astro_325', 'name': 'Phoenix Chinese Channel HD', 'id0': '3478', 'source': 'epg.pw'},
-        {'id': 'astro_326', 'name': 'Phoenix Info News HD', 'id0': '878', 'source': 'epg.pw'},
-        {'id': 'astro_333', 'name': 'Astro Hua Hee Dai', 'id0': '1951', 'source': 'epg.pw'},
-        {'id': 'astro_335', 'name': 'CCTV4 HD', 'id0': '3518', 'source': 'epg.pw'},
-        {'id': 'astro_392', 'name': 'KBS World HD', 'id0': '1889', 'source': 'epg.pw'},
-        {'id': 'astro_393', 'name': 'ONE HD', 'id0': '1242', 'source': 'epg.pw'},
+        {'id': 'astro_306', 'name': 'AEC HD', 'id0': '2400', 'source': 'astro'},
+        {'id': 'astro_308', 'name': 'QJ HD', 'id0': '2507', 'source': 'astro'},
+        {'id': 'astro_309', 'name': 'CELESTIAL HD', 'id0': '506', 'source': 'astro'},
+        {'id': 'astro_310', 'name': 'TVBJ', 'id0': '2600', 'source': 'astro'},
+        {'id': 'astro_311', 'name': 'AOD HD', 'id0': '2706', 'source': 'astro'},
+        {'id': 'astro_316', 'name': 'CTI ASIA HD', 'id0': '5017', 'source': 'astro'},
+        {'id': 'astro_317', 'name': 'TVB E-NEWS HD', 'id0': '5015', 'source': 'astro'},
+        {'id': 'astro_319', 'name': 'TVB XING HE HD', 'id0': '401', 'source': 'astro'},
+        {'id': 'astro_320', 'name': 'TVBS ASIA HD', 'id0': '402', 'source': 'astro'},
+        {'id': 'astro_321', 'name': 'CCM', 'id0': '100', 'source': 'astro'},
+        {'id': 'astro_325', 'name': 'PHOENIX HD', 'id0': '400', 'source': 'astro'},
+        {'id': 'astro_326', 'name': 'PHOENIX NEWS HD', 'id0': '5009', 'source': 'astro'},
+        {'id': 'astro_333', 'name': 'HUA HEE DAI HD', 'id0': '2308', 'source': 'astro'},
+        {'id': 'astro_335', 'name': 'CCTV4 HD', 'id0': '403', 'source': 'astro'},
+        {'id': 'astro_392', 'name': 'KBSW HD', 'id0': '2306', 'source': 'astro'},
+        {'id': 'astro_393', 'name': 'ONE HD', 'id0': '2702', 'source': 'astro'},
         {'id': 'astro_395', 'name': 'tvN HD', 'id0': '2323', 'source': 'epg.pw'},
         {'id': 'astro_396', 'name': 'K-Plus HD', 'id0': '2652', 'source': 'epg.pw'},
         {'id': 'astro_398', 'name': 'NHK World Premium', 'id0': '3929', 'source': 'epg.pw'},
@@ -1588,6 +1607,12 @@ if __name__ == '__main__':
         {'id': 'epgpw_10770', 'name': 'NHK BS4K', 'id0': '10770', 'source': 'epg.pw'},
         {'id': 'epgpw_12162', 'name': 'BBC NEWS HD', 'id0': '12162', 'source': 'epg.pw'},
         {'id': 'epgpw_12523', 'name': 'TRT World HD', 'id0': '12523', 'source': 'epg.pw'},
+        {'id': 'epgpw_76619', 'name': 'Eurosport 1', 'id0': '76619', 'source': 'epg.pw'},
+        {'id': 'epgpw_767447', 'name': 'Eurosport 2', 'id0': '6744', 'source': 'epg.pw'},
+        {'id': 'epgpw_400477', 'name': 'TNT Sports 1 HD', 'id0': '400477', 'source': 'epg.pw'},
+        {'id': 'epgpw_400478', 'name': 'TNT Sports 4 HD', 'id0': '400478', 'source': 'epg.pw'},
+        {'id': 'epgpw_400479', 'name': 'TNT Sports 3 HD', 'id0': '400479', 'source': 'epg.pw'},
+        {'id': 'epgpw_400480', 'name': 'TNT Sports 2 HD', 'id0': '400480', 'source': 'epg.pw'},
         {'id': 'epgpw_463912', 'name': 'DD INDIA', 'id0': '463912', 'source': 'epg.pw'},
         {'id': 'epgpw_463973', 'name': 'WION', 'id0': '463973', 'source': 'epg.pw'},
         {'id': 'epgpw_464835', 'name': 'CSPAN', 'id0': '464835', 'source': 'epg.pw'},

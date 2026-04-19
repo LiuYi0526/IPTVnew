@@ -31,11 +31,11 @@ jobs:
       run: |
         cd ./EPG/xml
         wget https://tvpass.org/epg.xml
-        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://e.erw.cc/all.xml.gz)
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/kuke31/xmlgz/main/all.xml.gz)
         if [ "$HTTP_CODE" -eq "404" ]; then
           echo "File not found (404), skipping..."
         else
-          curl -O http://e.erw.cc/all.xml.gz
+          curl -O https://raw.githubusercontent.com/kuke31/xmlgz/main/all.xml.gz
           gunzip all.xml.gz
         fi
     - name: Merge EPG
