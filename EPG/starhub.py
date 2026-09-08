@@ -22,6 +22,14 @@ def has_chinese(text):
     pattern = r'[\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]'
     return bool(re.search(pattern, text))
 
+
+def _natural_sort_key(value):
+    return [
+        int(part) if part.isdigit() else part.lower()
+        for part in re.split(r'(\d+)', value)
+    ]
+
+
 async def get_epgs_starhub(channel, dt):
     epgs = []
     msg = ''
@@ -113,16 +121,18 @@ async def get_channels_starhub():
     data = res.json()
     for resource in data.get('resources', []):
         if resource.get('metatype') == 'Channel':
-            id = resource['id']
+            channel_api_id = resource['id']
             number = resource['number']
             channel = {
                 'id': f'starhubtvplus_{number}',
                 'name': resource["title"],
-                'id0': id,
+                'id0': channel_api_id,
                 'source': 'starhub'
             }
             channels.append(channel)
-            print(channel)
+    channels.sort(key=lambda channel: _natural_sort_key(channel['id']))
+    for channel in channels:
+        print(channel)
     return channels
 
 
