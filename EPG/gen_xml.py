@@ -51,6 +51,7 @@ from astro import *
 from ysp_jce import get_epgs_ysp_jce
 from nhk import get_epgs_nhk
 from singtel import get_epgs_singtel
+from btime import get_epgs_btime
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -109,6 +110,7 @@ EPG_SOURCE_CONFIGS = {
     'YSP_JCE': (get_epgs_ysp_jce, MODE_DATE, range(-6, 2)),
     'nhk': (get_epgs_nhk, MODE_DATE, THREE_DAY_OFFSETS),
     'singtel': (get_epgs_singtel, MODE_DATE, THREE_DAY_OFFSETS),
+    'btime': (get_epgs_btime, MODE_PLAIN, None),
 }
 
 
@@ -1028,15 +1030,15 @@ if __name__ == '__main__':
         {'id': 'tvmao_NANCHANG-NANCHANG3', 'name': '南昌电视台资讯频道', 'id0': 'NANCHANG-NANCHANG3', 'source': 'tvmao'},
         {'id': '1905_xl', 'name': '会员专享放映厅', 'id0': 'xl', 'source': '1905'},
         {'id': '1905_1905tv', 'name': '环球经典', 'id0': '1905tv', 'source': '1905'},
-        {'id': 'guhua_620', 'name': 'BRTV体育休闲高清', 'id0': '620', 'source': 'gehua'},
-        {'id': 'guhua_621', 'name': '北京卫视高清', 'id0': '621', 'source': 'gehua'},
-        {'id': 'guhua_622', 'name': 'BRTV文艺高清', 'id0': '622', 'source': 'gehua'},
-        {'id': 'guhua_23', 'name': 'BRTV纪实科教', 'id0': '23', 'source': 'gehua'},
-        {'id': 'guhua_624', 'name': 'BRTV影视高清', 'id0': '624', 'source': 'gehua'},
-        {'id': 'guhua_25', 'name': 'BRTV财经', 'id0': '25', 'source': 'gehua'},
-        {'id': 'guhua_27', 'name': 'BRTV生活', 'id0': '27', 'source': 'gehua'},
-        {'id': 'guhua_629', 'name': 'BRTV新闻高清', 'id0': '629', 'source': 'gehua'},
-        {'id': 'guhua_30', 'name': '卡酷少儿', 'id0': '30', 'source': 'gehua'},
+        {'id': 'btime_btv_09', 'name': 'BRTV新闻', 'id0': '53gpt1ephlp86eor6ahtkg5b2hf', 'source': 'btime'},
+        {'id': 'btime_btv_12', 'name': '北京卫视', 'id0': '573ib1kp5nk92irinpumbo9krlb', 'source': 'btime'},
+        {'id': 'btime_btv_16', 'name': 'BRTV体育休闲', 'id0': '54hv0f3pq079d4oiil2k12dkvsc', 'source': 'btime'},
+        {'id': 'btime_btv_31', 'name': 'BRTV文艺', 'id0': '54db6gi5vfj8r8q1e6r89imd64s', 'source': 'btime'},
+        {'id': 'btime_btv_105', 'name': 'BRTV影视', 'id0': '50mqo8t4n4e8gtarqr3orj9l93v', 'source': 'btime'},
+        {'id': 'btime_btv_107', 'name': 'BRTV财经', 'id0': '50e335k9dq488lb7jo44olp71f5', 'source': 'btime'},
+        {'id': 'btime_btv_108', 'name': 'BRTV i生活', 'id0': '50j015rjrei9vmp3h8upblr41jf', 'source': 'btime'},
+        {'id': 'btime_btv_109', 'name': '卡酷少儿', 'id0': '55skfjq618b9kcq9tfjr5qllb7r', 'source': 'btime'},
+        {'id': 'btime_btv_110', 'name': 'BRTV纪实科教', 'id0': '53bn9rlalq08lmb8nf8iadoph0b', 'source': 'btime'},
         {'id': 'btzx', 'name': "兵团卫视", 'id0': 'TvCh1540979167111228', 'source': 'btzx'},
         {'id': 'fjtv_665248990102917120', 'name': '福建综合频道', 'id0': '665248990102917120', 'source': 'fjtv'},
         {'id': 'fjtv_665248966136664064', 'name': '东南卫视', 'id0': '665248966136664064', 'source': 'fjtv'},
