@@ -1287,6 +1287,8 @@ if __name__ == '__main__':
         {'id': 'nowtv_625', 'name': 'Now Sports 英超5台', 'id0': '410392', 'source': 'epg.pw'},
         {'id': 'nowtv_626', 'name': 'Now Sports 英超6台', 'id0': '415544', 'source': 'epg.pw'},
         {'id': 'nowtv_627', 'name': 'Now Sports 英超7台', 'id0': '415545', 'source': 'epg.pw'},
+        {'id': 'nowtv_628', 'name': 'Now Sports 英超8台', 'id0': '628', 'source': 'nowtv'},
+        {'id': 'nowtv_629', 'name': 'Now Sports 英超9台', 'id0': '629', 'source': 'nowtv'},
         {'id': 'nowtv_630', 'name': 'Now Sports 精選', 'id0': '630', 'source': 'nowtv'},
         {'id': 'nowtv_631', 'name': 'Now Sports 1', 'id0': '631', 'source': 'nowtv'},
         {'id': 'nowtv_632', 'name': 'Now Sports 2', 'id0': '632', 'source': 'nowtv'},
