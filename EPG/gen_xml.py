@@ -52,6 +52,7 @@ from ysp_jce import get_epgs_ysp_jce
 from nhk import get_epgs_nhk
 from singtel import get_epgs_singtel
 from btime import get_epgs_btime
+from jxntv import get_epgs_jxntv
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -111,6 +112,7 @@ EPG_SOURCE_CONFIGS = {
     'nhk': (get_epgs_nhk, MODE_DATE, THREE_DAY_OFFSETS),
     'singtel': (get_epgs_singtel, MODE_DATE, THREE_DAY_OFFSETS),
     'btime': (get_epgs_btime, MODE_PLAIN, None),
+    'jxntv': (get_epgs_jxntv, MODE_DATE, range(-6, 2)),
 }
 
 
@@ -1046,6 +1048,15 @@ if __name__ == '__main__':
         {'id': 'fjtv_665248752898248704', 'name': '福建文旅·体育频道', 'id0': '665248752898248704', 'source': 'fjtv'},
         {'id': 'fjtv_665248553475870720', 'name': '福建少儿频道', 'id0': '665248553475870720', 'source': 'fjtv'},
         {'id': 'fjtv_665248523855695872', 'name': '海峡卫视', 'id0': '665248523855695872', 'source': 'fjtv'},
+        {'id': 'jxntv_19', 'name': '江西卫视-高清', 'id0': 'Umai:CHAN/2097383@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_20', 'name': '江西都市频道-高清', 'id0': 'Umai:CHAN/4222494@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_21', 'name': '江西经济生活频道-高清', 'id0': 'Umai:CHAN/3033115@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_23', 'name': '江西公共农业频道-高清', 'id0': 'Umai:CHAN/2391024@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_25', 'name': '江西新闻频道-高清', 'id0': 'Umai:CHAN/2389368@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_26', 'name': '江西移动电视频道-高清', 'id0': 'Umai:CHAN/5673714@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_28', 'name': '陶瓷-高清', 'id0': 'Umai:CHAN/4809099@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_29', 'name': '江西教育频道-高清', 'id0': 'Umai:CHAN/3003035@BESTV.STA.SMG', 'source': 'jxntv'},
+        {'id': 'jxntv_69', 'name': '江西少儿频道-高清', 'id0': 'Umai:CHAN/2974389@BESTV.STA.SMG', 'source': 'jxntv'},
         {'id': 'jxgdw_87', 'name': '江西卫视', 'id0': '87', 'source': 'jxgdw'},
         {'id': 'jxgdw_86', 'name': '都市频道', 'id0': '86', 'source': 'jxgdw'},
         {'id': 'jxgdw_153', 'name': '经济生活', 'id0': '153', 'source': 'jxgdw'},
