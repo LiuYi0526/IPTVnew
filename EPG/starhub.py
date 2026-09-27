@@ -17,17 +17,32 @@ def _create_starhub_client():
     return httpx.AsyncClient(verify=False, timeout=STARHUB_TIMEOUT)
 
 
-def has_chinese(text):
-    # 包含更多中文字符范围
-    pattern = r'[\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]'
-    return bool(re.search(pattern, text))
-
-
 def _natural_sort_key(value):
     return [
         int(part) if part.isdigit() else part.lower()
         for part in re.split(r'(\d+)', value)
     ]
+
+
+def _format_program_title(resource):
+    title = resource.get('title') or ''
+    serie_title = resource.get('serie_title') or ''
+    episode_number = resource.get('episode_number')
+
+    if episode_number:
+        episode_title = f'E{episode_number}'
+        if serie_title:
+            title = f'{episode_title} - {title}'
+        else:
+            title = f'{title} - {episode_title}'
+
+    if serie_title:
+        title = f'{serie_title} - {title}'
+
+    rating = resource.get('rating') or ''
+    if rating:
+        title = f'{title}[{rating}]'
+    return title
 
 
 async def get_epgs_starhub(channel, dt):
@@ -60,23 +75,8 @@ async def get_epgs_starhub(channel, dt):
         data = res.json()
         for resource in data.get('resources', []):
             if resource.get('metatype') == 'Schedule':
-                title = resource.get('title', '')
-                description = resource.get('description', '')
-
-                episode_number = resource.get('episode_number')
-                if episode_number:
-                    if has_chinese(title) or has_chinese(description):
-                        title = f"{title} - E{episode_number}"
-                    else:
-                        title = f"E{episode_number} - {title}"
-                
-                serie_title = resource.get('serie_title', '')
-                if serie_title:
-                    title = f"{serie_title} - {title}"
-
-                rating = resource.get('rating', '')
-                if rating:
-                    title = f"{title}[{rating}]"
+                title = _format_program_title(resource)
+                description = resource.get('description') or ''
 
                 start_time = datetime.datetime.fromtimestamp(resource.get('start')).astimezone(datetime.timezone(datetime.timedelta(hours=8)))
                 end_time = datetime.datetime.fromtimestamp(resource.get('end')).astimezone(datetime.timezone(datetime.timedelta(hours=8)))
