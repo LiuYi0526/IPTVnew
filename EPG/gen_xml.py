@@ -53,6 +53,7 @@ from nhk import get_epgs_nhk
 from singtel import get_epgs_singtel
 from btime import get_epgs_btime
 from jxntv import get_epgs_jxntv
+from elta import get_epgs_elta
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -113,6 +114,7 @@ EPG_SOURCE_CONFIGS = {
     'singtel': (get_epgs_singtel, MODE_DATE, THREE_DAY_OFFSETS),
     'btime': (get_epgs_btime, MODE_PLAIN, None),
     'jxntv': (get_epgs_jxntv, MODE_DATE, range(-6, 2)),
+    'elta': (get_epgs_elta, MODE_DATE, THREE_DAY_OFFSETS),
 }
 
 
@@ -1438,6 +1440,24 @@ if __name__ == '__main__':
         {'id': 'mod_098', 'name': '098 公視兒少台', 'id0': '098', 'source': 'mod'},
         {'id': 'mod_123', 'name': '123 國會頻道1', 'id0': '123', 'source': 'mod'},
         {'id': 'mod_124', 'name': '124 國會頻道2', 'id0': '124', 'source': 'mod'},
+        {'id': 'elta_101', 'name': '體育 1 台', 'id0': '101', 'source': 'elta'},
+        {'id': 'elta_105', 'name': '體育 2 台', 'id0': '105', 'source': 'elta'},
+        {'id': 'elta_110', 'name': '體育 3 台', 'id0': '110', 'source': 'elta'},
+        {'id': 'elta_115', 'name': '體育 4 台', 'id0': '115', 'source': 'elta'},
+        {'id': 'elta_540', 'name': '體育MAX1台', 'id0': '540', 'source': 'elta'},
+        {'id': 'elta_541', 'name': '體育MAX2台', 'id0': '541', 'source': 'elta'},
+        {'id': 'elta_542', 'name': '體育MAX3台', 'id0': '542', 'source': 'elta'},
+        {'id': 'elta_543', 'name': '體育MAX4台', 'id0': '543', 'source': 'elta'},
+        {'id': 'elta_544', 'name': '體育MAX5台', 'id0': '544', 'source': 'elta'},
+        {'id': 'elta_545', 'name': '體育MAX6台', 'id0': '545', 'source': 'elta'},
+        {'id': 'elta_546', 'name': '體育MAX7台', 'id0': '546', 'source': 'elta'},
+        {'id': 'elta_547', 'name': '體育MAX8台', 'id0': '547', 'source': 'elta'},
+        {'id': 'elta_548', 'name': '體育MAX9台', 'id0': '548', 'source': 'elta'},
+        {'id': 'elta_549', 'name': '體育MAX10台', 'id0': '549', 'source': 'elta'},
+        {'id': 'elta_102', 'name': '影劇台', 'id0': '102', 'source': 'elta'},
+        {'id': 'elta_103', 'name': '綜合台', 'id0': '103', 'source': 'elta'},
+        {'id': 'elta_108', 'name': '日韓台', 'id0': '108', 'source': 'elta'},
+        {'id': 'elta_104', 'name': '寵物運動台', 'id0': '104', 'source': 'elta'},
         {'id': 'mod_200', 'name': '200 愛爾達體育1台', 'id0': '200', 'source': 'mod'},
         {'id': 'mod_201', 'name': '201 愛爾達體育2台', 'id0': '201', 'source': 'mod'},
         {'id': 'mod_202', 'name': '202 愛爾達體育3台', 'id0': '202', 'source': 'mod'},
