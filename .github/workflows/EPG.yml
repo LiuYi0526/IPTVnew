@@ -27,17 +27,55 @@ jobs:
         mv README.md xml
         mv merge_xmltv_files.py xml
     - name: Download Others EPG
-      continue-on-error: true
       run: |
         cd ./EPG/xml
-        wget https://api.liuyi0526.com/gmcc_epg.xml
-        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/kuke31/xmlgz/main/all.xml.gz)
-        if [ "$HTTP_CODE" -eq "404" ]; then
-          echo "File not found (404), skipping..."
-        else
-          curl -O https://raw.githubusercontent.com/kuke31/xmlgz/main/all.xml.gz
-          gunzip all.xml.gz
-        fi
+
+        validate_xml() {
+          python3 -c "import sys, xml.etree.ElementTree as ET; root = ET.parse(sys.argv[1]).getroot(); assert root.tag == 'tv', root.tag" "$1"
+        }
+
+        download_xml() {
+          url="$1"
+          output="$2"
+          temporary="${output}.tmp"
+          rm -f "$temporary"
+          if curl --fail --location --silent --show-error \
+              --retry 3 --retry-all-errors --connect-timeout 15 --max-time 180 \
+              --output "$temporary" "$url" \
+              && validate_xml "$temporary"; then
+            mv "$temporary" "$output"
+          else
+            echo "::warning::Unable to download a valid $output; skipping it."
+            rm -f "$temporary"
+          fi
+        }
+
+        download_gzip_xml() {
+          url="$1"
+          output="$2"
+          temporary_gzip="${output}.gz.tmp"
+          temporary_xml="${output}.tmp"
+          rm -f "$temporary_gzip" "$temporary_xml"
+          if curl --fail --location --silent --show-error \
+              --retry 3 --retry-all-errors --connect-timeout 15 --max-time 180 \
+              --output "$temporary_gzip" "$url" \
+              && gzip -t "$temporary_gzip" \
+              && gzip -dc "$temporary_gzip" > "$temporary_xml" \
+              && validate_xml "$temporary_xml"; then
+            mv "$temporary_xml" "$output"
+          else
+            echo "::warning::Unable to download a valid $output; skipping it."
+            rm -f "$temporary_xml"
+          fi
+          rm -f "$temporary_gzip"
+        }
+
+        download_xml \
+          "https://api.liuyi0526.com/gmcc_epg.xml" \
+          "gmcc_epg.xml"
+        download_gzip_xml \
+          "https://raw.githubusercontent.com/kuke31/xmlgz/main/all.xml.gz" \
+          "all.xml"
     - name: Merge EPG
       run: |
         cd ./EPG/xml
