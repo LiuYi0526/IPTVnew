@@ -11,16 +11,12 @@ body tag1="day=YYYY-MM-DD&pid=600156816&timestamp=..."
 
 from __future__ import annotations
 
-import argparse
 import asyncio
 import gzip
 import ssl
 import struct
-import sys
-import urllib.error
 import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -29,9 +25,6 @@ from typing import Callable, Optional, TypeVar
 
 
 JACC_URL = "https://jacc.ysp.cctv.cn/"
-CCTV8K_PID = "600156816"
-CCTV8K_CHANNEL_ID = "CCTV8K"
-CCTV8K_CHANNEL_NAME = "CCTV8K 超高清"
 CMD_TV_SHOW_LIST = 24997
 DEFAULT_GUID = "093e7e5989684fd986c44f07542d8dc8"
 USER_AGENT = "CCTVVideo/2.9.0 (iPad; iOS 17.2; Scale/2.00)"
@@ -691,53 +684,12 @@ def fetch_epg(
     return parse_tvshowlist_response(response_body)
 
 
-def xmltv_time(timestamp: int) -> str:
-    return datetime.fromtimestamp(timestamp, CN_TZ).strftime("%Y%m%d%H%M%S %z")
-
-
-def write_xmltv(
-    programs: list[TVShowProgram],
-    output: Path,
-    *,
-    channel_id: str = CCTV8K_CHANNEL_ID,
-    channel_name: str = CCTV8K_CHANNEL_NAME,
-) -> None:
-    tv = ET.Element("tv", {"generator-info-name": "my-tv TVShowList Y_JCE EPG"})
-    channel = ET.SubElement(tv, "channel", {"id": channel_id})
-    ET.SubElement(channel, "display-name", {"lang": "zh"}).text = channel_name
-
-    for index, program in enumerate(programs):
-        stop = None
-        if program.duration > 0:
-            stop = program.start_time_stamp + program.duration
-        elif index + 1 < len(programs):
-            next_start = programs[index + 1].start_time_stamp
-            if next_start > program.start_time_stamp:
-                stop = next_start
-
-        attrs = {
-            "start": xmltv_time(program.start_time_stamp),
-            "channel": channel_id,
-        }
-        if stop is not None:
-            attrs["stop"] = xmltv_time(stop)
-        item = ET.SubElement(tv, "programme", attrs)
-        ET.SubElement(item, "title", {"lang": "zh"}).text = program.title
-        if program.display_time:
-            ET.SubElement(item, "sub-title", {"lang": "zh"}).text = program.display_time
-
-    if hasattr(ET, "indent"):
-        ET.indent(tv, space="  ")
-    output.parent.mkdir(parents=True, exist_ok=True)
-    ET.ElementTree(tv).write(output, encoding="utf-8", xml_declaration=True)
-
-
 async def get_epgs_ysp_jce(channel: dict, dt: datetime) -> dict:
     epgs = []
     msg = ''
     success = 1
     channel_id = channel['id']
-    pid = str(channel.get('id0') or CCTV8K_PID)
+    pid = str(channel.get('id0'))
     day = dt.strftime("%Y-%m-%d")
     timestamp = default_timestamp()
     try:
@@ -760,6 +712,7 @@ async def get_epgs_ysp_jce(channel: dict, dt: datetime) -> dict:
                 'title': program.title,
                 'desc': '',
             }
+            # print(epg)
             epgs.append(epg)
     except Exception as e:
         success = 0
@@ -782,63 +735,5 @@ def default_timestamp() -> int:
     return int(datetime.now(CN_TZ).timestamp())
 
 
-def parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Fetch CCTV8K EPG through TVShowList Y_JCE and save XMLTV."
-    )
-    parser.add_argument("--pid", default=CCTV8K_PID, help="YSP pid, default: CCTV8K")
-    parser.add_argument("--day", default=default_day(), help="Day parameter, YYYY-MM-DD")
-    parser.add_argument("--timestamp", type=int, default=0)
-    parser.add_argument("--url", default=JACC_URL, help="Y_JCE endpoint URL")
-    parser.add_argument("-o", "--output", type=Path, default=Path("cctv8k_tvshowlist_epg.xml"))
-    parser.add_argument("--channel-id", default=CCTV8K_CHANNEL_ID)
-    parser.add_argument("--channel-name", default=CCTV8K_CHANNEL_NAME)
-    parser.add_argument("--timeout", type=float, default=15.0)
-    parser.add_argument("--request-id", type=int, default=44)
-    parser.add_argument("--guid", default=DEFAULT_GUID)
-    parser.add_argument("--raw-response", type=Path, help="Optional path to save raw response .bin")
-    parser.add_argument(
-        "--insecure",
-        action="store_true",
-        help="Disable TLS certificate verification.",
-    )
-    return parser.parse_args(argv)
-
-
-def main(argv: list[str]) -> int:
-    args = parse_args(argv)
-    try:
-        programs = fetch_epg(
-            pid=args.pid,
-            day=args.day,
-            timestamp=args.timestamp,
-            url=args.url,
-            timeout=args.timeout,
-            insecure=args.insecure,
-            request_id=args.request_id,
-            guid=args.guid,
-            raw_response=args.raw_response,
-        )
-        write_xmltv(
-            programs,
-            args.output,
-            channel_id=args.channel_id,
-            channel_name=args.channel_name,
-        )
-    except (JceDecodeError, OSError, urllib.error.URLError, ValueError) as exc:
-        print(f"Failed to fetch TVShowList EPG: {exc}", file=sys.stderr)
-        return 1
-
-    if programs:
-        print(
-            f"Wrote {len(programs)} programmes to {args.output} "
-            f"({xmltv_time(programs[0].start_time_stamp)} -> "
-            f"{xmltv_time(programs[-1].start_time_stamp + max(programs[-1].duration, 0))})"
-        )
-    else:
-        print(f"Wrote 0 programmes to {args.output}")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main(sys.argv[1:]))
+if __name__ == '__main__':
+    asyncio.run(get_epgs_ysp_jce({'id': 'cctv_fyyy', 'name': 'CCTV风云音乐', 'id0': '600001859', 'source': 'YSP_JCE'}, datetime.now().date()))
