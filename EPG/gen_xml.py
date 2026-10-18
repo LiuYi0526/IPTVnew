@@ -54,6 +54,7 @@ from singtel import get_epgs_singtel
 from btime import get_epgs_btime
 from jxntv import get_epgs_jxntv
 from elta import get_epgs_elta
+from italkbb import get_epgs_italkbb
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -115,6 +116,7 @@ EPG_SOURCE_CONFIGS = {
     'btime': (get_epgs_btime, MODE_PLAIN, None),
     'jxntv': (get_epgs_jxntv, MODE_DATE, range(-6, 2)),
     'elta': (get_epgs_elta, MODE_DATE, THREE_DAY_OFFSETS),
+    'italkbb': (get_epgs_italkbb, MODE_PLAIN, None),
 }
 
 
@@ -1945,6 +1947,26 @@ if __name__ == '__main__':
         {'id': 'singtel_6692', 'name': 'Cinema One Global', 'id0': '6692', 'source': 'singtel'},
         {'id': 'singtel_5693', 'name': 'The Filipino Ch (HD)', 'id0': '5693', 'source': 'singtel'},
         {'id': 'singtel_6694', 'name': 'ABS-CBN News Channel', 'id0': '6694', 'source': 'singtel'},
+        {'id': 'italkbb_6a017e09bdf9f93f62467172', 'name': 'CCTV-国际', 'id0': '6a017e09bdf9f93f62467172', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc97174725b5305843c454', 'name': '凤凰资讯台', 'id0': '62cc97174725b5305843c454', 'source': 'italkbb'},
+        {'id': 'italkbb_6a3100be9b50412f007572fc', 'name': '浙江国际HD', 'id0': '6a3100be9b50412f007572fc', 'source': 'italkbb'},
+        {'id': 'italkbb_6a30f74820a80832dc74e2c7', 'name': '海峡卫视', 'id0': '6a30f74820a80832dc74e2c7', 'source': 'italkbb'},
+        {'id': 'italkbb_6a30f744260d0d240f66a375', 'name': '大湾区卫视', 'id0': '6a30f744260d0d240f66a375', 'source': 'italkbb'},
+        {'id': 'italkbb_6a3a37819b50412f00757536', 'name': 'CCTV-娱乐', 'id0': '6a3a37819b50412f00757536', 'source': 'italkbb'},
+        {'id': 'italkbb_6a3a3784260d0d240f66a62c', 'name': '安徽国际频道', 'id0': '6a3a3784260d0d240f66a62c', 'source': 'italkbb'},
+        {'id': 'italkbb_6a3a378a20a80832dc74e4c0', 'name': '深圳卫视', 'id0': '6a3a378a20a80832dc74e4c0', 'source': 'italkbb'},
+        {'id': 'italkbb_6a27b9b63368ef058c28b881', 'name': '北京国际频道', 'id0': '6a27b9b63368ef058c28b881', 'source': 'italkbb'},
+        {'id': 'italkbb_6a27b9be820a5849076b0499', 'name': '上海东方国际', 'id0': '6a27b9be820a5849076b0499', 'source': 'italkbb'},
+        {'id': 'italkbb_6a17e7b3820a5849076b0009', 'name': '厦门卫视', 'id0': '6a17e7b3820a5849076b0009', 'source': 'italkbb'},
+        {'id': 'italkbb_6a17e7af3368ef058c28b47a', 'name': 'CGTN纪录', 'id0': '6a17e7af3368ef058c28b47a', 'source': 'italkbb'},
+        {'id': 'italkbb_6a17e7aabcd127197503045d', 'name': 'CGTN', 'id0': '6a17e7aabcd127197503045d', 'source': 'italkbb'},
+        {'id': 'italkbb_6a27b9babcd12719750308fd', 'name': '中国电影频道', 'id0': '6a27b9babcd12719750308fd', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc979c4725b5305843c853', 'name': '中旺电视', 'id0': '62cc979c4725b5305843c853', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc96a74725b5305843c0d5', 'name': '凤凰美洲台', 'id0': '62cc96a74725b5305843c0d5', 'source': 'italkbb'},
+        {'id': 'italkbb_6a018984edb269311e00a185', 'name': 'CCTV-戏曲', 'id0': '6a018984edb269311e00a185', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc95e04725b5305843ba86', 'name': '東森美洲新聞', 'id0': '62cc95e04725b5305843ba86', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc959e4725b5305843b84e', 'name': '东森美洲卫视', 'id0': '62cc959e4725b5305843b84e', 'source': 'italkbb'},
+        {'id': 'italkbb_62cc93a14725b5305843a8f1', 'name': '東森中国', 'id0': '62cc93a14725b5305843a8f1', 'source': 'italkbb'},
         {'id': 'epgpw_6580', 'name': 'RT News', 'id0': '6580', 'source': 'epg.pw'},
         {'id': 'epgpw_6856', 'name': 'TVP World', 'id0': '6856', 'source': 'epg.pw'},
         {'id': 'epgpw_7374', 'name': 'RT Д English', 'id0': '7374', 'source': 'epg.pw'},
