@@ -17,6 +17,7 @@ async def get_epgs_homeplus(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.post(url=url, headers=headers, data=payload, timeout=10)
+        res.raise_for_status()
         date_program = res.json()['date_program']
         for date in date_program:
             for i in date_program[date]:
@@ -61,6 +62,7 @@ async def get_channels_homeplus():
         payload = f"so=210&page={i}&category=all"
         async with httpx.AsyncClient() as client:
             res = await client.post(url=url, headers=headers, data=payload, timeout=10)
+        res.raise_for_status()
         for channel_list in res.json()['channel']['channel']:
             for ch in channel_list:
                 id = ch['channelid']

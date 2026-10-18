@@ -27,11 +27,13 @@ async def get_epgs_tdm(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url1, headers=headers, timeout=8)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         j = json.loads(res.text)
         starttime = datetime.datetime.strptime(j['data'][0]['date'], '%Y-%m-%d %H:%M:%S')
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers, timeout=8)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         j = json.loads(res.text)
         data = j['data']
@@ -42,6 +44,7 @@ async def get_epgs_tdm(channel, dt):
             if d['slug']:
                 async with httpx.AsyncClient() as client:
                     res = await client.get(f"https://www.tdm.com.mo/api/v1.0/program/{d['slug']}/details", headers=headers, timeout=8)
+                res.raise_for_status()
                 res.encoding = 'utf-8'
                 j = json.loads(res.text)
                 data0 = j['data']

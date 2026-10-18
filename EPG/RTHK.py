@@ -13,6 +13,7 @@ async def get_epgs_RTHK(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=10)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser')
         for i in soup.find_all('div', class_='slideBlock'):

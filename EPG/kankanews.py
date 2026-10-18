@@ -29,7 +29,7 @@ async def get_epgs_kankanews(channel, dt):
         url = f"https://kapi.kankanews.com/content/app/tv/programs?channel_id={channel_id0}&date={dt_str}"
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         re_json = res.json()
         programs = re_json["result"]['list'][0]['programs']
         for program in programs:
@@ -79,7 +79,7 @@ async def get_channels_kankanews():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get("https://kapi.kankanews.com/content/app/tv/channels", headers=headers)
-    res.encoding = 'utf-8'
+    res.raise_for_status()
     re_json = res.json()
     result_list = re_json["result"]['list']
     for i in result_list:

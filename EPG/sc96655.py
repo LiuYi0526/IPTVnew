@@ -19,7 +19,7 @@ async def get_epgs_sc96655(channel, dt):
         }
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
-        res.encoding = "utf-8"
+        res.raise_for_status()
         ret_data = res.json()["ret_data"]
         for item in ret_data:
             title = item["name"]
@@ -55,6 +55,7 @@ async def get_channels_sc96655():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get(url, headers=headers)
+    res.raise_for_status()
     ret_data = res.json()["ret_data"]
     channels = []
     for li in ret_data:
@@ -71,5 +72,6 @@ async def get_channels_sc96655():
     return channels
 
 
-# asyncio.run(get_channels_sc96655())
-# asyncio.run(get_epgs_sc96655({'id': 'sc96655_3916', 'name': 'CGTN-西班牙语', 'id0': 3916, 'source': 'sc96655'}, datetime.datetime.now().date()))
+if __name__ == '__main__':
+    asyncio.run(get_channels_sc96655())
+    # asyncio.run(get_epgs_sc96655({'id': 'sc96655_3916', 'name': 'CGTN-西班牙语', 'id0': 3916, 'source': 'sc96655'}, datetime.datetime.now().date()))

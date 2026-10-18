@@ -20,6 +20,7 @@ async def download_litv_epgs():
     data = json.dumps({"jsonrpc":"2.0","id":9527,"method":"ConfigService.GetConfigNoAuth","params":{"device_id":"0","swver":"LTAGP0231140LTV20250623101220","services":["epg"]}})
     async with httpx.AsyncClient() as client:
         response = await client.post("https://proxy.svc.litv.tv/cdi/v2/rpc", headers=headers, data=data)
+    response.raise_for_status()
     epg_sqlite_url = response.json()["result"]["epg_sqlite"][0]
     async with httpx.AsyncClient() as client:
         response = await client.get(epg_sqlite_url)

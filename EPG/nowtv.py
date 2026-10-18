@@ -25,7 +25,7 @@ async def get_epgs_nowtv(channel, get_days):
         }
         async with httpx.AsyncClient() as client:
             res = await client.post("https://catalogapi.nowtv.now.com/CatalogEngine/getEPGDetail", json=payload, timeout=10)
-        res.encoding = "utf-8"
+        res.raise_for_status()
         epgDetail = res.json().get("epgDetail", [])
         for channel_epg in epgDetail:
             channelId = str(channel_epg["channelId"])
@@ -40,6 +40,7 @@ async def get_epgs_nowtv(channel, get_days):
         }
         async with httpx.AsyncClient() as client:
             response = await client.post("https://catalogapi.nowtv.now.com/CatalogEngine/getEPGProgramDetailList", json=payload, timeout=10)
+        response.raise_for_status()
         epgProgramList = response.json()['epgProgramList']
         for epgProgram in epgProgramList:
             epg = {
@@ -73,7 +74,7 @@ async def get_channels_nowtv():
     }
     async with httpx.AsyncClient() as client:
         res = await client.post("https://catalogapi.nowtv.now.com/CatalogEngine/getLiveChannelList", json=payload, timeout=10)
-    res.encoding = "utf-8"
+    res.raise_for_status()
     channelList = res.json()["channelList"]
     for channel in channelList:
         channelId = channel["channelId"]
@@ -91,7 +92,7 @@ async def get_channels_nowtv():
     return channels
 
 
-# if __name__ == "__main__":
-#     channels = asyncio.run(get_channels_nowtv())
+if __name__ == "__main__":
+    channels = asyncio.run(get_channels_nowtv())
 #     epgs = asyncio.run(get_epgs_nowtv({"id": "nowtv_331", "name": "Now直播台", "id0": "331", "source": "nowtv"}, get_days=(-1, 0, 1)))
 #     print(epgs)

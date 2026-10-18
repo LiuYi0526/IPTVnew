@@ -111,6 +111,7 @@ async def get_channels_jxntv():
     querystring = {"categoryCode":"f5b8e163836e4f1fbb104368daf4570c","pageNumber":"1","pageSize":"1000","isWithExtInfo":"2"}
     async with httpx.AsyncClient() as client:
         res = await client.get(url, headers=headers, params=querystring)
+    res.raise_for_status()
     result = res.json()["data"]["result"]
     channels = []
     for i in result:

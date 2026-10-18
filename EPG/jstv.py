@@ -7,6 +7,13 @@ import asyncio
 import hashlib
 import ctypes
 
+JSTV_TIMEOUT = httpx.Timeout(30.0, connect=10.0)
+JSTV_TOKEN_TTL = 300
+
+_access_token = None
+_access_token_expires_at = 0.0
+_access_token_task = None
+
 
 def transform_timestamp(timestamp: int) -> int:
     parts = [
@@ -26,7 +33,7 @@ def transform_timestamp(timestamp: int) -> int:
     return ctypes.c_int32(res).value
 
 
-async def get_jstv_accessToken():
+async def _request_jstv_access_token():
     APP_ID = '3b93c452b851431c8b3a076789ab1e14'
     SECRET = '9dd4b0400f6e4d558f2b3497d734c2b4'
     UUID = 'D5COmve6IQgwXvsJ4E3uxBstqxtDSCYW'
@@ -41,11 +48,45 @@ async def get_jstv_accessToken():
     }
     headers = {'Content-Type': 'application/json', 'Referer': 'https://live.jstv.com/'}
     url = f"https://api-auth-lizhi.jstv.com/JwtAuth/GetWebToken?AppID={APP_ID}&TT={tt}&Sign={sign}"
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=JSTV_TIMEOUT) as client:
         res = await client.post(url, headers=headers, json=postData)
-    res.encoding = 'utf-8'
-    accessToken = res.json()['data']['accessToken']
-    return accessToken
+    res.raise_for_status()
+    payload = res.json()
+    access_token = (payload.get('data') or {}).get('accessToken')
+    if not access_token:
+        raise ValueError(
+            f'JSTV token response has no accessToken: '
+            f'{payload.get("message") or payload.get("msg") or payload}'
+        )
+    return access_token
+
+
+async def get_jstv_accessToken():
+    global _access_token
+    global _access_token_expires_at
+    global _access_token_task
+
+    now = time.monotonic()
+    if _access_token and now < _access_token_expires_at:
+        return _access_token
+
+    task = _access_token_task
+    if task is None:
+        task = asyncio.create_task(_request_jstv_access_token())
+        _access_token_task = task
+
+    try:
+        access_token = await task
+    except Exception:
+        if _access_token_task is task:
+            _access_token_task = None
+        raise
+
+    _access_token = access_token
+    _access_token_expires_at = time.monotonic() + JSTV_TOKEN_TTL
+    if _access_token_task is task:
+        _access_token_task = None
+    return access_token
 
 
 async def get_epgs_jstv(channel):
@@ -58,9 +99,16 @@ async def get_epgs_jstv(channel):
     try:
         accessToken = await get_jstv_accessToken()
         headers['Authorization'] = f"Bearer {accessToken}"
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=JSTV_TIMEOUT) as client:
             res = await client.get(f'https://live-lizhi.jstv.com/api/Channel/Epg?channelId={channel_id0}&days=6&isNeedTomorrow=1', headers=headers)
-        data_epg = res.json()["data"]['epg']
+        res.raise_for_status()
+        payload = res.json()
+        data_epg = (payload.get('data') or {}).get('epg')
+        if not isinstance(data_epg, list):
+            raise ValueError(
+                f'JSTV EPG response has no epg list: '
+                f'{payload.get("message") or payload.get("msg") or payload}'
+            )
         for data in data_epg:
             for i in data["data"]:
                 starttime = datetime.datetime.strptime(i['startTime'], "%Y-%m-%d %H:%M:%S")
@@ -75,10 +123,15 @@ async def get_epgs_jstv(channel):
                 }
                 epgs.append(epg)
                 # print(epg)
+        epgs.sort(key=lambda item: item['starttime'])
     except Exception as e:
         success = 0
         spidername = os.path.basename(__file__).split('.')[0]
-        msg = 'spider-%s-%s' % (spidername, e)
+        msg = 'spider-%s-%s-%s' % (
+            spidername,
+            type(e).__name__,
+            str(e) or repr(e),
+        )
     ret = {
         'success': success,
         'epgs': epgs,
@@ -90,13 +143,12 @@ async def get_epgs_jstv(channel):
 
 async def get_channels_jstv():
     channels = []
-    accessToken = await get_jstv_accessToken()
     headers = {'Content-Type': 'application/json', 'Referer': 'https://live.jstv.com/'}
     accessToken = await get_jstv_accessToken()
     headers['Authorization'] = f"Bearer {accessToken}"
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=JSTV_TIMEOUT) as client:
         res = await client.get('https://publish-lizhi.jstv.com/nav/8385', headers=headers)
-    res.encoding = 'utf-8'
+    res.raise_for_status()
     re_json = res.json()
     articles = re_json["data"]['articles']
     for i in articles:

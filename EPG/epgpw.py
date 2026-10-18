@@ -14,6 +14,7 @@ async def get_epgs_epgpw(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
+        res.raise_for_status()
         epg_list = res.json()['epg_list']
         starttime = datetime.datetime.strptime(epg_list[-1]['start_date'][:10], '%Y-%m-%d') + datetime.timedelta(days=1)
         for i in epg_list[::-1]:

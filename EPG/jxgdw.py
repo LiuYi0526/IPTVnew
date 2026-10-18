@@ -18,7 +18,7 @@ async def get_epgs_jxgdw(channel, dt):
             url = 'https://app.jxgdw.com/api/tv/channel/%s/menus?playDate=%s' % (channel_id0, date_str)
             async with httpx.AsyncClient() as client:
                 res = await client.get(url, timeout=10)
-            res.encoding = 'utf-8'
+            res.raise_for_status()
             res_j = res.json()
             items = res_j['result']
             for item in items[::-1]:
@@ -50,6 +50,7 @@ async def get_channels_jxgdw():
     url = 'https://app.jxgdw.com/api/tv/channel/page?pageSize=100'
     async with httpx.AsyncClient() as client:
         res = await client.get(url)
+    res.raise_for_status()
     res_channels = res.json()['result']['list']
     channels = []
     for li in res_channels:

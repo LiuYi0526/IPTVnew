@@ -123,7 +123,6 @@ async def get_epgs_astro(channel, dt):
         async with httpx.AsyncClient(timeout=ASTRO_TIMEOUT) as client:
             res = await client.get(ASTRO_GRID_URL, headers=headers, params=params)
         res.raise_for_status()
-        res.encoding = 'utf-8'
         data = res.json()
         channels = data.get("channels")
         if not isinstance(channels, list):
@@ -182,7 +181,6 @@ async def get_channels_astro():
     async with httpx.AsyncClient(timeout=ASTRO_TIMEOUT) as client:
         res = await client.get(ASTRO_CHANNELS_URL, params=params, headers=headers)
     res.raise_for_status()
-    res.encoding = 'utf-8'
     data = res.json()
     for channel in data.get("channels", []):
         logicalChannelNumber = channel.get("logicalChannelNumber", "")

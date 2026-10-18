@@ -16,7 +16,7 @@ async def get_epgs_xmtv(channel, get_days):
         url = f"https://mapi1.kxm.xmtv.cn/api/v1/tvshow_share.php?channel_id={channel_id0}&zone={get_days}"
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
-        res.encoding = "utf-8"
+        res.raise_for_status()
         for i in res.json():
             title = i["theme"]
             starttime = datetime.datetime.strptime(date_str + i["start"], "%Y-%m-%d%H:%M")

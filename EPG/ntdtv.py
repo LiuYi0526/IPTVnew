@@ -16,6 +16,7 @@ async def get_epgs_ntdtv(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get('https://www.ntdtv.com/b5/program-schedule')
+        res.raise_for_status()
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser')
         data_schedules = soup.find('div', class_="json-data")['data-schedules']

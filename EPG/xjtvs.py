@@ -23,6 +23,7 @@ async def get_epgs_xjtvs(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         programs = json.loads(res.text)
         prog_lists = programs['data']

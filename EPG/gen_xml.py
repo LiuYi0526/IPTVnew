@@ -142,10 +142,29 @@ async def _call_epg_handler(handler, c, mode, target):
 async def _fetch_epgs_with_retries(c, handler, mode, target):
     fail_context = f'{c}' if mode == MODE_PLAIN else f'{c}, {target}'
     for retry in range(1, MAX_RETRIES + 1):
-        ret = await _call_epg_handler(handler, c, mode, target)
+        try:
+            ret = await _call_epg_handler(handler, c, mode, target)
+            if not isinstance(ret, dict):
+                raise TypeError(
+                    f'EPG handler returned {type(ret).__name__}, expected dict'
+                )
+        except Exception as e:
+            ret = {
+                'success': 0,
+                'epgs': [],
+                'msg': (
+                    f'{handler.__module__}.{handler.__name__}-'
+                    f'{type(e).__name__}-{e}'
+                ),
+            }
         if ret.get('success'):
             return ret.get('epgs', []), True
-        logging.warning(f"{ret.get('msg', '')}, 将进行第{retry}次重试！")
+        if not ret.get('retryable', True):
+            logging.warning(f"{ret.get('msg', '')}, 该错误不再重试！")
+            break
+        if retry < MAX_RETRIES:
+            logging.warning(f"{ret.get('msg', '')}, 将进行第{retry}次重试！")
+            await asyncio.sleep(1)
 
     logging.warning(f'{fail_context}获取失败！')
     return [], False

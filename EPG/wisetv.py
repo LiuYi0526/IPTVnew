@@ -39,6 +39,7 @@ async def get_epgs_wisetv(channel, dt):
     try:
         async with httpx.AsyncClient(verify=context) as client:
             res = await client.get(f"https://api.wisetv.com.cn:8684/6/program/{channel_id0}/{dt_str}", headers=headers, follow_redirects=True)
+        res.raise_for_status()
         data = res.json()["data"][0]["data"]
         for i in data:
             epg = {
@@ -92,6 +93,7 @@ async def get_channels_wisetv():
     context.load_cert_chain(certfile='wisetv.crt', keyfile='wisetv.key')
     async with httpx.AsyncClient(verify=context) as client:
         res = await client.get("https://api.wisetv.com.cn:8684/6/channelvalid", headers=headers)
+    res.raise_for_status()
     contents = res.json()["data"]["data"][0]["contents"]
     for i in contents:
         id = i['id']

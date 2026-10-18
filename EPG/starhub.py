@@ -71,7 +71,6 @@ async def get_epgs_starhub(channel, dt):
                 params=params,
             )
         res.raise_for_status()
-        res.encoding = 'utf-8'
         data = res.json()
         for resource in data.get('resources', []):
             if resource.get('metatype') == 'Schedule':
@@ -117,7 +116,6 @@ async def get_channels_starhub():
             params=params,
         )
     res.raise_for_status()
-    res.encoding = 'utf-8'
     data = res.json()
     for resource in data.get('resources', []):
         if resource.get('metatype') == 'Channel':

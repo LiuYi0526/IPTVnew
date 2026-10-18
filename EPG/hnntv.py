@@ -18,7 +18,7 @@ async def get_epgs_hnntv(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(f'https://www.hnntv.cn/api/schedule/byDay?channelId={channel_id0}')
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         resultSet = res.json()['resultSet']
         for result in resultSet:
             for schedule in result["schedules"]:

@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 # 齐鲁网-官网来源,2023-08-07添加到数据库，只有山东地区12个频道
-import httpx, datetime, os, re, time, json, asyncio
+import httpx, datetime, os, re, time, asyncio
 
 
 async def get_epgs_iqilu(channel, dt):
@@ -18,8 +18,8 @@ async def get_epgs_iqilu(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
-        res.encoding = 'utf-8'
-        re_json = json.loads(res.text)
+        res.raise_for_status()
+        re_json = res.json()
         contents = re_json['data']['infos']
         for content in contents:
             starttime = datetime.datetime.fromtimestamp(int(content['begintime']))

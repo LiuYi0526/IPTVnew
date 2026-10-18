@@ -32,6 +32,7 @@ async def get_epgs_fjtv(channel, dt):
         async with httpx.AsyncClient() as client:
             # res = await client.get(url, headers=headers)
             res = await client.get(url)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser')
         items = soup.find("div", id="liveSchedule").find_all('li')

@@ -14,7 +14,7 @@ async def get_epgs_btzx(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get("https://api.liuyi0526.com/btzx_dayWeb", params={"json": {'id': channel_id0, 'day': dt_str}, "cb": ""})
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         # print(res.text)
         videolivelist = res.json()['videolivelist']
         for videolive in videolivelist:

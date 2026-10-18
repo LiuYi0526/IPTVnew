@@ -15,7 +15,7 @@ async def get_epgs_fengshows(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         returnData = res.json()
         for i in returnData:
             epg = {

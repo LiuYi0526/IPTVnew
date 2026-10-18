@@ -30,7 +30,7 @@ async def get_epgs_sztv(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         returnData = res.json()['returnData']['list']
         for day in returnData[::-1]:
             daytime = day['daytime']
@@ -77,6 +77,7 @@ async def get_channels_sztv():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get("https://apix.scms.sztv.com.cn/api/com/catalog/getCatalogList?types=2&appCode=201&isTree=0&appVersion=10.0.3&client=Android&tenantId=ysz&tenantid=ysz", headers=headers)
+    res.raise_for_status()
     returnData = res.json()['returnData']
     for i in returnData:
         id = i['id']

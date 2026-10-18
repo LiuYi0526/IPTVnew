@@ -16,6 +16,7 @@ async def get_epgs_sxtvs(channel):
         url = f"https://qidian.sxtvs.com/api/v3/program/tv?channel={channel_id0}"
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
+        res.raise_for_status()
         res.encoding = "utf-8"
         snr_Playlist = json.loads(res.text[19:-1])
         for item in snr_Playlist:

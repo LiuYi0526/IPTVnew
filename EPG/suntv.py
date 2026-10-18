@@ -15,6 +15,7 @@ async def get_epgs_suntv(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get('https://www.chinasuntv.com/api/v1/chinasun/programlist')
+        res.raise_for_status()
         res.encoding = 'utf-8'
         programlist = json.loads(res.text)['payload']
         endtime = datetime.datetime.strptime(programlist[-1]['PlayTime'], "%Y-%m-%dT%H:%M:%S.%fZ") + datetime.timedelta(hours=8)

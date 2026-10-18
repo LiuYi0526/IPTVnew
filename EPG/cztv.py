@@ -20,7 +20,7 @@ async def get_epgs_cztv(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(f"https://p.cztv.com/api/paas/program/{channel_id0}/{dt}")
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         items = res.json()["content"]["list"][0]["list"]
         for item in items[::-1]:
             title = item['program_title']

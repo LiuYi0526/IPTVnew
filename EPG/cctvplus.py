@@ -14,7 +14,7 @@ async def get_epgs_cctvplus(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get('https://secure.cctvplus.com/livenotice/getNotice.do?&pageSize=10&pageNo=1&Time=0&Live_Status=All')
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         items = res.json()
         if type(items) == list:
             for item in items:

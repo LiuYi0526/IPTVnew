@@ -28,7 +28,7 @@ async def get_epgs_hebtv(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.post(url, headers=headers, json=payload)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         data = res.json()['data']
         for day in data:
             for i in data[day]:

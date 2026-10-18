@@ -16,8 +16,8 @@ async def get_epgs_hoy(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(f'https://epg-file.hoy.tv/hoy/OTT{channel_id0}{need_date}.xml')
-        res.encoding = 'utf-8'
-        root = ET.fromstring(res.text)
+        res.raise_for_status()
+        root = ET.fromstring(res.content)
         for channel in root.findall('./Channel'):
             for epg_item in channel.findall('./EpgItem'):
                 starttime = datetime.datetime.strptime(epg_item.find('./EpgStartDateTime').text, "%Y-%m-%d %H:%M:%S")

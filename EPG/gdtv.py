@@ -2,10 +2,12 @@
 #广东广播电视台-官网来源,2021-12-16添加到数据库，只有广东地区频道共10多个
 import httpx
 import datetime
-import os
 import xml.etree.ElementTree as ET
 import asyncio
 import html
+
+GDTv_TIMEOUT = httpx.Timeout(30.0, connect=10.0)
+
 
 async def get_epgs_gdtv(channel, dt):
     epgs = []
@@ -14,18 +16,25 @@ async def get_epgs_gdtv(channel, dt):
     need_date = dt.strftime('%Y-%m-%d')
     channel_id = channel['id']
     channel_id0 = channel['id0']
+    retryable = True
+    url = f'https://api.liuyi0526.com/gdtv/{channel_id0}/{need_date}.xml'
     try:
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=GDTv_TIMEOUT) as client:
             # res = await client.get(f'http://epg.gdtv.cn/f/{channel_id0}/{need_date}.xml')
-            res = await client.get(f'https://api.liuyi0526.com/gdtv/{channel_id0}/{need_date}.xml')
-        res.encoding = 'utf-8'
-        root = ET.fromstring(res.text)
+            res = await client.get(url)
+        res.raise_for_status()
+        root = ET.fromstring(res.content)
+        if root.tag != 'epg':
+            raise ValueError(f'unexpected root element: {root.tag}')
         epgs_contents = root.findall('.//content')
-        epgs = []
         for epga in epgs_contents:
             starttime = datetime.datetime.fromtimestamp(int(epga.get('time1')))
             endtime = datetime.datetime.fromtimestamp(int(epga.get('time2')))
-            title = html.unescape(epga.text.replace("<br />", "\n").strip())
+            title = html.unescape(
+                (epga.text or '').replace("<br />", "\n").strip()
+            )
+            if not title or endtime <= starttime:
+                continue
             epg = {
                 'channel_id': channel_id,
                 'starttime': starttime,
@@ -35,15 +44,23 @@ async def get_epgs_gdtv(channel, dt):
             }
             epgs.append(epg)
             # print(epg)
+    except httpx.HTTPStatusError as e:
+        success = 0
+        status_code = e.response.status_code
+        retryable = status_code in (408, 429)
+        msg = f'spider-gdtv-HTTPStatusError-{status_code}-{url}'
     except Exception as e:
         success = 0
-        spidername = os.path.basename(__file__).split('.')[0]
-        msg = 'spider-%s-%s' % (spidername, e)
+        msg = 'spider-gdtv-%s-%s' % (
+            type(e).__name__,
+            str(e) or repr(e),
+        )
     ret = {
         'success': success,
         'epgs': epgs,
         'msg': msg,
         'last_program_date': dt,
+        'retryable': retryable,
         'ban':0,
     }
     return ret
@@ -51,8 +68,8 @@ async def get_epgs_gdtv(channel, dt):
 async def get_channels_gdtv():
     async with httpx.AsyncClient() as client:
         res = await client.get('http://epg.gdtv.cn/f/1.xml')
-    res.encoding = 'utf-8'
-    root = ET.fromstring(res.text)
+    res.raise_for_status()
+    root = ET.fromstring(res.content)
     contents = root.findall('.//channel')
     channels = []
     for content in contents:

@@ -15,6 +15,7 @@ async def get_epgs_1905(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=10)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser').find("div", class_="hasCons")
         for i in soup.find_all("li")[::-1]:

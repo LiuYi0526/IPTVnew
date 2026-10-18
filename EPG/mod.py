@@ -16,6 +16,7 @@ async def get_epgs_mod(channel):
     try:
         async with httpx.AsyncClient(verify=False, follow_redirects=True) as client:
             res = await client.get('https://modp.cht.com.tw/modinfo/epginfob.php', params={'w': 0, 'id': channel_id0}, timeout=10)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         soup = BeautifulSoup(res.text, 'html.parser')
         epgs = []
@@ -80,6 +81,7 @@ async def get_channels_mod():
     url = 'https://modweb2.chtmod.tv/bepg2/'
     async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=10)
+    res.raise_for_status()
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')
     divs = soup.select('div.rowat')

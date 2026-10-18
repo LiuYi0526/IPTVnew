@@ -12,8 +12,8 @@ async def get_epgs_gehua(channel, dt):
     channel_id0 = channel["id0"]
     date_str = dt.strftime("%Y-%m-%d")
     try:
-        # url = f"https://yfsxcx.yun.gehua.net.cn/ghyx-api/api/v1/epg/liveEpg.json?date={date_str}&channelId={channel_id0}&type=&pageNo=1&pageSize=100&scope=1&openId="
-        url = f"https://api.liuyi0526.com/yfsxcx?date={date_str}&channelId={channel_id0}"
+        url = f"https://yfsxcx.yun.gehua.net.cn/ghyx-api/api/v1/epg/liveEpg.json?date={date_str}&channelId={channel_id0}&type=&pageNo=1&pageSize=100&scope=1&openId="
+        # url = f"https://api.liuyi0526.com/yfsxcx?date={date_str}&channelId={channel_id0}"
         headers = {
             "charset": "utf-8",
             "User-Agent": "Mozilla/5.0 (Linux) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/142.0.7444.173 Safari/537.36",
@@ -21,7 +21,7 @@ async def get_epgs_gehua(channel, dt):
         }
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
-        res.encoding = "utf-8"
+        res.raise_for_status()
         # print(res.text)
         res_list = res.json()["response"]["responseBody"]["list"]
         for item in res_list:
@@ -60,6 +60,7 @@ async def get_channels_gehua():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get(url, headers=headers)
+    res.raise_for_status()
     res_list = res.json()["response"]["responseBody"]["list"]
     channels = []
     for li in res_list:
@@ -76,5 +77,6 @@ async def get_channels_gehua():
     return channels
 
 
-# asyncio.run(get_channels_gehua())
-# asyncio.run(get_epgs_gehua({"id": "guhua_613", "name": "CCTV-13高清", "id0": "613", "source": "gehua"}, datetime.datetime.now().date()))
+if __name__ == '__main__':
+    asyncio.run(get_channels_gehua())
+    asyncio.run(get_epgs_gehua({"id": "guhua_613", "name": "CCTV-13高清", "id0": "613", "source": "gehua"}, datetime.datetime.now().date()))

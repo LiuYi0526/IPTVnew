@@ -25,7 +25,7 @@ async def get_epgs_mytvsuper(channel, dt):  # channel_id, dt ，每次获取当�
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=8, headers=headers)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         res_j = res.json()
         items = res_j[0]['item']
         for item in items:
@@ -70,6 +70,7 @@ async def get_channels_mytvsuper():
     url = 'https://content-api.mytvsuper.com/v1/channel/list?platform=web'
     async with httpx.AsyncClient() as client:
         res = await client.get(url, headers=headers)
+    res.raise_for_status()
     res_channels = res.json()['channels']
     channels = []
     for li in res_channels:

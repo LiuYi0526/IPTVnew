@@ -16,7 +16,7 @@ async def get_epgs_cctv(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=10)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         programs = res.json()
         prog_lists = programs[channel_id0]["program"]
         for prog_list in prog_lists:
@@ -49,6 +49,7 @@ async def get_channels_cctv():
     channels = []
     async with httpx.AsyncClient() as client:
         res = await client.get('https://tv.cctv.com/epg/index.shtml')
+    res.raise_for_status()
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')
     lis = soup.select('div.channel_con > div > ul > li')
@@ -59,6 +60,7 @@ async def get_channels_cctv():
         url_info = 'http://api.cntv.cn/epg/getEpgInfoByChannelNew?c=%s&serviceId=tvcctv&d=%s&t=jsonp&cb=set' % (id, need_date)
         async with httpx.AsyncClient() as client:
             res = await client.get(url_info, timeout=5)
+        res.raise_for_status()
         res.encoding = 'utf-8'
         research = re.search('"channelName":"(.+?)".+?"lvUrl":"(.+?)"', res.text)
         name = research.group(1)

@@ -17,6 +17,7 @@ async def get_epgs_hami(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.post(reqUrl, data=payload, headers=headersList)
+        res.raise_for_status()
         response = res.json()
         for prog_list in response:
             title = prog_list['programName']

@@ -33,7 +33,7 @@ async def get_epgs_gxntv(channel, dt):
         url = 'https://api2019.gxtv.cn/memberApi/programList/selectListByChannelId'
         async with httpx.AsyncClient() as client:
             res = await client.post(url, data=data)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         res_json = res.json()
         epgs_contents = res_json['data']
         epgs = []
@@ -69,6 +69,7 @@ async def get_channels_gxntv():
     url = 'https://program.gxtv.cn/'
     async with httpx.AsyncClient() as client:
         res = await client.get(url)
+    res.raise_for_status()
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')
     contents = soup.select('#TV_tab > ul > li')

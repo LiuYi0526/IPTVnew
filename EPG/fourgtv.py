@@ -15,7 +15,7 @@ async def get_epgs_4gtv(channel):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, timeout=8)
-        res.encoding = 'utf-8'
+        res.raise_for_status()
         res_json = res.json()
         for j in res_json:
             title = j['title']
@@ -66,7 +66,7 @@ async def get_channels_4gtv():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get(url, headers=headers)
-    res.encoding = 'utf-8'
+    res.raise_for_status()
     js = res.json()['Data']
     channels = []
     for j in js:

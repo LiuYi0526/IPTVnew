@@ -19,7 +19,7 @@ async def get_epgs_bfgd(channel, dt):
         url = f"http://slave.bfgd.com.cn/media/event/get_list?chnlid={channel_id0}&pageidx=1&vcontrol=0&attachdesc=1&repeat=1&accesstoken={accesstoken}&starttime={starttime}&endtime={endtime}&pagenum=100&flagposter=0"
         async with httpx.AsyncClient() as client:
             res = await client.get(url)
-        res.encoding = "utf-8"
+        res.raise_for_status()
         event_list = res.json()["event_list"]
         for event in event_list:
             starttime = datetime.datetime.fromtimestamp(event["start_time"])
@@ -50,6 +50,7 @@ async def get_channels_bfgd():
     url = "http://slave.bfgd.com.cn/media/channel/get_list?accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&pageidx=1&pagenum=150"
     async with httpx.AsyncClient() as client:
         res = await client.get(url)
+    res.raise_for_status()
     chnl_list = res.json()["chnl_list"]
     channels = []
     for chnl in chnl_list:
@@ -66,5 +67,6 @@ async def get_channels_bfgd():
     return channels
 
 
-# asyncio.run(get_channels_bfgd())
-# asyncio.run(get_epgs_bfgd({'id': 'bfgd_4200000636', 'name': '重温经典', 'id0': 4200000636, 'source': 'bfgd'}, datetime.datetime.now().date()))
+if __name__ == '__main__':
+    asyncio.run(get_channels_bfgd())
+    # asyncio.run(get_epgs_bfgd({'id': 'bfgd_4200000636', 'name': '重温经典', 'id0': 4200000636, 'source': 'bfgd'}, datetime.datetime.now().date()))

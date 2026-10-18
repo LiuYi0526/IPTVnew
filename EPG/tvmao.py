@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import asyncio
 import httpx
 import datetime
 
@@ -30,6 +31,7 @@ async def get_epgs_tvmao(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers)
+        res.raise_for_status()
         res_j = res.json()
         # print(res_j)
         datas = res_j[2]['pro']
@@ -60,4 +62,5 @@ async def get_epgs_tvmao(channel, dt):
     return ret
 
 
-# await get_epgs_tvmao({'id': 'tvmao_NANCHANG-NANCHANG1', 'name': '南昌电视台新闻综合频道', 'id0': 'NANCHANG-NANCHANG1', 'source': 'tvmao'}, datetime.datetime.now().date())
+if __name__ == "__main__":
+    asyncio.run(get_epgs_tvmao({'id': 'tvmao_NANCHANG-NANCHANG1', 'name': '南昌电视台新闻综合频道', 'id0': 'NANCHANG-NANCHANG1', 'source': 'tvmao'}, datetime.datetime.now().date()))

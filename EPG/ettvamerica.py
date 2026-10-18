@@ -21,6 +21,7 @@ async def get_epgs_ettvamerica(channel, dt):
             url = f'https://www.ettvamerica.com/Schedule/ScheduleList.cshtml?Region=1&Provider={provider}&Y={dt.year}&M={dt.month}&D={dt.day}&H={hour}'
             async with httpx.AsyncClient() as client:
                 res = await client.get(url, timeout=10)
+            res.raise_for_status()
             res.encoding = 'utf-8'
             soup = BeautifulSoup(res.text, 'html.parser')
             channel_list = res.text.split('; grid-column: 1; text-align: center;">')

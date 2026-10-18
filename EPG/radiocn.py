@@ -24,6 +24,7 @@ async def get_epgs_radiocn(channel, dt):
     try:
         async with httpx.AsyncClient() as client:
             res = await client.get(url, headers=headers, timeout=10)
+        res.raise_for_status()
         data = res.json()['data']
         for i in data:
             epg = {
@@ -60,6 +61,7 @@ async def get_channels_radiocn():
     }
     async with httpx.AsyncClient() as client:
         res = await client.get(f'https://ytmsout.radio.cn/web/appBroadcast/list?{opts}', headers=headers)
+    res.raise_for_status()
     data = res.json()['data']
     for i in data:
         id = i['contentId']

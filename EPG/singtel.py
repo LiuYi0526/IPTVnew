@@ -168,7 +168,6 @@ async def get_channels_singtel():
             headers=SINGTEL_HEADERS,
         )
     res.raise_for_status()
-    res.encoding = 'utf-8'
     data = res.json()
     items = data.get('data')
     if not isinstance(items, list):
