@@ -55,6 +55,7 @@ from btime import get_epgs_btime
 from jxntv import get_epgs_jxntv
 from elta import get_epgs_elta
 from italkbb import get_epgs_italkbb
+from sling import get_epgs_sling
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
 
@@ -117,6 +118,7 @@ EPG_SOURCE_CONFIGS = {
     'jxntv': (get_epgs_jxntv, MODE_DATE, range(-6, 2)),
     'elta': (get_epgs_elta, MODE_DATE, THREE_DAY_OFFSETS),
     'italkbb': (get_epgs_italkbb, MODE_PLAIN, None),
+    'sling': (get_epgs_sling, MODE_DATE, THREE_DAY_OFFSETS),
 }
 
 
@@ -1970,6 +1972,12 @@ if __name__ == '__main__':
         {'id': 'epgpw_6580', 'name': 'RT News', 'id0': '6580', 'source': 'epg.pw'},
         {'id': 'epgpw_6856', 'name': 'TVP World', 'id0': '6856', 'source': 'epg.pw'},
         {'id': 'epgpw_7374', 'name': 'RT Д English', 'id0': '7374', 'source': 'epg.pw'},
+        {'id': 'sling_d85bac98a25543ccbc7afca21565e221', 'name': 'Bloomberg TV+', 'id0': 'c5e802c0fba04d68b6c4aa2acb93876c', 'source': 'sling'},
+        {'id': 'sling_07a05ab63699451da0a5882e8fe8ecb3', 'name': 'CNN', 'id0': '24696f5c20ad4d1490111064f0b32dc1', 'source': 'sling'},
+        {'id': 'sling_7fc808fe8daf47cc8df783d981a5a864', 'name': 'CNBC', 'id0': 'b876698b7790475eabafe6fe64d16210', 'source': 'sling'},
+        {'id': 'sling_7c7f3b3f3d324c7d970a002869f39b9f', 'name': 'MS NOW', 'id0': 'b708785d33964014896ab636042af863', 'source': 'sling'},
+        {'id': 'sling_844add5a8cf046a692db3ed6c6a3ab9b', 'name': 'Fox Business', 'id0': '392688324daf4af0b6f10170de78d843', 'source': 'sling'},
+        {'id': 'sling_d5d144c59227408a8cbaccb2c70e3603', 'name': 'NBC News Now', 'id0': '6309dace16374a80b3aa17dd705645c0', 'source': 'sling'},
         {'id': 'nhk_g', 'name': 'NHK総合', 'id0': 'g1', 'source': 'nhk'},
         {'id': 'nhk_bsp4k', 'name': 'NHK BSP4K', 'id0': 's5', 'source': 'nhk'},
         {'id': 'nhk_bs8k', 'name': 'NHK BS8K', 'id0': 's6', 'source': 'nhk'},
